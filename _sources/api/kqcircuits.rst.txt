@@ -4,10 +4,11 @@ API documentation
 
    kqcircuits.chips
    kqcircuits.elements
+   kqcircuits.junctions
+   kqcircuits.layer_config
    kqcircuits.masks
    kqcircuits.qubits
    kqcircuits.simulations
-   kqcircuits.squids
    kqcircuits.test_structures
    kqcircuits.util
 

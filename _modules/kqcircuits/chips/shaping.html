@@ -113,9 +113,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../user_guide/index.html">User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/gui_features.html">GUI Features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#useful-hotkeys">Useful hotkeys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#introduction-to-elements">Introduction to Elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#placing-elements">Placing Elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#modifying-element-parameters">Modifying Element parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#modifying-waveguides">Modifying waveguides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#editing-waveguidecomposite-nodes">Editing WaveguideComposite Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#converting-elements-placed-in-gui-into-code">Converting elements placed in GUI into code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#useful-menu-commands">Useful Menu Commands</a></li>
 </ul>
@@ -131,9 +133,17 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#example-of-defining-an-element-class">Example of defining an <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#example-of-defining-a-chip-and-inserting-elements-into-it">Example of defining a Chip and inserting elements into it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#example-of-defining-a-chip-and-inserting-elements-into-it">Example of defining a Chip and inserting elements into it</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#defining-sampleholder-types">Defining sampleholder types</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#refpoints">Refpoints</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#faces">Faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#faces">Faces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#layer-configuration-files">Layer configuration files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#adding-a-new-face">Adding a new face</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#opening-element-or-chip-from-an-ide">Opening <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code> from an IDE</a></li>
 </ul>
 </li>
@@ -155,17 +165,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/simulations.html">External simulation tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulations.html#creating-simulation-object">Creating simulation object</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulations.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulations.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html">Creating simulation object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulations.html#ansys-export">Ansys export</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulations.html#ansys-scripts">Ansys scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/ansys_export.html">Ansys export</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/ansys_export.html#ansys-scripts">Ansys scripts</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulations.html#sonnet-export">Sonnet export</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulations.html#gmsh-elmer-export">Gmsh/Elmer export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/sonnet_export.html">Sonnet export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/xsection.html">Creating cross section images</a></li>
@@ -195,9 +205,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#usage">Usage</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/docker_image.html">Docker image</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../developer/docker_image.html#cli-usage">CLI usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../developer/docker_image.html#ci-usage">CI usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/containers.html">Containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/containers.html#cli-usage">CLI usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/containers.html#docker-ci-usage">Docker CI usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/containers.html#singularity-usage">Singularity usage</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/architecture.html">Architecture</a><ul>
@@ -215,58 +226,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/documentation.html">Documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#versioning">Versioning</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../libraries/elements.html">Elements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#airbridge">Airbridge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#chipframe">ChipFrame</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#element">Element</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#fingercapacitorsquare">FingerCapacitorSquare</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#fingercapacitortaper">FingerCapacitorTaper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#flip-chip-connector">Flip chip connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#flip-chip-connector-rf">Flip chip connector Rf</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#tsv-connector">TSV connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#manual-squids">Manual SQUIDs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#launcher">Launcher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#launcherdc">LauncherDC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#marker">Marker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#maskmarkerfc">MaskMarkerFc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#meander">Meander</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#swissmon">Swissmon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#waveguidecoplanar">WaveguideCoplanar</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#waveguidecoplanarcurved">WaveguideCoplanarCurved</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#waveguidecoplanarstraight">WaveguideCoplanarStraight</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#waveguidecoplanartaper">WaveguideCoplanarTaper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#waveguidecoplanarsplitter">WaveguideCoplanarSplitter</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../libraries/chips.html">Chips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#airbridgecrossings">AirbridgeCrossings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#airbridgedctest">AirbridgeDcTest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#chip">Chip</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#daisywoven">DaisyWoven</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#demo">Demo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#empty">Empty</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#junctiontest">JunctionTest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#junctiontest2">JunctionTest2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#lithographytest">LithographyTest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#crossingtwoface">CrossingTwoface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#qualityfactortwoface">QualityFactorTwoface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#qualityfactor">QualityFactor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#shaping">Shaping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#singlexmons">SingleXmons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#stripes">Stripes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#xmonsdirectcoupling">XmonsDirectCoupling</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../libraries/test_structures.html">Test structures</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/test_structures.html#airbridgedc">AirbridgeDC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/test_structures.html#junctiontestpads">JunctionTestPads</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/test_structures.html#tsvtestpattern">TsvTestPattern</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/test_structures.html#stripestest">StripesTest</a></li>
 </ul>
 </li>
 </ul>
@@ -307,10 +266,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.airbridges.html#module-kqcircuits.elements.airbridges">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.f2f_connectors.html">kqcircuits.elements.f2f_connectors</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.f2f_connectors.flip_chip_connectors.html">kqcircuits.elements.f2f_connectors.flip_chip_connectors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.f2f_connectors.tsvs.html">kqcircuits.elements.f2f_connectors.tsvs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.f2f_connectors.html#module-kqcircuits.elements.f2f_connectors">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.flip_chip_connectors.html">kqcircuits.elements.flip_chip_connectors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.flip_chip_connectors.flip_chip_connector.html">kqcircuits.elements.flip_chip_connectors.flip_chip_connector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.flip_chip_connectors.flip_chip_connector_dc.html">kqcircuits.elements.flip_chip_connectors.flip_chip_connector_dc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.flip_chip_connectors.flip_chip_connector_rf.html">kqcircuits.elements.flip_chip_connectors.flip_chip_connector_rf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.flip_chip_connectors.html#module-kqcircuits.elements.flip_chip_connectors">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.fluxlines.html">kqcircuits.elements.fluxlines</a><ul>
@@ -324,6 +284,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.markers.marker.html">kqcircuits.elements.markers.marker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.markers.marker_standard.html">kqcircuits.elements.markers.marker_standard</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.markers.html#module-kqcircuits.elements.markers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.tsvs.html">kqcircuits.elements.tsvs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.tsvs.tsv.html">kqcircuits.elements.tsvs.tsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.tsvs.tsv_ellipse.html">kqcircuits.elements.tsvs.tsv_ellipse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.tsvs.tsv_standard.html">kqcircuits.elements.tsvs.tsv_standard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.tsvs.html#module-kqcircuits.elements.tsvs">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.airbridge_connection.html">kqcircuits.elements.airbridge_connection</a></li>
@@ -347,6 +314,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.html#module-kqcircuits.elements">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.junctions.html">kqcircuits.junctions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.junction.html">kqcircuits.junctions.junction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.manhattan.html">kqcircuits.junctions.manhattan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.manhattan_single_junction.html">kqcircuits.junctions.manhattan_single_junction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.no_squid.html">kqcircuits.junctions.no_squid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.sim.html">kqcircuits.junctions.sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.squid.html">kqcircuits.junctions.squid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.html#module-kqcircuits.junctions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.layer_config.html">kqcircuits.layer_config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.layer_config.default_layer_config.html">kqcircuits.layer_config.default_layer_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.layer_config.example_layer_config.html">kqcircuits.layer_config.example_layer_config</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.masks.html">kqcircuits.masks</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.masks.mask_export.html">kqcircuits.masks.mask_export</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.masks.mask_layout.html">kqcircuits.masks.mask_layout</a></li>
@@ -355,6 +337,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.qubits.double_pads.html">kqcircuits.qubits.double_pads</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.qubits.qubit.html">kqcircuits.qubits.qubit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.qubits.swissmon.html">kqcircuits.qubits.swissmon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.qubits.html#module-kqcircuits.qubits">Module contents</a></li>
@@ -371,11 +354,14 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.circular_capacitor_sim.html">kqcircuits.simulations.circular_capacitor_sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.cross_section_simulation.html">kqcircuits.simulations.cross_section_simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.double_pads.html">kqcircuits.simulations.double_pads</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.empty_simulation.html">kqcircuits.simulations.empty_simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.finger_capacitor_sim.html">kqcircuits.simulations.finger_capacitor_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.flip_chip_connector_sim.html">kqcircuits.simulations.flip_chip_connector_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.port.html">kqcircuits.simulations.port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.simulation.html">kqcircuits.simulations.simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.single_xmon.html">kqcircuits.simulations.single_xmon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.single_xmons_full_chip_sim.html">kqcircuits.simulations.single_xmons_full_chip_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.waveguides_sim.html">kqcircuits.simulations.waveguides_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.xmons_direct_coupling_full_chip_sim.html">kqcircuits.simulations.xmons_direct_coupling_full_chip_sim</a></li>
@@ -383,18 +369,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.html#module-kqcircuits.simulations">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.squids.html">kqcircuits.squids</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.squids.manhattan.html">kqcircuits.squids.manhattan</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.squids.sim.html">kqcircuits.squids.sim</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.squids.squid.html">kqcircuits.squids.squid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.squids.html#module-kqcircuits.squids">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.test_structures.html">kqcircuits.test_structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads.html">kqcircuits.test_structures.junction_test_pads</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads.junction_test_pads.html">kqcircuits.test_structures.junction_test_pads.junction_test_pads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads.junction_test_pads_simple.html">kqcircuits.test_structures.junction_test_pads.junction_test_pads_simple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads.html#module-kqcircuits.test_structures.junction_test_pads">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.test_structures.html">kqcircuits.test_structures</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.airbridge_dc.html">kqcircuits.test_structures.airbridge_dc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.cross_test.html">kqcircuits.test_structures.cross_test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads.html">kqcircuits.test_structures.junction_test_pads</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads_simple.html">kqcircuits.test_structures.junction_test_pads_simple</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.stripes_test.html">kqcircuits.test_structures.stripes_test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.test_structure.html">kqcircuits.test_structures.test_structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.tsv_test_pattern.html">kqcircuits.test_structures.tsv_test_pattern</a></li>
@@ -411,6 +394,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html">kqcircuits.util.geometry_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.import_helper.html">kqcircuits.util.import_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.label.html">kqcircuits.util.label</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.library_helper.html">kqcircuits.util.library_helper</a></li>
@@ -530,7 +515,7 @@
 <span class="kn">from</span> <span class="nn">kqcircuits.chips.chip</span> <span class="kn">import</span> <span class="n">Chip</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.util.parameters</span> <span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.meander</span> <span class="kn">import</span> <span class="n">Meander</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.squids.squid</span> <span class="kn">import</span> <span class="n">Squid</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.junctions.squid</span> <span class="kn">import</span> <span class="n">Squid</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.qubits.swissmon</span> <span class="kn">import</span> <span class="n">Swissmon</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.waveguide_coplanar</span> <span class="kn">import</span> <span class="n">WaveguideCoplanar</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.waveguide_coplanar_splitter</span> <span class="kn">import</span> <span class="n">WaveguideCoplanarSplitter</span><span class="p">,</span> <span class="n">t_cross_parameters</span>
@@ -538,7 +523,7 @@
 
 
 <div class="viewcode-block" id="Shaping"><a class="viewcode-back" href="../../../api/kqcircuits.chips.shaping.html#kqcircuits.chips.shaping.Shaping">[docs]</a><span class="k">class</span> <span class="nc">Shaping</span><span class="p">(</span><span class="n">Chip</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The PCell declaration for a Shaping chip.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The PCell declaration for a Shaping chip.&quot;&quot;&quot;</span>
 
     <span class="n">tunable</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeBoolean</span><span class="p">,</span> <span class="s2">&quot;Tunable&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 

@@ -113,9 +113,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../user_guide/index.html">User Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/gui_features.html">GUI Features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#useful-hotkeys">Useful hotkeys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#introduction-to-elements">Introduction to Elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#placing-elements">Placing Elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#modifying-element-parameters">Modifying Element parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#modifying-waveguides">Modifying waveguides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#editing-waveguidecomposite-nodes">Editing WaveguideComposite Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#converting-elements-placed-in-gui-into-code">Converting elements placed in GUI into code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/gui_features.html#useful-menu-commands">Useful Menu Commands</a></li>
 </ul>
@@ -131,9 +133,17 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#example-of-defining-an-element-class">Example of defining an <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#example-of-defining-a-chip-and-inserting-elements-into-it">Example of defining a Chip and inserting elements into it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#example-of-defining-a-chip-and-inserting-elements-into-it">Example of defining a Chip and inserting elements into it</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#defining-sampleholder-types">Defining sampleholder types</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#refpoints">Refpoints</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#faces">Faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#faces">Faces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#layer-configuration-files">Layer configuration files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/python_workflow.html#adding-a-new-face">Adding a new face</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../user_guide/python_workflow.html#opening-element-or-chip-from-an-ide">Opening <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code> from an IDE</a></li>
 </ul>
 </li>
@@ -155,17 +165,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/simulations.html">External simulation tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulations.html#creating-simulation-object">Creating simulation object</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulations.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulations.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html">Creating simulation object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/simulation_object.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulations.html#ansys-export">Ansys export</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulations.html#ansys-scripts">Ansys scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/ansys_export.html">Ansys export</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../user_guide/simulation/ansys_export.html#ansys-scripts">Ansys scripts</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulations.html#sonnet-export">Sonnet export</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulations.html#gmsh-elmer-export">Gmsh/Elmer export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/sonnet_export.html">Sonnet export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../user_guide/simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../user_guide/xsection.html">Creating cross section images</a></li>
@@ -195,9 +205,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#usage">Usage</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/docker_image.html">Docker image</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../developer/docker_image.html#cli-usage">CLI usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../developer/docker_image.html#ci-usage">CI usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/containers.html">Containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/containers.html#cli-usage">CLI usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/containers.html#docker-ci-usage">Docker CI usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/containers.html#singularity-usage">Singularity usage</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/architecture.html">Architecture</a><ul>
@@ -215,58 +226,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/documentation.html">Documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#versioning">Versioning</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../libraries/index.html">Libraries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../libraries/elements.html">Elements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#airbridge">Airbridge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#chipframe">ChipFrame</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#element">Element</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#fingercapacitorsquare">FingerCapacitorSquare</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#fingercapacitortaper">FingerCapacitorTaper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#flip-chip-connector">Flip chip connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#flip-chip-connector-rf">Flip chip connector Rf</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#tsv-connector">TSV connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#manual-squids">Manual SQUIDs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#launcher">Launcher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#launcherdc">LauncherDC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#marker">Marker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#maskmarkerfc">MaskMarkerFc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#meander">Meander</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#swissmon">Swissmon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#waveguidecoplanar">WaveguideCoplanar</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#waveguidecoplanarcurved">WaveguideCoplanarCurved</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#waveguidecoplanarstraight">WaveguideCoplanarStraight</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#waveguidecoplanartaper">WaveguideCoplanarTaper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/elements.html#waveguidecoplanarsplitter">WaveguideCoplanarSplitter</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../libraries/chips.html">Chips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#airbridgecrossings">AirbridgeCrossings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#airbridgedctest">AirbridgeDcTest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#chip">Chip</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#daisywoven">DaisyWoven</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#demo">Demo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#empty">Empty</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#junctiontest">JunctionTest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#junctiontest2">JunctionTest2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#lithographytest">LithographyTest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#crossingtwoface">CrossingTwoface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#qualityfactortwoface">QualityFactorTwoface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#qualityfactor">QualityFactor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#shaping">Shaping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#singlexmons">SingleXmons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#stripes">Stripes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/chips.html#xmonsdirectcoupling">XmonsDirectCoupling</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../libraries/test_structures.html">Test structures</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/test_structures.html#airbridgedc">AirbridgeDC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/test_structures.html#junctiontestpads">JunctionTestPads</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/test_structures.html#tsvtestpattern">TsvTestPattern</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../libraries/test_structures.html#stripestest">StripesTest</a></li>
 </ul>
 </li>
 </ul>
@@ -307,10 +266,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.airbridges.html#module-kqcircuits.elements.airbridges">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.f2f_connectors.html">kqcircuits.elements.f2f_connectors</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.f2f_connectors.flip_chip_connectors.html">kqcircuits.elements.f2f_connectors.flip_chip_connectors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.f2f_connectors.tsvs.html">kqcircuits.elements.f2f_connectors.tsvs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.f2f_connectors.html#module-kqcircuits.elements.f2f_connectors">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.flip_chip_connectors.html">kqcircuits.elements.flip_chip_connectors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.flip_chip_connectors.flip_chip_connector.html">kqcircuits.elements.flip_chip_connectors.flip_chip_connector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.flip_chip_connectors.flip_chip_connector_dc.html">kqcircuits.elements.flip_chip_connectors.flip_chip_connector_dc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.flip_chip_connectors.flip_chip_connector_rf.html">kqcircuits.elements.flip_chip_connectors.flip_chip_connector_rf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.flip_chip_connectors.html#module-kqcircuits.elements.flip_chip_connectors">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.fluxlines.html">kqcircuits.elements.fluxlines</a><ul>
@@ -324,6 +284,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.markers.marker.html">kqcircuits.elements.markers.marker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.markers.marker_standard.html">kqcircuits.elements.markers.marker_standard</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.markers.html#module-kqcircuits.elements.markers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.tsvs.html">kqcircuits.elements.tsvs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.tsvs.tsv.html">kqcircuits.elements.tsvs.tsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.tsvs.tsv_ellipse.html">kqcircuits.elements.tsvs.tsv_ellipse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.tsvs.tsv_standard.html">kqcircuits.elements.tsvs.tsv_standard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.tsvs.html#module-kqcircuits.elements.tsvs">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.airbridge_connection.html">kqcircuits.elements.airbridge_connection</a></li>
@@ -347,6 +314,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.html#module-kqcircuits.elements">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.junctions.html">kqcircuits.junctions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.junction.html">kqcircuits.junctions.junction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.manhattan.html">kqcircuits.junctions.manhattan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.manhattan_single_junction.html">kqcircuits.junctions.manhattan_single_junction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.no_squid.html">kqcircuits.junctions.no_squid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.sim.html">kqcircuits.junctions.sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.squid.html">kqcircuits.junctions.squid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.html#module-kqcircuits.junctions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.layer_config.html">kqcircuits.layer_config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.layer_config.default_layer_config.html">kqcircuits.layer_config.default_layer_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.layer_config.example_layer_config.html">kqcircuits.layer_config.example_layer_config</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.masks.html">kqcircuits.masks</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.masks.mask_export.html">kqcircuits.masks.mask_export</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.masks.mask_layout.html">kqcircuits.masks.mask_layout</a></li>
@@ -355,6 +337,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.qubits.double_pads.html">kqcircuits.qubits.double_pads</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.qubits.qubit.html">kqcircuits.qubits.qubit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.qubits.swissmon.html">kqcircuits.qubits.swissmon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.qubits.html#module-kqcircuits.qubits">Module contents</a></li>
@@ -371,11 +354,14 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.circular_capacitor_sim.html">kqcircuits.simulations.circular_capacitor_sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.cross_section_simulation.html">kqcircuits.simulations.cross_section_simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.double_pads.html">kqcircuits.simulations.double_pads</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.empty_simulation.html">kqcircuits.simulations.empty_simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.finger_capacitor_sim.html">kqcircuits.simulations.finger_capacitor_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.flip_chip_connector_sim.html">kqcircuits.simulations.flip_chip_connector_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.port.html">kqcircuits.simulations.port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.simulation.html">kqcircuits.simulations.simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.single_xmon.html">kqcircuits.simulations.single_xmon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.single_xmons_full_chip_sim.html">kqcircuits.simulations.single_xmons_full_chip_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.waveguides_sim.html">kqcircuits.simulations.waveguides_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.xmons_direct_coupling_full_chip_sim.html">kqcircuits.simulations.xmons_direct_coupling_full_chip_sim</a></li>
@@ -383,18 +369,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.html#module-kqcircuits.simulations">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.squids.html">kqcircuits.squids</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.squids.manhattan.html">kqcircuits.squids.manhattan</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.squids.sim.html">kqcircuits.squids.sim</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.squids.squid.html">kqcircuits.squids.squid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.squids.html#module-kqcircuits.squids">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.test_structures.html">kqcircuits.test_structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads.html">kqcircuits.test_structures.junction_test_pads</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads.junction_test_pads.html">kqcircuits.test_structures.junction_test_pads.junction_test_pads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads.junction_test_pads_simple.html">kqcircuits.test_structures.junction_test_pads.junction_test_pads_simple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads.html#module-kqcircuits.test_structures.junction_test_pads">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.test_structures.html">kqcircuits.test_structures</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.airbridge_dc.html">kqcircuits.test_structures.airbridge_dc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.cross_test.html">kqcircuits.test_structures.cross_test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads.html">kqcircuits.test_structures.junction_test_pads</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.junction_test_pads_simple.html">kqcircuits.test_structures.junction_test_pads_simple</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.stripes_test.html">kqcircuits.test_structures.stripes_test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.test_structure.html">kqcircuits.test_structures.test_structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.test_structures.tsv_test_pattern.html">kqcircuits.test_structures.tsv_test_pattern</a></li>
@@ -411,6 +394,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html">kqcircuits.util.geometry_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.import_helper.html">kqcircuits.util.import_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.label.html">kqcircuits.util.label</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.library_helper.html">kqcircuits.util.library_helper</a></li>
@@ -522,10 +507,13 @@
 <span class="c1"># The software distribution should follow IQM trademark policy for open-source software</span>
 <span class="c1"># (meetiqm.com/developers/osstmpolicy). IQM welcomes contributions to the code. Please see our contribution agreements</span>
 <span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
+
 <span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">perf_counter</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">Template</span>
 <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">isclass</span>
 <span class="kn">from</span> <span class="nn">multiprocessing.pool</span> <span class="kn">import</span> <span class="n">ThreadPool</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -534,14 +522,15 @@
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_bar_format</span><span class="p">,</span> <span class="n">TMP_PATH</span><span class="p">,</span> <span class="n">PY_PATH</span><span class="p">,</span> <span class="n">STARTUPINFO</span><span class="p">,</span> <span class="n">klayout_executable_command</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">default_bar_format</span><span class="p">,</span> <span class="n">TMP_PATH</span><span class="p">,</span> <span class="n">STARTUPINFO</span><span class="p">,</span> <span class="n">klayout_executable_command</span><span class="p">,</span> <span class="n">default_face_id</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.masks.mask_export</span> <span class="kn">import</span> <span class="n">export_chip</span><span class="p">,</span> <span class="n">export_mask_set</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.masks.mask_layout</span> <span class="kn">import</span> <span class="n">MaskLayout</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.klayout_view</span> <span class="kn">import</span> <span class="n">KLayoutView</span><span class="p">,</span> <span class="n">MissingUILibraryException</span>
 
 
 <div class="viewcode-block" id="MaskSet"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet">[docs]</a><span class="nd">@logged</span>
 <span class="k">class</span> <span class="nc">MaskSet</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Class representing a set of masks for different chip faces.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class representing a set of masks for different chip faces.</span>
 
 <span class="sd">    A mask set consists of one or more MaskLayouts, each of which is for a certain face.</span>
 
@@ -570,15 +559,29 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;MaskSet&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">with_grid</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">export_drc</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">mask_export_layers</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">layout</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">Layout</span><span class="p">):</span>
-            <span class="n">error_text</span> <span class="o">=</span> <span class="s2">&quot;Cannot create mask with invalid or nil layout.&quot;</span>
-            <span class="n">error</span> <span class="o">=</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_text</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__log</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">error_text</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="n">error</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="n">error</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;MaskSet&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">with_grid</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">export_drc</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">mask_export_layers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_time</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;INIT&quot;</span><span class="p">:</span> <span class="n">perf_counter</span><span class="p">(),</span> <span class="s2">&quot;ADD_CHIPS&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>  <span class="s2">&quot;BUILD&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;EXPORT&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;END&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
+
+        <span class="k">if</span> <span class="n">debug</span> <span class="ow">or</span> <span class="s1">&#39;-d&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>  <span class="c1"># Stand-alone debug mode, without klayout. Single process.</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running without KLayout. Some features for mask export have been limited.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Layout</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># Normal mode, multiple processes run klayout in the background</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">KLayoutView</span><span class="p">(</span><span class="n">current</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">initialize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">KLayoutView</span><span class="o">.</span><span class="n">get_active_layout</span><span class="p">()</span>
+            <span class="k">except</span> <span class="n">MissingUILibraryException</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KLayout application not detected! Most likely the mask export was attempted externally.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try: &#39;klayout -z -r masks/demo.py&#39; &quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alternatively, you may export the mask without KLayout but with limited features.&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;To do this use the debug mode switch &#39;-d&#39;: &#39;python masks/demo.py -d&#39;&quot;</span><span class="p">)</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">with_grid</span> <span class="o">=</span> <span class="n">with_grid</span>
@@ -587,11 +590,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">mask_layouts</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mask_export_layers</span> <span class="o">=</span> <span class="n">mask_export_layers</span> <span class="k">if</span> <span class="n">mask_export_layers</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">used_chips</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_thread_create_chip_template</span> <span class="o">=</span> <span class="n">PY_PATH</span> <span class="o">/</span> <span class="s1">&#39;kqcircuits/util/create_chip_template.txt&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">template_imports</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_thread_create_chip_parameters</span> <span class="o">=</span> <span class="p">{}</span>
 
-<div class="viewcode-block" id="MaskSet.add_mask_layout"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.add_mask_layout">[docs]</a>    <span class="k">def</span> <span class="nf">add_mask_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chips_map</span><span class="p">,</span> <span class="n">face_id</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="n">mask_layout_type</span><span class="o">=</span><span class="n">MaskLayout</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Creates a mask layout from chips_map and adds it to self.mask_layouts.</span>
+<div class="viewcode-block" id="MaskSet.add_mask_layout"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.add_mask_layout">[docs]</a>    <span class="k">def</span> <span class="nf">add_mask_layout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chips_map</span><span class="p">,</span> <span class="n">face_id</span><span class="o">=</span><span class="n">default_face_id</span><span class="p">,</span> <span class="n">mask_layout_type</span><span class="o">=</span><span class="n">MaskLayout</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Creates a mask layout from chips_map and adds it to self.mask_layouts.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            chips_map: List of lists (2D-array) of strings, each string is a chip name (or --- for no chip)</span>
@@ -610,8 +613,25 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">mask_layouts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mask_layout</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">mask_layout</span></div>
 
+<div class="viewcode-block" id="MaskSet.load_cell_from_file"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.load_cell_from_file">[docs]</a>    <span class="k">def</span> <span class="nf">load_cell_from_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load GDS or OASIS cell from file.</span>
+
+<span class="sd">        Load a cell (usually a chip) from the specified file.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_name: name of the file (with path) to be loaded</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            the loaded cell</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">load_opts</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">LoadLayoutOptions</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="ow">and</span> <span class="n">pya</span><span class="o">.</span><span class="n">Application</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">version</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="s1">&#39;KLayout 0.27.0&#39;</span><span class="p">:</span>
+            <span class="n">load_opts</span><span class="o">.</span><span class="n">cell_conflict_resolution</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">LoadLayoutOptions</span><span class="o">.</span><span class="n">CellConflictResolution</span><span class="o">.</span><span class="n">RenameCell</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">load_opts</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">top_cells</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
 <div class="viewcode-block" id="MaskSet.add_chips"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.add_chips">[docs]</a>    <span class="k">def</span> <span class="nf">add_chips</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chips</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a list of chips with parameters to self.chips_map_legend and exports the files for each chip.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a list of chips with parameters to self.chips_map_legend and exports the files for each chip.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            chips: List of tuples that ``add_chip`` uses. Parameters are optional.</span>
@@ -623,17 +643,21 @@
 <span class="sd">            It is advised to lower the thread number if your system has a lot of CPU cores but not a lot of memory.</span>
 <span class="sd">            The same applies for exporting large and complex geometry.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="p">[</span><span class="s1">&#39;ADD_CHIPS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
+
         <span class="k">if</span> <span class="n">threads</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">threads</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">threads</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">threads</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">threads</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">:</span>
+            <span class="n">threads</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">threads</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">chip_class</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">chips</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;Building variants&#39;</span><span class="p">,</span>
                                                           <span class="n">bar_format</span><span class="o">=</span><span class="n">default_bar_format</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">add_chip</span><span class="p">(</span><span class="n">chip_class</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="o">**</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">params</span> <span class="k">else</span> <span class="p">{}))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Building chip variants in parallel using </span><span class="si">{</span><span class="n">threads</span><span class="si">}</span><span class="s2"> threads...&quot;</span><span class="p">)</span>
 
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_thread_create_chip_template</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="n">template</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+            <span class="n">template</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_template</span><span class="p">()</span>
 
             <span class="k">class</span> <span class="nc">ChipSubprocessException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
                 <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">chip_variant</span><span class="p">):</span>
@@ -728,7 +752,7 @@
                     <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">script_name</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MaskSet.add_chip"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.add_chip">[docs]</a>    <span class="k">def</span> <span class="nf">add_chip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chip</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Adds a chip with the given name and parameters to self.chips_map_legend and exports chip files.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a chip with the given name and parameters to self.chips_map_legend and exports chip files.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            chip: the chip type class (for PCell chip), or a chip cell (for manually designed chip)</span>
@@ -741,15 +765,15 @@
 
         <span class="k">if</span> <span class="n">isclass</span><span class="p">(</span><span class="n">chip</span><span class="p">):</span>
             <span class="n">cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variant_definition</span><span class="p">(</span><span class="n">chip</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)[</span><span class="n">variant_name</span><span class="p">]</span>
-            <span class="n">export_chip</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="n">chip_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">export_drc</span><span class="p">)</span>
+            <span class="n">export_chip</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="n">chip_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">export_drc</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">delete_cell_rec</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">())</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">export_chip</span><span class="p">(</span><span class="n">chip</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="n">chip_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">export_drc</span><span class="p">)</span>
+            <span class="n">export_chip</span><span class="p">(</span><span class="n">chip</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="n">chip_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">export_drc</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_load_chip_into_mask</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">chip_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">variant_name</span><span class="si">}</span><span class="s2">.oas&quot;</span><span class="p">),</span> <span class="n">variant_name</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MaskSet.variant_definition"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.variant_definition">[docs]</a>    <span class="k">def</span> <span class="nf">variant_definition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chip_class</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns chip variant definition with default mask specific parameters.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns chip variant definition with default mask specific parameters.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            chip_class: the chip type class</span>
@@ -774,7 +798,7 @@
         <span class="k">return</span> <span class="p">{</span><span class="n">variant_name</span><span class="p">:</span> <span class="n">chip_class</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="p">,</span> <span class="o">**</span><span class="n">chip_parameters</span><span class="p">)}</span></div>
 
 <div class="viewcode-block" id="MaskSet.build"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">remove_guiding_shapes</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Builds the mask set.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Builds the mask set.</span>
 
 <span class="sd">        Creates cells for the mask based on self.mask_layouts and self.chips_map_legend. Optionally removes</span>
 <span class="sd">        guiding shapes from the layout. Populates self.used_chips with the chips used in the mask layouts.</span>
@@ -783,11 +807,12 @@
 <span class="sd">            remove_guiding_shapes (Boolean): determines if the guiding shapes are removed</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="p">[</span><span class="s1">&#39;BUILD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
         <span class="c1"># build mask layouts (without chip copy labels)</span>
         <span class="k">for</span> <span class="n">mask_layout</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask_layouts</span><span class="p">:</span>
             <span class="c1"># include face_id in mask_layout.name only for multi-face masks</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mask_layouts</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">mask_layout</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="n">mask_layout</span><span class="o">.</span><span class="n">face_id</span>
+                <span class="n">mask_layout</span><span class="o">.</span><span class="n">name</span> <span class="o">+=</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">mask_layout</span><span class="o">.</span><span class="n">face_id</span>
             <span class="n">mask_layout</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span><span class="p">)</span>
 
         <span class="n">chip_copy_label_layers</span> <span class="o">=</span> <span class="p">[</span>
@@ -849,8 +874,8 @@
         <span class="k">if</span> <span class="n">remove_guiding_shapes</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">is_valid_layer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">guiding_shape_layer</span><span class="p">()):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">delete_layer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">guiding_shape_layer</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="MaskSet.export"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.export">[docs]</a>    <span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Exports designs, bitmaps and documentation of this mask set.</span>
+<div class="viewcode-block" id="MaskSet.export"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.export">[docs]</a>    <span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Exports designs, bitmaps and documentation of this mask set.</span>
 
 <span class="sd">        Assumes that self.build() has been called before.</span>
 
@@ -859,12 +884,22 @@
 <span class="sd">            view: KLayout view object</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="p">[</span><span class="s1">&#39;EXPORT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
+
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Exporting mask set...&quot;</span><span class="p">)</span>
-        <span class="n">export_mask_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">view</span><span class="p">)</span></div>
+        <span class="n">export_mask_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="p">[</span><span class="s1">&#39;END&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
+
+        <span class="k">def</span> <span class="nf">tdiff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>  <span class="c1"># get elapsed time from &quot;a&quot; to &quot;b&quot;</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">s&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_time</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="k">else</span> <span class="s1">&#39;n/a&#39;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Runtime: </span><span class="si">{</span><span class="n">tdiff</span><span class="p">(</span><span class="s1">&#39;INIT&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;END&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> (add chips: </span><span class="si">{</span><span class="n">tdiff</span><span class="p">(</span><span class="s1">&#39;ADD_CHIPS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;BUILD&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">, &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;build: </span><span class="si">{</span><span class="n">tdiff</span><span class="p">(</span><span class="s1">&#39;BUILD&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;EXPORT&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">, export: </span><span class="si">{</span><span class="n">tdiff</span><span class="p">(</span><span class="s1">&#39;EXPORT&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;END&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MaskSet.chips_map_from_box_map"><a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_set.html#kqcircuits.masks.mask_set.MaskSet.chips_map_from_box_map">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">chips_map_from_box_map</span><span class="p">(</span><span class="n">box_map</span><span class="p">,</span> <span class="n">mask_map</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Returns the chips_map created from box_map and mask_map.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the chips_map created from box_map and mask_map.</span>
 
 <span class="sd">        Given NxN box map and MxM mask_map, creates chips_map of size MNxMN. So each element of mask map is &quot;replaced&quot;</span>
 <span class="sd">        by a box in the box map. Assumes that box_map and mask_map are square.</span>
@@ -890,11 +925,64 @@
         <span class="k">return</span> <span class="n">chips_map</span></div>
 
     <span class="k">def</span> <span class="nf">_load_chip_into_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">variant_name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Loads a chip from file_name to self.layout and adds it into self.chips_map_legend[&quot;variant_name&quot;]&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads a chip from file_name to self.layout and adds it into self.chips_map_legend[&quot;variant_name&quot;]&quot;&quot;&quot;</span>
         <span class="n">load_opts</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">LoadLayoutOptions</span><span class="p">()</span>
         <span class="n">load_opts</span><span class="o">.</span><span class="n">cell_conflict_resolution</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">LoadLayoutOptions</span><span class="o">.</span><span class="n">CellConflictResolution</span><span class="o">.</span><span class="n">RenameCell</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">load_opts</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">variant_name</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">top_cells</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]})</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">variant_name</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">top_cells</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]})</span>
+
+    <span class="k">def</span> <span class="nf">_get_template</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns an updated template string.&quot;&quot;&quot;</span>
+
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">_CREATE_CHIP_TEMPLATE</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">template_imports</span><span class="p">:</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;#TEMPLATE_IMPORT#&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Template</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span></div>
+
+
+<span class="c1"># Template for creating and exporting a chip during mask generation.</span>
+<span class="c1">#</span>
+<span class="c1"># This is used in _get_template() to create a template used in add_chips() to create chips in</span>
+<span class="c1"># parallel. The &quot;#TEMPLATE_IMPORT#&quot; strings in it will be replaced by &quot;template_imports&quot; elements</span>
+<span class="c1"># to update the template itself.</span>
+
+<span class="n">_CREATE_CHIP_TEMPLATE</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">import logging</span>
+<span class="s2">import sys</span>
+<span class="s2">import traceback</span>
+<span class="s2">#TEMPLATE_IMPORT#</span>
+<span class="s2">from pathlib import Path</span>
+<span class="s2">from kqcircuits.defaults import TMP_PATH</span>
+<span class="s2">from kqcircuits.masks.mask_export import export_chip</span>
+<span class="s2">from kqcircuits.pya_resolver import pya</span>
+<span class="s2">from kqcircuits.util import macro_prepare</span>
+<span class="s2">from kqcircuits.util.log_router import route_log</span>
+<span class="s2">$</span><span class="si">{element_import}</span>
+
+<span class="s2">try:</span>
+<span class="s2">    logging.basicConfig(level=logging.DEBUG)  # this level is NOT actually used</span>
+<span class="s2">    chip_path = Path(TMP_PATH / &quot;$</span><span class="si">{name_mask}</span><span class="s2">_v$</span><span class="si">{version_mask}</span><span class="s2">&quot; / &quot;Chips&quot; / &quot;$</span><span class="si">{variant_name}</span><span class="s2">&quot;)</span>
+<span class="s2">    route_log(filename=chip_path/&quot;$</span><span class="si">{variant_name}</span><span class="s2">.log&quot;)</span>
+
+<span class="s2">    layout, top_cell, _, _ = macro_prepare.prep_empty_layout()</span>
+
+<span class="s2">    # cell definition and arbitrary code here</span>
+<span class="s2">    $</span><span class="si">{create_element}</span>
+
+<span class="s2">    top_cell.insert(pya.DCellInstArray(cell.cell_index(), pya.DTrans()))</span>
+
+<span class="s2">    # export chip files</span>
+<span class="s2">    export_chip(cell, &quot;$</span><span class="si">{variant_name}</span><span class="s2">&quot;, chip_path, layout, $</span><span class="si">{export_drc}</span><span class="s2">)</span>
+
+<span class="s2">#TEMPLATE_IMPORT#</span>
+
+<span class="s2">except Exception as err:</span>
+<span class="s2">    print(traceback.format_exc(), file=sys.stderr)</span>
+<span class="s2">    pya.Application.instance().exit(1)</span>
+<span class="s2">pya.Application.instance().exit(0)</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
 </pre></div>
 
            </div>

@@ -115,9 +115,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="gui_features.html">GUI Features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#useful-hotkeys">Useful hotkeys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gui_features.html#introduction-to-elements">Introduction to Elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#placing-elements">Placing Elements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#modifying-element-parameters">Modifying Element parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#modifying-waveguides">Modifying waveguides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gui_features.html#editing-waveguidecomposite-nodes">Editing WaveguideComposite Nodes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#converting-elements-placed-in-gui-into-code">Converting elements placed in GUI into code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gui_features.html#useful-menu-commands">Useful Menu Commands</a></li>
 </ul>
@@ -133,9 +135,17 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#example-of-defining-an-element-class">Example of defining an <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#example-of-defining-a-chip-and-inserting-elements-into-it">Example of defining a Chip and inserting elements into it</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-of-defining-a-chip-and-inserting-elements-into-it">Example of defining a Chip and inserting elements into it</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#defining-sampleholder-types">Defining sampleholder types</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#refpoints">Refpoints</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#faces">Faces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#faces">Faces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#layer-configuration-files">Layer configuration files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-new-face">Adding a new face</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#kqcircuit-s-layers">KQCircuit’s Layers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#opening-element-or-chip-from-an-ide">Opening <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code> from an IDE</a></li>
 </ul>
 </li>
@@ -157,17 +167,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="simulations.html">External simulation tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="simulations.html#creating-simulation-object">Creating simulation object</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="simulations.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="simulations.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulation/simulation_object.html">Creating simulation object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation/simulation_object.html#geometry-from-klayout-gui">Geometry from Klayout GUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simulation/simulation_object.html#geometry-from-kqcircuits-library">Geometry from KQCircuits library</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="simulations.html#ansys-export">Ansys export</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="simulations.html#ansys-scripts">Ansys scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulation/ansys_export.html">Ansys export</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="simulation/ansys_export.html#ansys-scripts">Ansys scripts</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="simulations.html#sonnet-export">Sonnet export</a></li>
-<li class="toctree-l3"><a class="reference internal" href="simulations.html#gmsh-elmer-export">Gmsh/Elmer export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulation/sonnet_export.html">Sonnet export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="xsection.html">Creating cross section images</a></li>
@@ -197,9 +207,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#usage">Usage</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/docker_image.html">Docker image</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../developer/docker_image.html#cli-usage">CLI usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../developer/docker_image.html#ci-usage">CI usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/containers.html">Containers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer/containers.html#cli-usage">CLI usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/containers.html#docker-ci-usage">Docker CI usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/containers.html#singularity-usage">Singularity usage</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../developer/architecture.html">Architecture</a><ul>
@@ -217,58 +228,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../developer/documentation.html">Documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing.html">Contributing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../contributing.html#versioning">Versioning</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/elements.html">Elements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#airbridge">Airbridge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#chipframe">ChipFrame</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#element">Element</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#fingercapacitorsquare">FingerCapacitorSquare</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#fingercapacitortaper">FingerCapacitorTaper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#flip-chip-connector">Flip chip connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#flip-chip-connector-rf">Flip chip connector Rf</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#tsv-connector">TSV connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#manual-squids">Manual SQUIDs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#launcher">Launcher</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#launcherdc">LauncherDC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#marker">Marker</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#maskmarkerfc">MaskMarkerFc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#meander">Meander</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#swissmon">Swissmon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#waveguidecoplanar">WaveguideCoplanar</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#waveguidecoplanarcurved">WaveguideCoplanarCurved</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#waveguidecoplanarstraight">WaveguideCoplanarStraight</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#waveguidecoplanartaper">WaveguideCoplanarTaper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/elements.html#waveguidecoplanarsplitter">WaveguideCoplanarSplitter</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/chips.html">Chips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#airbridgecrossings">AirbridgeCrossings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#airbridgedctest">AirbridgeDcTest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#chip">Chip</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#daisywoven">DaisyWoven</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#demo">Demo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#empty">Empty</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#junctiontest">JunctionTest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#junctiontest2">JunctionTest2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#lithographytest">LithographyTest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#crossingtwoface">CrossingTwoface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#qualityfactortwoface">QualityFactorTwoface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#qualityfactor">QualityFactor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#shaping">Shaping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#singlexmons">SingleXmons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#stripes">Stripes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/chips.html#xmonsdirectcoupling">XmonsDirectCoupling</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/test_structures.html">Test structures</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/test_structures.html#airbridgedc">AirbridgeDC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/test_structures.html#junctiontestpads">JunctionTestPads</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/test_structures.html#tsvtestpattern">TsvTestPattern</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../libraries/test_structures.html#stripestest">StripesTest</a></li>
 </ul>
 </li>
 </ul>
@@ -309,10 +268,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.airbridges.html#module-kqcircuits.elements.airbridges">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.elements.f2f_connectors.html">kqcircuits.elements.f2f_connectors</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.f2f_connectors.flip_chip_connectors.html">kqcircuits.elements.f2f_connectors.flip_chip_connectors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.f2f_connectors.tsvs.html">kqcircuits.elements.f2f_connectors.tsvs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.f2f_connectors.html#module-kqcircuits.elements.f2f_connectors">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.elements.flip_chip_connectors.html">kqcircuits.elements.flip_chip_connectors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.flip_chip_connectors.flip_chip_connector.html">kqcircuits.elements.flip_chip_connectors.flip_chip_connector</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.flip_chip_connectors.flip_chip_connector_dc.html">kqcircuits.elements.flip_chip_connectors.flip_chip_connector_dc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.flip_chip_connectors.flip_chip_connector_rf.html">kqcircuits.elements.flip_chip_connectors.flip_chip_connector_rf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.flip_chip_connectors.html#module-kqcircuits.elements.flip_chip_connectors">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.elements.fluxlines.html">kqcircuits.elements.fluxlines</a><ul>
@@ -326,6 +286,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.markers.marker.html">kqcircuits.elements.markers.marker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.markers.marker_standard.html">kqcircuits.elements.markers.marker_standard</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.markers.html#module-kqcircuits.elements.markers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.elements.tsvs.html">kqcircuits.elements.tsvs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.tsvs.tsv.html">kqcircuits.elements.tsvs.tsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.tsvs.tsv_ellipse.html">kqcircuits.elements.tsvs.tsv_ellipse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.tsvs.tsv_standard.html">kqcircuits.elements.tsvs.tsv_standard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.elements.tsvs.html#module-kqcircuits.elements.tsvs">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.elements.airbridge_connection.html">kqcircuits.elements.airbridge_connection</a></li>
@@ -349,6 +316,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.elements.html#module-kqcircuits.elements">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.junctions.html">kqcircuits.junctions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.junction.html">kqcircuits.junctions.junction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.manhattan.html">kqcircuits.junctions.manhattan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.manhattan_single_junction.html">kqcircuits.junctions.manhattan_single_junction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.no_squid.html">kqcircuits.junctions.no_squid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.sim.html">kqcircuits.junctions.sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.squid.html">kqcircuits.junctions.squid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.junctions.html#module-kqcircuits.junctions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.layer_config.html">kqcircuits.layer_config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.layer_config.default_layer_config.html">kqcircuits.layer_config.default_layer_config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.layer_config.example_layer_config.html">kqcircuits.layer_config.example_layer_config</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.masks.html">kqcircuits.masks</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.masks.mask_export.html">kqcircuits.masks.mask_export</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.masks.mask_layout.html">kqcircuits.masks.mask_layout</a></li>
@@ -357,6 +339,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.double_pads.html">kqcircuits.qubits.double_pads</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.qubit.html">kqcircuits.qubits.qubit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.swissmon.html">kqcircuits.qubits.swissmon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.html#module-kqcircuits.qubits">Module contents</a></li>
@@ -373,11 +356,14 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.circular_capacitor_sim.html">kqcircuits.simulations.circular_capacitor_sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.cross_section_simulation.html">kqcircuits.simulations.cross_section_simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.double_pads.html">kqcircuits.simulations.double_pads</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.empty_simulation.html">kqcircuits.simulations.empty_simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.finger_capacitor_sim.html">kqcircuits.simulations.finger_capacitor_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.flip_chip_connector_sim.html">kqcircuits.simulations.flip_chip_connector_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.port.html">kqcircuits.simulations.port</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.simulation.html">kqcircuits.simulations.simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.single_xmon.html">kqcircuits.simulations.single_xmon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.single_xmons_full_chip_sim.html">kqcircuits.simulations.single_xmons_full_chip_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.waveguides_sim.html">kqcircuits.simulations.waveguides_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.xmons_direct_coupling_full_chip_sim.html">kqcircuits.simulations.xmons_direct_coupling_full_chip_sim</a></li>
@@ -385,18 +371,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.simulations.html#module-kqcircuits.simulations">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.squids.html">kqcircuits.squids</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.squids.manhattan.html">kqcircuits.squids.manhattan</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.squids.sim.html">kqcircuits.squids.sim</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.squids.squid.html">kqcircuits.squids.squid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.squids.html#module-kqcircuits.squids">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.test_structures.html">kqcircuits.test_structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.test_structures.junction_test_pads.html">kqcircuits.test_structures.junction_test_pads</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.test_structures.junction_test_pads.junction_test_pads.html">kqcircuits.test_structures.junction_test_pads.junction_test_pads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.test_structures.junction_test_pads.junction_test_pads_simple.html">kqcircuits.test_structures.junction_test_pads.junction_test_pads_simple</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.test_structures.junction_test_pads.html#module-kqcircuits.test_structures.junction_test_pads">Module contents</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.test_structures.html">kqcircuits.test_structures</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.test_structures.airbridge_dc.html">kqcircuits.test_structures.airbridge_dc</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.test_structures.cross_test.html">kqcircuits.test_structures.cross_test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.test_structures.junction_test_pads.html">kqcircuits.test_structures.junction_test_pads</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.test_structures.junction_test_pads_simple.html">kqcircuits.test_structures.junction_test_pads_simple</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.test_structures.stripes_test.html">kqcircuits.test_structures.stripes_test</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.test_structures.test_structure.html">kqcircuits.test_structures.test_structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.test_structures.tsv_test_pattern.html">kqcircuits.test_structures.tsv_test_pattern</a></li>
@@ -413,6 +396,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.geometry_helper.html">kqcircuits.util.geometry_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.import_helper.html">kqcircuits.util.import_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.label.html">kqcircuits.util.label</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.library_helper.html">kqcircuits.util.library_helper</a></li>
@@ -530,7 +515,7 @@ package. Other folders are mainly for automatic tests and documentation.
 KQCircuits code is divided into the <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/kqcircuits">kqcircuits</a> and
 <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/scripts">scripts</a> folders in <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python">klayout_package/python</a>.
 These two folders are also (after installation process) linked as symbolic links <code class="docutils literal notranslate"><span class="pre">kqcircuits</span></code> and
-<code class="docutils literal notranslate"><span class="pre">kqcircuits_scripts</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/.klayout`</span> <span class="pre">or</span> <span class="pre">``~/KLayout</span></code> folder.</p>
+<code class="docutils literal notranslate"><span class="pre">kqcircuits_scripts</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/.klayout</span></code> or <code class="docutils literal notranslate"><span class="pre">~/KLayout</span></code> folder.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">kqcircuits</span></code> folder contains all the KQCircuits PCell classes and many
 other modules used by them or by scripts. Folders directly under under
 <code class="docutils literal notranslate"><span class="pre">kqcircuits</span></code> containing PCell classes correspond to different PCell
@@ -701,6 +686,35 @@ element created in the previous section into a new chip:</p>
 <p>This code can be copied to a new Python-file <code class="docutils literal notranslate"><span class="pre">new_chip1.py</span></code> in the
 <code class="docutils literal notranslate"><span class="pre">klayout_package/python/kqcircuits/chips</span></code> folder to make it visible in the
 KQCircuits chip library.</p>
+<div class="section" id="defining-sampleholder-types">
+<h3>Defining sampleholder types<a class="headerlink" href="#defining-sampleholder-types" title="Permalink to this headline">¶</a></h3>
+<p>In the previous example we used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">produce_launchers</span><span class="p">(</span><span class="s2">&quot;SMA8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>to make the chip have the correct launchers and size for fitting in an
+“SMA8”-type sampleholder. The available sampleholder types are  defined in
+<a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/kqcircuits/defaults.py">defaults.py</a>
+<code class="docutils literal notranslate"><span class="pre">default_sampleholders</span></code>. You can add new sampleholder types there, for
+example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;RF16&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;n&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+    <span class="s2">&quot;launcher_type&quot;</span><span class="p">:</span> <span class="s2">&quot;RF&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;launcher_width&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="s2">&quot;launcher_gap&quot;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+    <span class="s2">&quot;launcher_indent&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s2">&quot;pad_pitch&quot;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+    <span class="s2">&quot;chip_box&quot;</span><span class="p">:</span> <span class="n">pya</span><span class="o">.</span><span class="n">DBox</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">12000</span><span class="p">,</span> <span class="mi">12000</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This can then be used in a chip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">produce_launchers</span><span class="p">(</span><span class="s2">&quot;RF16&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A quick way to check all available sampleholder types is to use the
+<a class="reference internal" href="../api/kqcircuits.chips.launchers.html#kqcircuits.chips.launchers.Launchers" title="kqcircuits.chips.launchers.Launchers"><code class="xref py py-class docutils literal notranslate"><span class="pre">Launchers</span></code></a> chip and change its <code class="docutils literal notranslate"><span class="pre">sampleholder_type</span></code> parameter.</p>
+</div>
 </div>
 <div class="section" id="refpoints">
 <h2>Refpoints<a class="headerlink" href="#refpoints" title="Permalink to this headline">¶</a></h2>
@@ -779,12 +793,17 @@ This can be very useful to see “chip-level” refpoints only.</p>
 </div>
 <div class="section" id="faces">
 <h2>Faces<a class="headerlink" href="#faces" title="Permalink to this headline">¶</a></h2>
-<p>Elements support a concept of faces, which is used for 3D-integrated chips to
-place shapes in layers belonging to a certain chip face. For example, an
+<p>KQCircuit layers are grouped by faces and functionality. A chip’s “face” intuitively means the
+bottom or top sides of it. To identify faces in multi chip configurations we number the chips from
+“1”. For technical reasons we permit multiple faces in a particular side. For example “2b1” denotes
+the bottom face of the 2nd chip in a typical flip-chip configuration. See more details in
+<a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/kqcircuits/layer_config/default_layer_config.py">default_layer_config.py</a>.</p>
+<p>Elements support a concept of <strong>faces</strong>, used for 3D-integrated chips to place shapes in layers
+belonging to different sides of (possibly) different wafers. For example, an
 element may create shapes in face 0 and face 1, and the <code class="docutils literal notranslate"><span class="pre">face_ids</span></code> parameter
-of the element determines which actual chip faces the faces 0 and 1 refer to.
-By default, KQC elements have <code class="docutils literal notranslate"><span class="pre">face_ids=[&quot;b&quot;,&quot;t&quot;,&quot;c&quot;]</span></code>, so face 0 would be
-“b” and face 1 would be “t”.</p>
+of the element determines which actual chip faces <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> refer to.
+By default, KQC elements have <code class="docutils literal notranslate"><span class="pre">face_ids=[&quot;1t1&quot;,&quot;2b1&quot;,&quot;2t1&quot;]</span></code>, so face 0 would be
+“1t1” and face 1 would be “2b1”.</p>
 <p>To choose which face/layer a shape is placed in, you can use the <code class="docutils literal notranslate"><span class="pre">face_id</span></code>
 argument of <code class="docutils literal notranslate"><span class="pre">self.get_layer</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># (the face_id passed to self.get_layer is actually an index to self.face_ids)</span>
@@ -801,17 +820,103 @@ placed in:</p>
 <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">FlipChipConnectorRf</span><span class="p">,</span> <span class="n">face_ids</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
 </pre></div>
 </div>
+<div class="section" id="layer-configuration-files">
+<h3>Layer configuration files<a class="headerlink" href="#layer-configuration-files" title="Permalink to this headline">¶</a></h3>
+<p>Layer configuration files are used to define the names of layers and faces, and
+many other values related to them. The <code class="docutils literal notranslate"><span class="pre">layer_config_path</span></code> variable in
+<a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/kqcircuits/defaults.py">defaults.py</a>
+controls which layer configuration file is used, so you can define your own
+layer configuration with completely different layer names etc. and use it by
+changing <code class="docutils literal notranslate"><span class="pre">layer_config_path</span></code>.</p>
+<p>For more information on what to include in these layer configuration files, see
+the comments in <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/kqcircuits/defaults.py">defaults.py</a>
+and the layer configuration files in
+<a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/kqcircuits/layer_config">layer_config</a>
+directory. Currently included are
+<a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/kqcircuits/layer_config/default_layer_config.py">default_layer_config.py</a>
+(used by default in KQC) and a simpler
+<a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/kqcircuits/layer_config/example_layer_config.py">example_layer_config.py</a>
+which may be useful as a starting point to define your own layer
+configuration file.</p>
+</div>
+<div class="section" id="adding-a-new-face">
+<h3>Adding a new face<a class="headerlink" href="#adding-a-new-face" title="Permalink to this headline">¶</a></h3>
+<p>New layers and new faces can be added in
+<a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/kqcircuits/defaults.py">defaults.py</a>
+by modifying <code class="docutils literal notranslate"><span class="pre">default_layers</span></code> and <code class="docutils literal notranslate"><span class="pre">default_faces</span></code>. As an example, let’s
+add a new face <code class="docutils literal notranslate"><span class="pre">x</span></code> with some layers that are in KQCircuits default faces
+and one new layer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default_layers</span><span class="p">[</span><span class="s2">&quot;x_base_metal_gap_wo_grid&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">LayerInfo</span><span class="p">(</span><span class="mi">130</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;x_base_metal_gap_wo_grid&quot;</span><span class="p">)</span>
+<span class="n">default_layers</span><span class="p">[</span><span class="s2">&quot;x_ground_grid_avoidance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">LayerInfo</span><span class="p">(</span><span class="mi">133</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;x_ground_grid_avoidance&quot;</span><span class="p">)</span>
+<span class="n">default_layers</span><span class="p">[</span><span class="s2">&quot;x_ports&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">LayerInfo</span><span class="p">(</span><span class="mi">154</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;x_ports&quot;</span><span class="p">)</span>
+<span class="n">default_layers</span><span class="p">[</span><span class="s2">&quot;x_new_layer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">LayerInfo</span><span class="p">(</span><span class="mi">999</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;x_new_layer&quot;</span><span class="p">)</span>
+
+<span class="n">default_faces</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;base_metal_gap_wo_grid&quot;</span><span class="p">:</span> <span class="n">default_layers</span><span class="p">[</span><span class="s2">&quot;x_base_metal_gap_wo_grid&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">:</span> <span class="n">default_layers</span><span class="p">[</span><span class="s2">&quot;x_ground_grid_avoidance&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;ports&quot;</span><span class="p">:</span> <span class="n">default_layers</span><span class="p">[</span><span class="s2">&quot;x_ports&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;new_layer&quot;</span><span class="p">:</span> <span class="n">default_layers</span><span class="p">[</span><span class="s2">&quot;x_new_layer&quot;</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The layers are identified by <code class="docutils literal notranslate"><span class="pre">layer</span> <span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code>,
+e.g. <code class="docutils literal notranslate"><span class="pre">900</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">x_base_metal_gap_wo_grid</span></code></p>
+<p>These lines should be added after the last line where <code class="docutils literal notranslate"><span class="pre">default_layers</span></code> or
+<code class="docutils literal notranslate"><span class="pre">default_faces</span></code> are modified. It is best to do these changes in the layer
+configuration file (see previous section), although it can also be done in
+<cite>defaults.py</cite> directly. Launching KLayout after these changes, you
+should see the new layers in the layers list. If you add for example
+<a class="reference internal" href="../api/kqcircuits.elements.launcher.html#kqcircuits.elements.launcher.Launcher" title="kqcircuits.elements.launcher.Launcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Launcher</span></code></a> element to the layout and modify its <code class="docutils literal notranslate"><span class="pre">face_ids</span></code>
+parameter to have the value <code class="docutils literal notranslate"><span class="pre">x</span></code>, it will then use the layers from the newly
+added face <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>To change the color of the layers and their organization in the layers list,
+the layer properties file (determined by <code class="docutils literal notranslate"><span class="pre">default_layer_props</span></code> in the layer
+configuration file) must be modified or another layer properties file must be
+set as default in KLayout Setup menu. The layer properties file can be edited
+directly or by modifying the layers list in GUI and saving them using KLayout
+<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">Save</span> <span class="pre">Layer</span> <span class="pre">Properties</span></code>.</p>
+</div>
+</div>
+<div class="section" id="kqcircuit-s-layers">
+<h2>KQCircuit’s Layers<a class="headerlink" href="#kqcircuit-s-layers" title="Permalink to this headline">¶</a></h2>
+<p>KLayout’s right panel shows a layer tree. Layers containing meaningful device geometry are grouped
+by faces: <code class="docutils literal notranslate"><span class="pre">1t1-face</span></code>, <code class="docutils literal notranslate"><span class="pre">2b1-face</span></code> and <code class="docutils literal notranslate"><span class="pre">2t1-face</span></code>. By default layer numbers 0-127 are used for
+the bottom face of the chips and 128-255 are used for the top face, and the data type indicates the
+chip number (data type 0 is used for layers not belonging to chip faces). Other texts, annotations
+and miscellaneous things not strictly belonging to a particular face are under the <code class="docutils literal notranslate"><span class="pre">texts</span></code> layer
+group. Other layers used only for simulations are under the aptly named <code class="docutils literal notranslate"><span class="pre">simulations</span></code> layer group.</p>
+<p>Most layers have self-describing names like <code class="docutils literal notranslate"><span class="pre">refpoints</span></code> or <code class="docutils literal notranslate"><span class="pre">instance</span> <span class="pre">names</span></code> but others need a
+bit of explanation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">metal</span> <span class="pre">gap</span></code> – Important layer with the final geometry of chips <em>in masks</em>. It has the
+shapes of gaps (areas without metal) in the base metal layer that is laid out on a silicon
+substrate.  Note that this layer is populated during mask export and therefore usually empty. It is hidden by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">metal</span> <span class="pre">gap</span> <span class="pre">wo</span> <span class="pre">grid</span></code> – Like above, it has the gaps around shapes “etched” into metal but
+<em>without</em> the ground grid that is slow to produce.  This is the most used layer in elements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">groud</span> <span class="pre">grid</span></code> – This layer is auto generated if the “Make ground plane grid” PCell parameter is
+enabled in a chip. It fills in the chip area <em>outside</em> of shapes in the <code class="docutils literal notranslate"><span class="pre">ground</span> <span class="pre">grid</span> <span class="pre">avoidance</span></code>
+layer with a metal grid.  Technically, this layer contains the square shaped gaps in the grid, not
+the metal grid itself. Hidden by default.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">metal</span> <span class="pre">addition</span></code> – Puts back metal to places where it is already removed. This is a
+technical layer helping us to construct the final shapes in a more elegant way, particularly here:
+<code class="docutils literal notranslate"><span class="pre">base_metal_gap</span> <span class="pre">=</span> <span class="pre">base_metal_gap_wo_grid</span> <span class="pre">+</span> <span class="pre">ground_grid</span> <span class="pre">-</span> <span class="pre">base_metal_addition</span></code>. It is also used
+in <code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">metal</span> <span class="pre">gap</span> <span class="pre">for</span> <span class="pre">EBL</span></code>, i.e. Electron Beam Litography.</p></li>
+</ul>
+<p>Find more details in <a class="reference external" href="../api/kqcircuits.defaults.html">defaults.py</a>.</p>
 </div>
 <div class="section" id="opening-element-or-chip-from-an-ide">
 <h2>Opening <a class="reference internal" href="../api/kqcircuits.elements.element.html#kqcircuits.elements.element.Element" title="kqcircuits.elements.element.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> or <a class="reference internal" href="../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip" title="kqcircuits.chips.chip.Chip"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code></a> from an IDE<a class="headerlink" href="#opening-element-or-chip-from-an-ide" title="Permalink to this headline">¶</a></h2>
-<p>You can use <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/scripts/create_element_from_path.py">klayout_package/python/scripts/create_element_from_path.py</a>
-to open an <a class="reference internal" href="../api/kqcircuits.elements.element.html#kqcircuits.elements.element.Element" title="kqcircuits.elements.element.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> or <a class="reference internal" href="../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip" title="kqcircuits.chips.chip.Chip"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code></a> in KLayout from your IDE (or just straight from the command-line).
-The script is used as:</p>
+<p>You can use <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main/klayout_package/python/scripts/create_element_from_path.py">klayout_package/python/scripts/create_element_from_path.py</a> to open an
+<a class="reference internal" href="../api/kqcircuits.elements.element.html#kqcircuits.elements.element.Element" title="kqcircuits.elements.element.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> or <a class="reference internal" href="../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip" title="kqcircuits.chips.chip.Chip"><code class="xref py py-class docutils literal notranslate"><span class="pre">Chip</span></code></a> in KLayout from your IDE (or just straight from the
+command-line).  The script is used as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">klayout_app</span> <span class="o">-</span><span class="n">e</span> <span class="o">-</span><span class="n">rx</span> <span class="o">-</span><span class="n">rm</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">create_element_from_path</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">rd</span> <span class="n">element_path</span><span class="o">=</span><span class="n">kqcircuits</span><span class="o">/</span><span class="n">chips</span><span class="o">/</span><span class="n">demo</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
-<p>And can be easily incorporated as a macro to your IDE.
-Check the comments in the function on how to use it in PyCharm or Visual Studio Code. The <code class="docutils literal notranslate"><span class="pre">element_path</span></code> argument can strip a leading <cite>*Circuits/klayout_package/python/</cite> or <cite>klayout_package/python/</cite>, use what is easiest to implement for your workflow.</p>
+<p>And can be easily incorporated as a macro to your IDE.  Check the comments in the function on how to
+use it in PyCharm or Visual Studio Code. The <code class="docutils literal notranslate"><span class="pre">element_path</span></code> argument can strip a leading
+<cite>*Circuits/klayout_package/python/</cite> or <cite>klayout_package/python/</cite>, use what is easiest to implement
+for your workflow.</p>
 </div>
 </div>
 
