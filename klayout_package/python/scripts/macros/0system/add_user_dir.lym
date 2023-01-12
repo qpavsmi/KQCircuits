@@ -8,11 +8,9 @@
  <doc/>
  <autorun>false</autorun>
  <autorun-early>false</autorun-early>
- <priority>0</priority>
  <shortcut/>
  <show-in-menu>true</show-in-menu>
- <group-name>Macros</group-name>
- <menu-path>kqcircuits_menu&gt;end("&amp;KQCircuits").end</menu-path>
+ <menu-path>kqcircuits_menu.#1</menu-path>
  <interpreter>python</interpreter>
  <dsl-interpreter-name/>
  <text>
