@@ -54,7 +54,7 @@ from kqcircuits.util.library_helper import get_library_paths
 def _setup_pkg(src_dir, pkg_name):
     """set up selected user directory as a new KQC package."""
 
-    salt = Path(os.path.dirname(os.path.realpath(__file__))).parents[3]
+    salt = Path(os.path.dirname(os.path.realpath(__file__))).parents[4]
     if salt.parts[-1] != "salt":
         raise RuntimeError("Supported only when using KQC Salt package.")
 
