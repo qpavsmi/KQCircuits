@@ -45,6 +45,7 @@ This will do the following things:
 import os
 import pya
 import math
+import subprocess
 from pathlib import Path
 from kqcircuits.util.library_helper import get_library_paths
 
@@ -56,16 +57,19 @@ def _setup_pkg(src_dir, pkg_name):
     if salt.parts[-1] != "salt":
         raise RuntimeError("Supported only when using KQC Salt package.")
 
-    link_target = Path(src_dir)
-    link_name = os.path.join(salt.parents[0], "python", pkg_name)
+    target_path = Path(src_dir)
+    link_path = os.path.join(salt.parents[0], "python", pkg_name)
 
-    link_target.mkdir(exist_ok=True)
+    target_path.mkdir(exist_ok=True)
     for lib in get_library_paths():
-        Path(os.path.join(link_target, lib)).mkdir(exist_ok=True)
+        Path(os.path.join(target_path, lib)).mkdir(exist_ok=True)
 
-    if os.path.lexists(link_name):
-        os.unlink(link_name)
-    os.symlink(link_target, link_name, target_is_directory=True)
+    if os.path.lexists(link_path):
+        os.unlink(link_path)
+    if os.name == "nt":  # use junction link in Windows
+        subprocess.check_call(['cmd', '/c', 'mklink', '/J', link_path, target_path])
+    else:
+        os.symlink(target_path, link_path, target_is_directory=True)
 
 
 class AddUserDir(pya.QDialog):
