@@ -71,6 +71,8 @@ class RemoveUserPackage(pya.QDialog):
             link_name = os.path.join(pkgdir, plist.currentItem.text)
             if os.path.lexists(link_name):
                 os.unlink(link_name)
+            pya.MessageBox.info(f"Removed '{plist.currentItem.text}' package.",
+                                "Restart KLayout to make this effective!", pya.MessageBox.Ok)
             self.accept()
 
         delete = pya.QPushButton(self)

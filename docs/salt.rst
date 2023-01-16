@@ -20,6 +20,22 @@ Note that KLayout was started in edit mode, see :ref:`usage`.
    problem with the specific KLayout version/build you are using, see
    :ref:`installation_issues` section for possible solutions.
 
+User Specific Content
+---------------------
+
+Users may extend KQCircuits with their own Python packages containing additional elements, chips
+etc. Use the `KQCircuits -> Add User Package` menu entry. Then user content may be added under the
+individual library directories using your favourite code editor.
+
+For example create a `user` package, this (by default) will be linked to a `user` directory in your
+home folder. Copy KQC's `finger_capacitor_square.py` to `user\elements\my_capacitor.py` then edit
+this file and change the `FingerCapacitorSquare` class name to `MyCapacitor`.
+
+After restarting KLayout the newly added `MyCapacitor` element will be available together with the
+standard KQCircuits elements.
+
+Packages may be removed with the adjacent `KQCircuits -> Remove User Package` menu entry.
+
 Upgrading or Removing Salt Package
 ----------------------------------
 
@@ -44,8 +60,8 @@ the code repository.
   reinstall multiple versions of the same file will be left behind.
 * Version 3.3.0 needs manual install of ``tqdm`` Python module.
 
-Modifying or Creating Elements or Chips
----------------------------------------
+Manually Modifying or Creating Elements or Chips
+------------------------------------------------
 
 KLayout Salt packages are read-only. The user may open a chosen chip (say, ``[Package
 KQCircuits]/kqcircuits/chips/simple``) with the embedded macro editor (``F5``) but it can not be

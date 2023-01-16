@@ -117,6 +117,8 @@ class AddUserDir(pya.QDialog):
                 pkg_name.text = Path(src_dir.text).parts[-1]
             try:
                 _setup_pkg(src_dir.text, pkg_name.text)
+                pya.MessageBox.info(f"Added '{pkg_name.text}' package.",
+                                    "Restart KLayout to make it visible!", pya.MessageBox.Ok)
                 self.accept()
             except Exception as ex:
                 pya.QMessageBox.critical(self, "Error", str(ex))
