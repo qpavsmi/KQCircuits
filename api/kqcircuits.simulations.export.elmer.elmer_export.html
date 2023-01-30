@@ -93,26 +93,16 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../start/installation.html">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#klayout">KLayout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#basic-automatic-installation">Basic automatic installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#upgrading-salt-package">Upgrading Salt Package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#release-notes">Release Notes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#known-installation-issues">Known installation issues</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../start/installation.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#klayout">KLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#known-installation-issues">Known installation issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../start/usage.html">Usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../start/usage.html#modifying-or-creating-elements-or-chips">Modifying or Creating Elements or Chips</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/usage.html">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/gui_features.html">GUI Features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/gui_features.html#useful-hotkeys">Useful hotkeys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/gui_features.html#introduction-to-elements">Introduction to Elements</a></li>
@@ -180,8 +170,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/xsection.html">Creating cross section images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/xsection.html">Creating cross section images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/xsection.html#klayout-gui-xsection-tool">KLayout GUI XSection tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/xsection.html#xsection-call-in-kqc-code">XSection call in KQC code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/xsection.html#process-files-xs">Process files (.xs)</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/terminology.html">Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../salt.html">Salt Package Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#user-specific-content">User Specific Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#release-notes">Release Notes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
@@ -340,6 +342,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.double_pads.html">kqcircuits.qubits.double_pads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.double_pads_splines.html">kqcircuits.qubits.double_pads_splines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.qubit.html">kqcircuits.qubits.qubit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.swissmon.html">kqcircuits.qubits.swissmon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.html#module-kqcircuits.qubits">Module contents</a></li>
@@ -350,6 +353,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.ansys.html">kqcircuits.simulations.export.ansys</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="kqcircuits.simulations.export.elmer.html">kqcircuits.simulations.export.elmer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.sonnet.html">kqcircuits.simulations.export.sonnet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.xsection.html">kqcircuits.simulations.export.xsection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 </ul>
@@ -357,7 +361,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.circular_capacitor_sim.html">kqcircuits.simulations.circular_capacitor_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.cross_section_simulation.html">kqcircuits.simulations.cross_section_simulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.double_pads.html">kqcircuits.simulations.double_pads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.double_pads_sim.html">kqcircuits.simulations.double_pads_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.empty_simulation.html">kqcircuits.simulations.empty_simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.finger_capacitor_sim.html">kqcircuits.simulations.finger_capacitor_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.flip_chip_connector_sim.html">kqcircuits.simulations.flip_chip_connector_sim</a></li>
@@ -392,6 +396,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.coupler_lib.html">kqcircuits.util.coupler_lib</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.deep_delete.html">kqcircuits.util.deep_delete</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.export_helper.html">kqcircuits.util.export_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.geometry_helper.html">kqcircuits.util.geometry_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a></li>
@@ -408,6 +413,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.parameter_helper.html">kqcircuits.util.parameter_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.parameters.html">kqcircuits.util.parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.plugin_startup.html">kqcircuits.util.plugin_startup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.refpoints.html">kqcircuits.util.refpoints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.replace_squids.html">kqcircuits.util.replace_squids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a></li>
@@ -421,6 +427,7 @@
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.html#module-kqcircuits">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../trademarks.html">Trademarks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">About</a><ul>
@@ -519,7 +526,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="kqcircuits.simulations.export.elmer.elmer_export.export_elmer_json">
-<span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.export.elmer.elmer_export.</span></span><span class="sig-name descname"><span class="pre">export_elmer_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation" title="kqcircuits.simulations.simulation.Simulation"><span class="pre">kqcircuits.simulations.simulation.Simulation</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'capacitance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linear_system_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bicgstab'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_element_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gmsh_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/export/elmer/elmer_export.html#export_elmer_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.export.elmer.elmer_export.export_elmer_json" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.export.elmer.elmer_export.</span></span><span class="sig-name descname"><span class="pre">export_elmer_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation" title="kqcircuits.simulations.simulation.Simulation"><span class="pre">kqcircuits.simulations.simulation.Simulation</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'capacitance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linear_system_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bicgstab'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_element_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/export/elmer/elmer_export.html#export_elmer_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.export.elmer.elmer_export.export_elmer_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export Elmer simulation into json and gds files.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -530,7 +537,7 @@
 <li><p><strong>linear_system_method</strong> (<em>str</em>) – Available: ‘bicgstab’, ‘mg’ (Default: bicgstab)</p></li>
 <li><p><strong>p_element_order</strong> (<em>int</em>) – polynomial order of p-elements (Default: 1)</p></li>
 <li><p><strong>frequency</strong> – Units are in GHz. To set up multifrequency analysis, use list of numbers.</p></li>
-<li><p><strong>gmsh_params</strong> (<em>dict</em>) – Parameters for Gmsh</p></li>
+<li><p><strong>mesh_size</strong> (<em>dict</em>) – Parameters to determine mesh element sizes</p></li>
 <li><p><strong>workflow</strong> (<em>dict</em>) – Parameters for simulation workflow</p></li>
 </ul>
 </dd>
@@ -563,7 +570,7 @@ Create also a main script to launch all the simulations at once.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="kqcircuits.simulations.export.elmer.elmer_export.export_elmer">
-<span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.export.elmer.elmer_export.</span></span><span class="sig-name descname"><span class="pre">export_elmer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'capacitance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linear_system_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bicgstab'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_element_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'simulation'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'scripts/run.py'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gmsh_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/export/elmer/elmer_export.html#export_elmer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.export.elmer.elmer_export.export_elmer" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.export.elmer.elmer_export.</span></span><span class="sig-name descname"><span class="pre">export_elmer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'capacitance'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linear_system_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bicgstab'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_element_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'simulation'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'scripts/run.py'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/export/elmer/elmer_export.html#export_elmer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.export.elmer.elmer_export.export_elmer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exports an elmer simulation model to the simulation path.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -576,7 +583,7 @@ Create also a main script to launch all the simulations at once.</p>
 <li><p><strong>frequency</strong> – Units are in GHz. To set up multifrequency analysis, use list of numbers.</p></li>
 <li><p><strong>file_prefix</strong> – File prefix of the script file to be created.</p></li>
 <li><p><strong>script_file</strong> – Name of the script file to run.</p></li>
-<li><p><strong>gmsh_params</strong> (<em>dict</em>) – Parameters for Gmsh</p></li>
+<li><p><strong>mesh_size</strong> (<em>dict</em>) – Parameters to determine mesh element sizes</p></li>
 <li><p><strong>workflow</strong> (<em>dict</em>) – Parameters for simulation workflow</p></li>
 <li><p><strong>skip_errors</strong> (<em>bool</em>) – <p>Skip simulations that cause errors. (Default: False)</p>
 <div class="admonition warning">
@@ -610,7 +617,7 @@ you might end up wasting time on bad simulations.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021-2022, IQM.
+        &#169; Copyright 2021-2023, IQM.
 
     </p>
   </div>

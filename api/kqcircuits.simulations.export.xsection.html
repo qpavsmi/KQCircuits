@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>kqcircuits.simulations.double_pads &mdash; KQCircuits  documentation</title>
+  <title>kqcircuits.simulations.export.xsection &mdash; KQCircuits  documentation</title>
   
 
   
@@ -46,8 +46,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="kqcircuits.simulations.empty_simulation" href="kqcircuits.simulations.empty_simulation.html" />
-    <link rel="prev" title="kqcircuits.simulations.cross_section_simulation" href="kqcircuits.simulations.cross_section_simulation.html" /> 
+    <link rel="next" title="kqcircuits.simulations.export.xsection.xsection_export" href="kqcircuits.simulations.export.xsection.xsection_export.html" />
+    <link rel="prev" title="kqcircuits.simulations.export.sonnet.sonnet_export" href="kqcircuits.simulations.export.sonnet.sonnet_export.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,26 +93,16 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../start/installation.html">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#klayout">KLayout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#basic-automatic-installation">Basic automatic installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#upgrading-salt-package">Upgrading Salt Package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#release-notes">Release Notes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../start/installation.html#known-installation-issues">Known installation issues</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../start/installation.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#klayout">KLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#known-installation-issues">Known installation issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../start/usage.html">Usage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../start/usage.html#modifying-or-creating-elements-or-chips">Modifying or Creating Elements or Chips</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/usage.html">Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/gui_features.html">GUI Features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/gui_features.html#useful-hotkeys">Useful hotkeys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/gui_features.html#introduction-to-elements">Introduction to Elements</a></li>
@@ -180,8 +170,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/simulation/gmsh_elmer_export.html">Gmsh/Elmer export</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../user_guide/xsection.html">Creating cross section images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_guide/xsection.html">Creating cross section images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/xsection.html#klayout-gui-xsection-tool">KLayout GUI XSection tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/xsection.html#xsection-call-in-kqc-code">XSection call in KQC code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/xsection.html#process-files-xs">Process files (.xs)</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/terminology.html">Terminology</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../salt.html">Salt Package Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#installing-kqcircuits-salt-package">Installing KQCircuits Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#user-specific-content">User Specific Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#upgrading-or-removing-salt-package">Upgrading or Removing Salt Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../salt.html#release-notes">Release Notes</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
@@ -340,16 +342,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.double_pads.html">kqcircuits.qubits.double_pads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.double_pads_splines.html">kqcircuits.qubits.double_pads_splines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.qubit.html">kqcircuits.qubits.qubit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.swissmon.html">kqcircuits.qubits.swissmon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.html#module-kqcircuits.qubits">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="kqcircuits.simulations.html">kqcircuits.simulations</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.html">kqcircuits.simulations.export</a><ul>
+<li class="toctree-l3 current"><a class="reference internal" href="kqcircuits.simulations.export.html">kqcircuits.simulations.export</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.ansys.html">kqcircuits.simulations.export.ansys</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.elmer.html">kqcircuits.simulations.export.elmer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.sonnet.html">kqcircuits.simulations.export.sonnet</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">kqcircuits.simulations.export.xsection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 </ul>
@@ -357,7 +361,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.airbridges_sim.html">kqcircuits.simulations.airbridges_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.circular_capacitor_sim.html">kqcircuits.simulations.circular_capacitor_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.cross_section_simulation.html">kqcircuits.simulations.cross_section_simulation</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">kqcircuits.simulations.double_pads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.double_pads_sim.html">kqcircuits.simulations.double_pads_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.empty_simulation.html">kqcircuits.simulations.empty_simulation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.finger_capacitor_sim.html">kqcircuits.simulations.finger_capacitor_sim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.flip_chip_connector_sim.html">kqcircuits.simulations.flip_chip_connector_sim</a></li>
@@ -392,6 +396,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.coupler_lib.html">kqcircuits.util.coupler_lib</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.deep_delete.html">kqcircuits.util.deep_delete</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.export_helper.html">kqcircuits.util.export_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.geometry_helper.html">kqcircuits.util.geometry_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a></li>
@@ -408,6 +413,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.parameter_helper.html">kqcircuits.util.parameter_helper</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.parameters.html">kqcircuits.util.parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.plugin_startup.html">kqcircuits.util.plugin_startup</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.refpoints.html">kqcircuits.util.refpoints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.replace_squids.html">kqcircuits.util.replace_squids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a></li>
@@ -421,6 +427,7 @@
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.html#module-kqcircuits">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../citing.html">Citing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../trademarks.html">Trademarks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about.html">About</a><ul>
@@ -479,14 +486,16 @@
         
           <li><a href="kqcircuits.simulations.html">kqcircuits.simulations</a> &raquo;</li>
         
-      <li>kqcircuits.simulations.double_pads</li>
+          <li><a href="kqcircuits.simulations.export.html">kqcircuits.simulations.export</a> &raquo;</li>
+        
+      <li>kqcircuits.simulations.export.xsection</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/iqm-finland/KQCircuits/blob/main/docs/api/kqcircuits.simulations.double_pads.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/iqm-finland/KQCircuits/blob/main/docs/api/kqcircuits.simulations.export.xsection.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -500,80 +509,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-kqcircuits.simulations.double_pads">
-<span id="kqcircuits-simulations-double-pads"></span><h1>kqcircuits.simulations.double_pads<a class="headerlink" href="#module-kqcircuits.simulations.double_pads" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="kqcircuits.simulations.double_pads.DoublePadsSim">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.double_pads.</span></span><span class="sig-name descname"><span class="pre">DoublePadsSim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/double_pads.html#DoublePadsSim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.double_pads.DoublePadsSim" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation" title="kqcircuits.simulations.simulation.Simulation"><code class="xref py py-class docutils literal notranslate"><span class="pre">kqcircuits.simulations.simulation.Simulation</span></code></a></p>
-<p>Initialize a Simulation.</p>
-<p>The initializer parses parameters, creates a top cell, and then calls <cite>self.build</cite> to create
-the simulation geometry, followed by <cite>self.create_simulation_layers</cite> to process the geometry
-so it is ready for exporting.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>layout</strong> – the layout on which to create the simulation</p>
-</dd>
-<dt class="field-even">Keyword Arguments</dt>
-<dd class="field-even"><p><strong>**kwargs</strong> – <p>Any parameter can be passed as a keyword argument.</p>
-<p>In addition, <cite>cell</cite> can be passed as keyword argument. If <cite>cell</cite> is supplied, it will be
-used as the top cell for the simulation. Otherwise, a new cell will be created. See
-<cite>Simulation.from_cell</cite> for creating simulations from existing cells.</p>
-</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="kqcircuits.simulations.double_pads.DoublePadsSim.build">
-<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/double_pads.html#DoublePadsSim.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.double_pads.DoublePadsSim.build" title="Permalink to this definition">¶</a></dt>
-<dd><p>Build simulation geometry.</p>
-<p>This method is to be overridden, and the overriding method should create the geometry to be
-simulated and add any ports to <cite>self.ports</cite>.</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="kqcircuits.simulations.double_pads.DoublePadsSim.ports">
-<span class="sig-name descname"><span class="pre">ports</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="kqcircuits.simulations.port.html#kqcircuits.simulations.port.Port" title="kqcircuits.simulations.port.Port"><span class="pre">kqcircuits.simulations.port.Port</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#kqcircuits.simulations.double_pads.DoublePadsSim.ports" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<strong>PCell parameters:</strong><div class="line"><br /></div>
-<ul class="simple">
-<li><p><strong>qubit_face</strong><em> (List)</em><span> - Bottom or top face qubit position</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['1t1',</span> <span class="pre">'2b1']</span></code></p></li>
-<li><p><strong>internal_island_ports</strong><em> (Boolean)</em><span> - Add InternalPorts on both islands. Use for capacitive simulations.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><strong>junction_inductance</strong><em> (List)</em><span> - Qubit junction inductance</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">1.1497e-08</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">H</span></code></p></li>
-<li><p><strong>junction_capacitance</strong><em> (List)</em><span> - Qubit junction capacitance</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">1e-16</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">F</span></code></p></li>
-<li><p><strong>a</strong><em> (Double)</em><span> - Width of center conductor</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>b</strong><em> (Double)</em><span> - Width of gap</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">6</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>n</strong><em> (Int)</em><span> - Number of points on turns</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">64</span></code></p></li>
-<li><p><strong>r</strong><em> (Double)</em><span> - Turn radius</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>margin</strong><em> (Double)</em><span> - Margin of the protection layer</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">5</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>face_ids</strong><em> (List)</em><span> - Chip face IDs list</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['1t1',</span> <span class="pre">'2b1',</span> <span class="pre">'1b1',</span> <span class="pre">'2t1']</span></code></p></li>
-<li><p><strong>display_name</strong><em> (String)</em><span> - Name displayed in GUI (empty for default)</span><em>, default=</em><code class="docutils literal notranslate"></code></p></li>
-<li><p><strong>protect_opposite_face</strong><em> (Boolean)</em><span> - Add opposite face protection too</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><strong>mirror_squid</strong><em> (Boolean)</em><span> - Mirror SQUID by its Y axis</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><strong>junction_total_length</strong><em> (Double)</em><span> - Simulation junction total length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">33</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
-<li><p><strong>junction_type</strong><em> (String)</em><span> - Junction Type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Manhattan</span> <span class="pre">Single</span> <span class="pre">Junction</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['NoSquid',</span> <span class="pre">'Manhattan',</span> <span class="pre">'Manhattan</span> <span class="pre">Single</span> <span class="pre">Junction',</span> <span class="pre">'Sim']</span></code></p></li>
-<li><p><strong>junction_width</strong><em> (Double)</em><span> - Junction width (only used for code generated element)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.02</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>loop_area</strong><em> (Double)</em><span> - Loop area</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm^2</span></code></p></li>
-<li><p><strong>fluxline_type</strong><em> (String)</em><span> - Fluxline Type</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">Fluxline</span> <span class="pre">Standard</span></code><em>, choices=</em><code class="docutils literal notranslate"><span class="pre">['none',</span> <span class="pre">'Fluxline</span> <span class="pre">Standard',</span> <span class="pre">'Fluxline</span> <span class="pre">Straight']</span></code></p></li>
-<li><p><strong>fluxline_gap_width</strong><em> (Double)</em><span> - Fluxline gap width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">2</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>ground_gap</strong><em> (List)</em><span> - Width, height of the ground gap (µm, µm)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[700,</span> <span class="pre">700]</span></code></p></li>
-<li><p><strong>ground_gap_r</strong><em> (Double)</em><span> - Ground gap rounding radius</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">50</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>coupler_extent</strong><em> (List)</em><span> - Width, height of the coupler (µm, µm)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[150,</span> <span class="pre">20]</span></code></p></li>
-<li><p><strong>coupler_r</strong><em> (Double)</em><span> - Coupler rounding radius</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>coupler_a</strong><em> (Double)</em><span> - Width of the coupler waveguide center conductor</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>coupler_offset</strong><em> (Double)</em><span> - Distance from first qubit island to coupler</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">20</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>squid_offset</strong><em> (Double)</em><span> - Offset between SQUID center and qubit center</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>island1_extent</strong><em> (List)</em><span> - Width, height of the first qubit island (µm, µm)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[500,</span> <span class="pre">100]</span></code></p></li>
-<li><p><strong>island1_r</strong><em> (Double)</em><span> - First qubit island rounding radius</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">50</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>island2_extent</strong><em> (List)</em><span> - Width, height of the second qubit island (µm, µm)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[500,</span> <span class="pre">100]</span></code></p></li>
-<li><p><strong>island2_r</strong><em> (Double)</em><span> - Second qubit island rounding radius</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">50</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
-<li><p><strong>drive_position</strong><em> (List)</em><span> - Coordinate for the drive port (µm, µm)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[-450,</span> <span class="pre">0]</span></code></p></li>
-<li><p><strong>island_taper_width</strong><em> (Double)</em><span> - Qubit island tapering width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">50</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
-<li><p><strong>island_taper_height</strong><em> (Double)</em><span> - Qubit island tapering height</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
+  <div class="section" id="kqcircuits-simulations-export-xsection">
+<h1>kqcircuits.simulations.export.xsection<a class="headerlink" href="#kqcircuits-simulations-export-xsection" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="kqcircuits.simulations.export.xsection.xsection_export.html">kqcircuits.simulations.export.xsection.xsection_export</a></li>
 </ul>
-<img alt="../_images/kqcircuits.simulations.double_pads.png" src="../_images/kqcircuits.simulations.double_pads.png" />
+</div>
 </div>
 
 
@@ -582,15 +524,15 @@ simulated and add any ports to <cite>self.ports</cite>.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="kqcircuits.simulations.empty_simulation.html" class="btn btn-neutral float-right" title="kqcircuits.simulations.empty_simulation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="kqcircuits.simulations.cross_section_simulation.html" class="btn btn-neutral float-left" title="kqcircuits.simulations.cross_section_simulation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="kqcircuits.simulations.export.xsection.xsection_export.html" class="btn btn-neutral float-right" title="kqcircuits.simulations.export.xsection.xsection_export" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="kqcircuits.simulations.export.sonnet.sonnet_export.html" class="btn btn-neutral float-left" title="kqcircuits.simulations.export.sonnet.sonnet_export" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021-2022, IQM.
+        &#169; Copyright 2021-2023, IQM.
 
     </p>
   </div>
