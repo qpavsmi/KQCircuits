@@ -13,14 +13,15 @@ kqcircuits.elements
 .. toctree::
 
    kqcircuits.elements.airbridge_connection
+   kqcircuits.elements.capacitive_x_coupler
    kqcircuits.elements.chip_frame
    kqcircuits.elements.circular_capacitor
    kqcircuits.elements.element
    kqcircuits.elements.finger_capacitor_square
    kqcircuits.elements.finger_capacitor_taper
+   kqcircuits.elements.hanger_resonator
    kqcircuits.elements.launcher
    kqcircuits.elements.launcher_dc
-   kqcircuits.elements.mask_marker_fc
    kqcircuits.elements.meander
    kqcircuits.elements.smooth_capacitor
    kqcircuits.elements.spiral_resonator_polygon
