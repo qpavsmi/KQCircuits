@@ -848,6 +848,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.run.html">kqcircuits.run</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.run.html#kqcircuits.run.argument_parser"><code class="docutils literal notranslate"><span class="pre">argument_parser()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.run.html#kqcircuits.run.run_kqc"><code class="docutils literal notranslate"><span class="pre">run_kqc()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.run.html#kqcircuits.run.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
 </ul>
 </li>
@@ -922,7 +924,6 @@
     <span class="n">default_probe_suffixes</span><span class="p">,</span>
     <span class="n">recommended_probe_suffix_mapping</span><span class="p">,</span>
     <span class="n">VERSION_PATHS</span><span class="p">,</span>
-    <span class="n">default_drc_runset</span><span class="p">,</span>
     <span class="n">DRC_PATH</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.klayout_view</span> <span class="kn">import</span> <span class="n">KLayoutView</span><span class="p">,</span> <span class="n">MissingUILibraryException</span>
@@ -1368,7 +1369,7 @@
 
 <div class="viewcode-block" id="export_drc_report">
 <a class="viewcode-back" href="../../../api/kqcircuits.util.export_helper.html#kqcircuits.util.export_helper.export_drc_report">[docs]</a>
-<span class="k">def</span> <span class="nf">export_drc_report</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">drc_script</span><span class="o">=</span><span class="n">default_drc_runset</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">export_drc_report</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">drc_script</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Run a DRC script on ``path/name.oas`` and export results in ``path/name_drc_report.lyrdb``.&quot;&quot;&quot;</span>
 
     <span class="n">drc_runset_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DRC_PATH</span><span class="p">,</span> <span class="n">drc_script</span><span class="p">)</span>

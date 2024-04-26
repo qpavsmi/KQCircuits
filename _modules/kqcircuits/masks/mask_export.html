@@ -848,6 +848,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.run.html">kqcircuits.run</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.run.html#kqcircuits.run.argument_parser"><code class="docutils literal notranslate"><span class="pre">argument_parser()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.run.html#kqcircuits.run.run_kqc"><code class="docutils literal notranslate"><span class="pre">run_kqc()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.run.html#kqcircuits.run.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
 </ul>
 </li>
@@ -1028,7 +1030,7 @@
 
         <span class="c1"># export drc report for the chip</span>
         <span class="k">if</span> <span class="n">export_drc</span><span class="p">:</span>
-            <span class="n">export_drc_report</span><span class="p">(</span><span class="n">chip_name</span><span class="p">,</span> <span class="n">chip_dir</span><span class="p">)</span>
+            <span class="n">export_drc_report</span><span class="p">(</span><span class="n">chip_name</span><span class="p">,</span> <span class="n">chip_dir</span><span class="p">,</span> <span class="n">export_drc</span><span class="p">)</span>
 
     <span class="c1"># delete the static cell which was only needed for export</span>
     <span class="k">if</span> <span class="n">static_cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">()</span> <span class="o">!=</span> <span class="n">chip_cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">():</span>

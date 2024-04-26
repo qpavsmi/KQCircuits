@@ -851,6 +851,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.run.html">kqcircuits.run</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.run.html#kqcircuits.run.argument_parser"><code class="docutils literal notranslate"><span class="pre">argument_parser()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.run.html#kqcircuits.run.run_kqc"><code class="docutils literal notranslate"><span class="pre">run_kqc()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.run.html#kqcircuits.run.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
 </ul>
 </li>
@@ -898,13 +900,14 @@ package. But you should not do both without removing the other one. Otherwise th
 duplicate macros and possibly other problems.</p>
 <section id="python">
 <h3>Python<a class="headerlink" href="#python" title="Link to this heading"></a></h3>
-<p>KQCircuits installation requires Python 3, which should be already installed on Linux. On Windows
-you may have to install it. If your Python installation does not already contain the <code class="docutils literal notranslate"><span class="pre">pip</span></code> package
+<p>KQCircuits installation requires Python 3.10 minimum. This should already come pre-packaged at least
+with Ubuntu 22.04. On Windows platforms Python needs to be installed manually.
+If your Python installation does not already contain the <code class="docutils literal notranslate"><span class="pre">pip</span></code> package
 manager, you have to also install that.</p>
 <p>Successfully tested versions:</p>
 <ul class="simple">
-<li><p>Ubuntu 18.04, 20.04 and 22.04 LTS with Python 3.6.9, 3.8.5 and 3.10.12</p></li>
-<li><p>Windows: Python 3.7.6, 3.8.5, 3.11</p></li>
+<li><p>Ubuntu 20.04 and 22.04 LTS with Python 3.10.14</p></li>
+<li><p>Windows: Python 3.11.2</p></li>
 </ul>
 </section>
 </section>
@@ -1026,10 +1029,10 @@ administrator privileges, and do:</p>
 <p>(In PowerShell replace the first line by <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~\KLayout\python</span></code>)</p>
 <p>Install the required packages by opening command prompt in your KQCircuits
 folder (which contains <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//requirements_within_klayout_windows.txt">requirements_within_klayout_windows.txt</a>), and writing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements_within_klayout_windows</span><span class="o">.</span><span class="n">txt</span> <span class="o">--</span><span class="n">target</span><span class="o">=%</span><span class="n">HOMEPATH</span><span class="o">%</span>\<span class="n">AppData</span>\<span class="n">Roaming</span>\<span class="n">KLayout</span>\<span class="n">lib</span>\<span class="n">python3</span><span class="mf">.7</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements_within_klayout_windows</span><span class="o">.</span><span class="n">txt</span> <span class="o">--</span><span class="n">target</span><span class="o">=%</span><span class="n">HOMEPATH</span><span class="o">%</span>\<span class="n">AppData</span>\<span class="n">Roaming</span>\<span class="n">KLayout</span>\<span class="n">lib</span>\<span class="n">python3</span><span class="mf">.10</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>
 </pre></div>
 </div>
-<p>(replace <code class="docutils literal notranslate"><span class="pre">python3.7</span></code> in this path by the python version used by your KLayout
+<p>(replace <code class="docutils literal notranslate"><span class="pre">python3.10</span></code> in this path by the python version used by your KLayout
 version)</p>
 <p>The previous command installs the packages to KLayout’s embedded Python
 environment, which is where KLayout looks for packages on Windows. If you
