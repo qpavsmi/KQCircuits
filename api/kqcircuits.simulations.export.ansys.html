@@ -172,7 +172,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer GUI Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#prerequisites">Prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#python">Python</a></li>
 </ul>
@@ -183,17 +183,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#manual-installation">Manual installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#linux-or-macos">Linux or MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#symlinks-in-linux-or-macos">Symlinks in Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#symlinks-in-windows">Symlinks in Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#installing-dependencies">Installing dependencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">KLayout Standalone Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#installation">Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#standard-not-secure-installation">Standard, Not Secure Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#basic-installation">1. Basic installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
@@ -283,6 +286,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.lithography_test_twoface.html">kqcircuits.chips.lithography_test_twoface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.chips.lithography_test_twoface.html#kqcircuits.chips.lithography_test_twoface.LithographyTestTwoface"><code class="docutils literal notranslate"><span class="pre">LithographyTestTwoface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.munch_qubits.html">kqcircuits.chips.munch_qubits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.chips.munch_qubits.html#kqcircuits.chips.munch_qubits.MunchQubits"><code class="docutils literal notranslate"><span class="pre">MunchQubits</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a><ul>
@@ -510,6 +517,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.circular_transmon_single_island.html">kqcircuits.qubits.circular_transmon_single_island</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.qubits.circular_transmon_single_island.html#kqcircuits.qubits.circular_transmon_single_island.CircularTransmonSingleIsland"><code class="docutils literal notranslate"><span class="pre">CircularTransmonSingleIsland</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.concentric_transmon.html">kqcircuits.qubits.concentric_transmon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.qubits.concentric_transmon.html#kqcircuits.qubits.concentric_transmon.ConcentricTransmon"><code class="docutils literal notranslate"><span class="pre">ConcentricTransmon</span></code></a></li>
 </ul>
@@ -543,6 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.export_singularity.html">kqcircuits.simulations.export.export_singularity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.remote_export_and_run.html">kqcircuits.simulations.export.remote_export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_validate.html">kqcircuits.simulations.export.simulation_validate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.solution.html">kqcircuits.simulations.export.solution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
@@ -661,7 +673,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_dependencies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_gui_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_gui_dependencies()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a><ul>
@@ -883,9 +895,8 @@
           <li class="breadcrumb-item"><a href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
           <li class="breadcrumb-item"><a href="kqcircuits.simulations.export.html">kqcircuits.simulations.export</a></li>
       <li class="breadcrumb-item active">kqcircuits.simulations.export.ansys</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/iqm-finland/KQCircuits/blob/main/docs/api/kqcircuits.simulations.export.ansys.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
+
+
   </ul>
   <hr/>
 </div>
@@ -905,31 +916,68 @@
 <li class="toctree-l1"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html">kqcircuits.simulations.export.ansys.ansys_solution</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution"><code class="docutils literal notranslate"><span class="pre">AnsysSolution</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.ansys_tool"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.ansys_tool</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.frequency_units"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.frequency_units</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.frequency"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.frequency</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.max_delta_s"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.max_delta_s</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.max_delta_e"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.max_delta_e</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.percent_error"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.percent_error</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.percent_refinement"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.percent_refinement</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.maximum_passes"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.maximum_passes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.minimum_passes"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.minimum_passes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.minimum_converged_passes"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.minimum_converged_passes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.sweep_enabled"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.sweep_enabled</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.sweep_start"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.sweep_start</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.sweep_end"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.sweep_end</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.sweep_count"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.sweep_count</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.sweep_type"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.sweep_type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.max_delta_f"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.max_delta_f</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.n_modes"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.n_modes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.frequency_units"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.frequency_units</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.mesh_size"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.mesh_size</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.simulation_flags"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.simulation_flags</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.ansys_project_template"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.ansys_project_template</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.integrate_energies"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.integrate_energies</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.integrate_magnetic_flux"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.integrate_magnetic_flux</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.hfss_capacitance_export"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.hfss_capacitance_export</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysSolution.get_solution_data"><code class="docutils literal notranslate"><span class="pre">AnsysSolution.get_solution_data()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.ansys_tool"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.ansys_tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.frequency"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.frequency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.max_delta_s"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.max_delta_s</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.sweep_enabled"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.sweep_enabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.sweep_start"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.sweep_start</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.sweep_end"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.sweep_end</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.sweep_count"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.sweep_count</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.sweep_type"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.sweep_type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.capacitance_export"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.capacitance_export</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.integrate_energies"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.integrate_energies</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.integrate_magnetic_flux"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.integrate_magnetic_flux</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysHfssSolution.get_solution_data"><code class="docutils literal notranslate"><span class="pre">AnsysHfssSolution.get_solution_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysQ3dSolution"><code class="docutils literal notranslate"><span class="pre">AnsysQ3dSolution</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysQ3dSolution.ansys_tool"><code class="docutils literal notranslate"><span class="pre">AnsysQ3dSolution.ansys_tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysQ3dSolution.frequency"><code class="docutils literal notranslate"><span class="pre">AnsysQ3dSolution.frequency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysQ3dSolution.percent_error"><code class="docutils literal notranslate"><span class="pre">AnsysQ3dSolution.percent_error</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysQ3dSolution.get_solution_data"><code class="docutils literal notranslate"><span class="pre">AnsysQ3dSolution.get_solution_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysEigenmodeSolution"><code class="docutils literal notranslate"><span class="pre">AnsysEigenmodeSolution</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysEigenmodeSolution.ansys_tool"><code class="docutils literal notranslate"><span class="pre">AnsysEigenmodeSolution.ansys_tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysEigenmodeSolution.min_frequency"><code class="docutils literal notranslate"><span class="pre">AnsysEigenmodeSolution.min_frequency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysEigenmodeSolution.max_delta_f"><code class="docutils literal notranslate"><span class="pre">AnsysEigenmodeSolution.max_delta_f</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysEigenmodeSolution.n_modes"><code class="docutils literal notranslate"><span class="pre">AnsysEigenmodeSolution.n_modes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysEigenmodeSolution.integrate_energies"><code class="docutils literal notranslate"><span class="pre">AnsysEigenmodeSolution.integrate_energies</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysEigenmodeSolution.integrate_magnetic_flux"><code class="docutils literal notranslate"><span class="pre">AnsysEigenmodeSolution.integrate_magnetic_flux</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysEigenmodeSolution.get_solution_data"><code class="docutils literal notranslate"><span class="pre">AnsysEigenmodeSolution.get_solution_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysCurrentSolution"><code class="docutils literal notranslate"><span class="pre">AnsysCurrentSolution</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysCurrentSolution.ansys_tool"><code class="docutils literal notranslate"><span class="pre">AnsysCurrentSolution.ansys_tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysCurrentSolution.frequency"><code class="docutils literal notranslate"><span class="pre">AnsysCurrentSolution.frequency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysCurrentSolution.max_delta_e"><code class="docutils literal notranslate"><span class="pre">AnsysCurrentSolution.max_delta_e</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysCurrentSolution.integrate_energies"><code class="docutils literal notranslate"><span class="pre">AnsysCurrentSolution.integrate_energies</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysCurrentSolution.integrate_magnetic_flux"><code class="docutils literal notranslate"><span class="pre">AnsysCurrentSolution.integrate_magnetic_flux</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysCurrentSolution.get_solution_data"><code class="docutils literal notranslate"><span class="pre">AnsysCurrentSolution.get_solution_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysVoltageSolution"><code class="docutils literal notranslate"><span class="pre">AnsysVoltageSolution</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysVoltageSolution.ansys_tool"><code class="docutils literal notranslate"><span class="pre">AnsysVoltageSolution.ansys_tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysVoltageSolution.frequency"><code class="docutils literal notranslate"><span class="pre">AnsysVoltageSolution.frequency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysVoltageSolution.max_delta_e"><code class="docutils literal notranslate"><span class="pre">AnsysVoltageSolution.max_delta_e</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysVoltageSolution.integrate_energies"><code class="docutils literal notranslate"><span class="pre">AnsysVoltageSolution.integrate_energies</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysVoltageSolution.integrate_magnetic_flux"><code class="docutils literal notranslate"><span class="pre">AnsysVoltageSolution.integrate_magnetic_flux</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.AnsysVoltageSolution.get_solution_data"><code class="docutils literal notranslate"><span class="pre">AnsysVoltageSolution.get_solution_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.ansys.ansys_solution.html#kqcircuits.simulations.export.ansys.ansys_solution.get_ansys_solution"><code class="docutils literal notranslate"><span class="pre">get_ansys_solution()</span></code></a></li>
 </ul>
 </li>
 </ul>

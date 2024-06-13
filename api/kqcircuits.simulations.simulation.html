@@ -172,7 +172,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer GUI Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#prerequisites">Prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#python">Python</a></li>
 </ul>
@@ -183,17 +183,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#manual-installation">Manual installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#linux-or-macos">Linux or MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#symlinks-in-linux-or-macos">Symlinks in Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#symlinks-in-windows">Symlinks in Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#installing-dependencies">Installing dependencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">KLayout Standalone Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#installation">Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#standard-not-secure-installation">Standard, Not Secure Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#basic-installation">1. Basic installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
@@ -283,6 +286,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.lithography_test_twoface.html">kqcircuits.chips.lithography_test_twoface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.chips.lithography_test_twoface.html#kqcircuits.chips.lithography_test_twoface.LithographyTestTwoface"><code class="docutils literal notranslate"><span class="pre">LithographyTestTwoface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.munch_qubits.html">kqcircuits.chips.munch_qubits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.chips.munch_qubits.html#kqcircuits.chips.munch_qubits.MunchQubits"><code class="docutils literal notranslate"><span class="pre">MunchQubits</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a><ul>
@@ -510,6 +517,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.circular_transmon_single_island.html">kqcircuits.qubits.circular_transmon_single_island</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.qubits.circular_transmon_single_island.html#kqcircuits.qubits.circular_transmon_single_island.CircularTransmonSingleIsland"><code class="docutils literal notranslate"><span class="pre">CircularTransmonSingleIsland</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.concentric_transmon.html">kqcircuits.qubits.concentric_transmon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.qubits.concentric_transmon.html#kqcircuits.qubits.concentric_transmon.ConcentricTransmon"><code class="docutils literal notranslate"><span class="pre">ConcentricTransmon</span></code></a></li>
 </ul>
@@ -543,6 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.export_singularity.html">kqcircuits.simulations.export.export_singularity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.remote_export_and_run.html">kqcircuits.simulations.export.remote_export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_validate.html">kqcircuits.simulations.export.simulation_validate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.solution.html">kqcircuits.simulations.export.solution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
@@ -661,7 +673,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_dependencies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_gui_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_gui_dependencies()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a><ul>
@@ -882,9 +894,8 @@
           <li class="breadcrumb-item"><a href="kqcircuits.html">API documentation</a></li>
           <li class="breadcrumb-item"><a href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
       <li class="breadcrumb-item active">kqcircuits.simulations.simulation</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/iqm-finland/KQCircuits/blob/main/docs/api/kqcircuits.simulations.simulation.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
+
+
   </ul>
   <hr/>
 </div>
@@ -1286,6 +1297,23 @@ This function must be used when initializing InternalPort.</p>
 access more than one sub-cell sharing the same ‘name’, but with different appended ‘index’ to the ‘name’.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.simulations.simulation.Simulation.visualise_region">
+<span class="sig-name descname"><span class="pre">visualise_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'visualisation'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">DPoint</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">DPoint</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/kqcircuits/simulations/simulation.html#Simulation.visualise_region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.simulation.Simulation.visualise_region" title="Link to this definition"></a></dt>
+<dd><p>Visualises given region in a dedicated layer in the preview geometry file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>region</strong> – pya.Region to visualise</p></li>
+<li><p><strong>label</strong> – Label of the region, rendered using pya.DText objects</p></li>
+<li><p><strong>layer</strong> – Name of the KLayout layer to place the visualised region</p></li>
+<li><p><strong>points</strong> – pya.DPoint or list of DPoints to place as labels to the region.
+By default places one point at the middle of the region’s boundary box.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <strong>PCell parameters:</strong><div class="line"><br /></div>
@@ -1320,6 +1348,7 @@ access more than one sub-cell sharing the same ‘name’, but with different ap
 <li><p><strong>tls_layer_thickness</strong><em> (List)</em><span> - Thickness of TLS interface layers (MA, MS, and SA, respectively)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[0.0]</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>tls_layer_material</strong><em> (List)</em><span> - Use only keywords introduced in material_dict.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['vacuum',</span> <span class="pre">'silicon',</span> <span class="pre">'silicon']</span></code></p></li>
 <li><p><strong>tls_sheet_approximation</strong><em> (Boolean)</em><span> - Approximate TLS interface layers as sheets</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>detach_tls_sheets_from_body</strong><em> (Boolean)</em><span> - Only has an effect when tls_sheet_approximation=True.Setting to False when using `ElmerEPR3DSolution` significantly improves simulation performance</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 <li><p><strong>minimum_point_spacing</strong><em> (Double)</em><span> - Tolerance for merging adjacent points in polygon</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.01</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>polygon_tolerance</strong><em> (Double)</em><span> - Tolerance for merging adjacent polygons in a layer</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.004</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>extra_json_data</strong><em> (None)</em><span> - This field may be used to store ‘virtual’ parameters useful for your simulations</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>

@@ -172,7 +172,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer GUI Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#prerequisites">Prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#python">Python</a></li>
 </ul>
@@ -183,17 +183,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#manual-installation">Manual installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#linux-or-macos">Linux or MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#symlinks-in-linux-or-macos">Symlinks in Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#symlinks-in-windows">Symlinks in Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#installing-dependencies">Installing dependencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">KLayout Standalone Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#installation">Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#standard-not-secure-installation">Standard, Not Secure Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#basic-installation">1. Basic installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
@@ -283,6 +286,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.lithography_test_twoface.html">kqcircuits.chips.lithography_test_twoface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.chips.lithography_test_twoface.html#kqcircuits.chips.lithography_test_twoface.LithographyTestTwoface"><code class="docutils literal notranslate"><span class="pre">LithographyTestTwoface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.munch_qubits.html">kqcircuits.chips.munch_qubits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.chips.munch_qubits.html#kqcircuits.chips.munch_qubits.MunchQubits"><code class="docutils literal notranslate"><span class="pre">MunchQubits</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a><ul>
@@ -510,6 +517,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.circular_transmon_single_island.html">kqcircuits.qubits.circular_transmon_single_island</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.qubits.circular_transmon_single_island.html#kqcircuits.qubits.circular_transmon_single_island.CircularTransmonSingleIsland"><code class="docutils literal notranslate"><span class="pre">CircularTransmonSingleIsland</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.concentric_transmon.html">kqcircuits.qubits.concentric_transmon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.qubits.concentric_transmon.html#kqcircuits.qubits.concentric_transmon.ConcentricTransmon"><code class="docutils literal notranslate"><span class="pre">ConcentricTransmon</span></code></a></li>
 </ul>
@@ -543,6 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.export_singularity.html">kqcircuits.simulations.export.export_singularity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.remote_export_and_run.html">kqcircuits.simulations.export.remote_export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_validate.html">kqcircuits.simulations.export.simulation_validate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.solution.html">kqcircuits.simulations.export.solution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
@@ -661,7 +673,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_dependencies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_gui_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_gui_dependencies()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a><ul>
@@ -882,9 +894,8 @@
           <li class="breadcrumb-item"><a href="kqcircuits.html">API documentation</a></li>
           <li class="breadcrumb-item"><a href="kqcircuits.util.html">kqcircuits.util</a></li>
       <li class="breadcrumb-item active">kqcircuits.util.layout_to_code</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/iqm-finland/KQCircuits/blob/main/docs/api/kqcircuits.util.layout_to_code.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
+
+
   </ul>
   <hr/>
 </div>
@@ -895,7 +906,7 @@
 <span id="kqcircuits-util-layout-to-code"></span><h1>kqcircuits.util.layout_to_code<a class="headerlink" href="#module-kqcircuits.util.layout_to_code" title="Link to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="kqcircuits.util.layout_to_code.convert_cells_to_code">
-<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.layout_to_code.</span></span><span class="sig-name descname"><span class="pre">convert_cells_to_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">top_cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_waveguides_as_composite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_instance_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refpoint_snap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_snap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'insert_cell+chip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_imports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_create_with_refpoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/layout_to_code.html#convert_cells_to_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.layout_to_code.convert_cells_to_code" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.layout_to_code.</span></span><span class="sig-name descname"><span class="pre">convert_cells_to_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">top_cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_waveguides_as_composite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_instance_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refpoint_snap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_snap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'chip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_imports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/layout_to_code.html#convert_cells_to_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.layout_to_code.convert_cells_to_code" title="Link to this definition"></a></dt>
 <dd><p>Prints out the Python code required to create the cells in top_cell.</p>
 <p>For each instance that is selected in GUI, prints out an <cite>insert_cell()</cite> command that can be copy pasted to a chip’s
 <cite>build()</cite>. If no instances are selected, then it will do the same for all instances that are one level below
@@ -912,21 +923,14 @@ if you want to have waveguides connect to refpoints of elements that were placed
 at that refpoint.</p></li>
 <li><p><strong>grid_snap</strong> – If a waveguide point was not close enough to a refpoint, it will be snapped to a square grid with
 square side length equal to <cite>grid_snap</cite></p></li>
-<li><p><strong>output_format</strong> – <p>Determines the format of the code for placing cells and if some extra code is printed. Has the
-following options:</p>
+<li><p><strong>output_format</strong> – <p>Determines the format of the code for placing cells. Has the following options:</p>
 <ul>
-<li><p>”insert_cell”: only insert_cell() calls which can be copied to existing chip’s/element’s build method</p></li>
-<li><p>”insert_cell+chip”: same as previous, but prints also the chip code, can copy to empty file to create
-new chip</p></li>
-<li><p>”create”: only create() and cell.insert() calls which can be copied to an existing macro with layout
-and top_cell</p></li>
-<li><p>”create+macro”: same as previous, but includes initial lines for macro, can copy to empty file to
-create new macro</p></li>
+<li><p>”build”: Creates code that can be used inside the <code class="docutils literal notranslate"><span class="pre">build</span></code> method of a <code class="docutils literal notranslate"><span class="pre">Chip</span></code> or <code class="docutils literal notranslate"><span class="pre">Element</span></code></p></li>
+<li><p>”chip”: Same as the above, but also outputs a full <code class="docutils literal notranslate"><span class="pre">Chip</span></code> class definition</p></li>
+<li><p>”macro”: Creates code that can be used in a stand-alone KLayout macro or python script</p></li>
 </ul>
 </p></li>
 <li><p><strong>include_imports</strong> – If true, then import statements for all used elements are included in the generated code</p></li>
-<li><p><strong>use_create_with_refpoints</strong> – If true, then create_with_refpoints() is used instead of create(). Only used when
-output_format is “create” or “create+macro”. Required if you want to use refpoints as waveguide points.</p></li>
 <li><p><strong>create_code</strong> – if False then does not export code but snap cells to refpoints in place</p></li>
 </ul>
 </dd>
@@ -959,10 +963,12 @@ element: class that implements the node’s element, or None if the node has no 
 <dl class="py function">
 <dt class="sig sig-object py" id="kqcircuits.util.layout_to_code.extract_pcell_data_from_views">
 <span class="sig-prename descclassname"><span class="pre">kqcircuits.util.layout_to_code.</span></span><span class="sig-name descname"><span class="pre">extract_pcell_data_from_views</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/layout_to_code.html#extract_pcell_data_from_views"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.layout_to_code.extract_pcell_data_from_views" title="Link to this definition"></a></dt>
-<dd><p>Remove all PCells and return their data.</p>
+<dd><p>Iterate over all KQCircuits PCells and return their data and instances.</p>
 <dl class="simple">
-<dt>Returns: A list of lists. Each element corresponds to a view in KLayout and it is a list of</dt><dd><p><code class="docutils literal notranslate"><span class="pre">(type,</span> <span class="pre">location,</span> <span class="pre">parameters)</span></code> tuples. These tuples completely describe the type, position and
-parameters of a single PCell in the “Top Cell” of this view.</p>
+<dt>Returns: a tuple (views, instances) where</dt><dd><p>views: a list of lists. Each element corresponds to a view in KLayout and it is a list of
+<code class="docutils literal notranslate"><span class="pre">(type,</span> <span class="pre">location,</span> <span class="pre">parameters)</span></code> tuples. These tuples completely describe the type, position
+and parameters of a single PCell in the “Top Cell” of this view.
+instances: flattened list of all instances of KQCircuits PCells found.</p>
 </dd>
 </dl>
 </dd></dl>

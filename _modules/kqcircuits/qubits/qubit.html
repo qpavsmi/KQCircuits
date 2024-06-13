@@ -169,7 +169,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/setup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/setup.html">Developer GUI Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#prerequisites">Prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/setup.html#python">Python</a></li>
 </ul>
@@ -180,17 +180,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#manual-installation">Manual installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/setup.html#linux-or-macos">Linux or MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/setup.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/setup.html#symlinks-in-linux-or-macos">Symlinks in Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/setup.html#symlinks-in-windows">Symlinks in Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/setup.html#installing-dependencies">Installing dependencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developer/standalone.html">KLayout Standalone Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#installation">Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#standard-not-secure-installation">Standard, Not Secure Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#reproducible-secure-installation">Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#basic-installation">1. Basic installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
@@ -280,6 +283,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.chips.lithography_test_twoface.html">kqcircuits.chips.lithography_test_twoface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.chips.lithography_test_twoface.html#kqcircuits.chips.lithography_test_twoface.LithographyTestTwoface"><code class="docutils literal notranslate"><span class="pre">LithographyTestTwoface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.chips.munch_qubits.html">kqcircuits.chips.munch_qubits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.chips.munch_qubits.html#kqcircuits.chips.munch_qubits.MunchQubits"><code class="docutils literal notranslate"><span class="pre">MunchQubits</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a><ul>
@@ -507,6 +514,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.qubits.circular_transmon_single_island.html">kqcircuits.qubits.circular_transmon_single_island</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.qubits.circular_transmon_single_island.html#kqcircuits.qubits.circular_transmon_single_island.CircularTransmonSingleIsland"><code class="docutils literal notranslate"><span class="pre">CircularTransmonSingleIsland</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.qubits.concentric_transmon.html">kqcircuits.qubits.concentric_transmon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.qubits.concentric_transmon.html#kqcircuits.qubits.concentric_transmon.ConcentricTransmon"><code class="docutils literal notranslate"><span class="pre">ConcentricTransmon</span></code></a></li>
 </ul>
@@ -540,6 +551,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.export_singularity.html">kqcircuits.simulations.export.export_singularity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.remote_export_and_run.html">kqcircuits.simulations.export.remote_export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.simulation_validate.html">kqcircuits.simulations.export.simulation_validate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.solution.html">kqcircuits.simulations.export.solution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
@@ -658,7 +670,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_dependencies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_gui_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_gui_dependencies()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a><ul>
@@ -878,8 +890,12 @@
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
       <li class="breadcrumb-item active">kqcircuits.qubits.qubit</li>
+
+
       <li class="wy-breadcrumbs-aside">
       </li>
+
+
   </ul>
   <hr/>
 </div>
@@ -901,12 +917,12 @@
 <span class="c1"># https://www.gnu.org/licenses/gpl-3.0.html.</span>
 <span class="c1">#</span>
 <span class="c1"># The software distribution should follow IQM trademark policy for open-source software</span>
-<span class="c1"># (meetiqm.com/developers/osstmpolicy). IQM welcomes contributions to the code. Please see our contribution agreements</span>
-<span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
+<span class="c1"># (meetiqm.com/iqm-open-source-trademark-policy). IQM welcomes contributions to the code.</span>
+<span class="c1"># Please see our contribution agreements for individuals (meetiqm.com/iqm-individual-contributor-license-agreement)</span>
+<span class="c1"># and organizations (meetiqm.com/iqm-organization-contributor-license-agreement).</span>
 
 
-<span class="kn">import</span> <span class="nn">math</span>
-
+<span class="kn">from</span> <span class="nn">kqcircuits.util.geometry_helper</span> <span class="kn">import</span> <span class="n">get_angle</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.element</span> <span class="kn">import</span> <span class="n">Element</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.elements.fluxlines.fluxline</span> <span class="kn">import</span> <span class="n">Fluxline</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.pya_resolver</span> <span class="kn">import</span> <span class="n">pya</span>
@@ -1011,7 +1027,7 @@
 
 <div class="viewcode-block" id="Qubit.produce_fluxline">
 <a class="viewcode-back" href="../../../api/kqcircuits.qubits.qubit.html#kqcircuits.qubits.qubit.Qubit.produce_fluxline">[docs]</a>
-    <span class="k">def</span> <span class="nf">produce_fluxline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">trans</span><span class="o">=</span><span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(),</span> <span class="o">**</span><span class="n">parameters</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">produce_fluxline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">displacement</span><span class="o">=</span><span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(),</span> <span class="o">**</span><span class="n">parameters</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produces the fluxline.</span>
 
 <span class="sd">        Creates the fluxline cell and inserts it as a subcell. The &quot;flux&quot; and &quot;flux_corner&quot; ports</span>
@@ -1022,7 +1038,7 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">            rot: Extra rotation of the fluxline, in degrees</span>
-<span class="sd">            trans (DVector): fluxline x/y translation</span>
+<span class="sd">            displacement (DVector): fluxline x/y displacement (ignored if center alignment is available)</span>
 <span class="sd">            parameters: parameters for the fluxline to overwrite default and subclass parameters</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
@@ -1033,9 +1049,17 @@
 
         <span class="n">refpoints_so_far</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_refpoints</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">)</span>
         <span class="n">squid_edge</span> <span class="o">=</span> <span class="n">refpoints_so_far</span><span class="p">[</span><span class="s2">&quot;origin_squid&quot;</span><span class="p">]</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">squid_edge</span> <span class="o">-</span> <span class="n">refpoints_so_far</span><span class="p">[</span><span class="s2">&quot;port_common&quot;</span><span class="p">]</span>
-        <span class="n">rotation</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">+</span> <span class="mi">90</span>
-        <span class="n">total_transformation</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">+</span> <span class="n">rot</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">squid_edge</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;base&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">trans</span><span class="p">)</span>
+        <span class="n">rotation</span> <span class="o">=</span> <span class="n">get_angle</span><span class="p">(</span><span class="n">squid_edge</span> <span class="o">-</span> <span class="n">refpoints_so_far</span><span class="p">[</span><span class="s2">&quot;port_common&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="mi">90</span>
+
+        <span class="n">refpoints_fluxline</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_refpoints</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;center_fluxline&quot;</span> <span class="ow">in</span> <span class="n">refpoints_fluxline</span> <span class="ow">and</span> <span class="s2">&quot;center_squid&quot;</span> <span class="ow">in</span> <span class="n">refpoints_so_far</span><span class="p">:</span>
+            <span class="n">total_transformation</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span>
+                <span class="mi">1</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">+</span> <span class="n">rot</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">refpoints_so_far</span><span class="p">[</span><span class="s2">&quot;center_squid&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;base&quot;</span><span class="p">]</span>
+            <span class="p">)</span> <span class="o">*</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="o">-</span><span class="n">refpoints_fluxline</span><span class="p">[</span><span class="s2">&quot;center_fluxline&quot;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">total_transformation</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span>
+                <span class="mi">1</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">+</span> <span class="n">rot</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">squid_edge</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;base&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">displacement</span>
+            <span class="p">)</span>
 
         <span class="n">cell_inst</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">total_transformation</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">copy_port</span><span class="p">(</span><span class="s2">&quot;flux&quot;</span><span class="p">,</span> <span class="n">cell_inst</span><span class="p">)</span></div>

@@ -1,9 +1,12 @@
+:github_url: hide
+
 kqcircuits.qubits
 =================
 
 
 .. toctree::
 
+   kqcircuits.qubits.circular_transmon_single_island
    kqcircuits.qubits.concentric_transmon
    kqcircuits.qubits.double_pads
    kqcircuits.qubits.double_pads_splines

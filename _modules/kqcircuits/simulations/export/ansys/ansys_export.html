@@ -169,7 +169,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../developer/index.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../developer/setup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developer/setup.html">Developer GUI Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#prerequisites">Prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#python">Python</a></li>
 </ul>
@@ -180,17 +180,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#manual-installation">Manual installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#linux-or-macos">Linux or MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#symlinks-in-linux-or-macos">Symlinks in Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#symlinks-in-windows">Symlinks in Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#installing-dependencies">Installing dependencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../developer/standalone.html">KLayout Standalone Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/standalone.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/standalone.html#installation">Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#standard-not-secure-installation">Standard, Not Secure Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#reproducible-secure-installation">Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#basic-installation">1. Basic installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
@@ -280,6 +283,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.chips.lithography_test_twoface.html">kqcircuits.chips.lithography_test_twoface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.chips.lithography_test_twoface.html#kqcircuits.chips.lithography_test_twoface.LithographyTestTwoface"><code class="docutils literal notranslate"><span class="pre">LithographyTestTwoface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.chips.munch_qubits.html">kqcircuits.chips.munch_qubits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.chips.munch_qubits.html#kqcircuits.chips.munch_qubits.MunchQubits"><code class="docutils literal notranslate"><span class="pre">MunchQubits</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a><ul>
@@ -507,6 +514,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../api/kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.qubits.circular_transmon_single_island.html">kqcircuits.qubits.circular_transmon_single_island</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.qubits.circular_transmon_single_island.html#kqcircuits.qubits.circular_transmon_single_island.CircularTransmonSingleIsland"><code class="docutils literal notranslate"><span class="pre">CircularTransmonSingleIsland</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.qubits.concentric_transmon.html">kqcircuits.qubits.concentric_transmon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.qubits.concentric_transmon.html#kqcircuits.qubits.concentric_transmon.ConcentricTransmon"><code class="docutils literal notranslate"><span class="pre">ConcentricTransmon</span></code></a></li>
 </ul>
@@ -540,6 +551,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.export_singularity.html">kqcircuits.simulations.export.export_singularity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.remote_export_and_run.html">kqcircuits.simulations.export.remote_export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.simulation_validate.html">kqcircuits.simulations.export.simulation_validate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.solution.html">kqcircuits.simulations.export.solution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
@@ -658,7 +670,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_dependencies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_gui_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_gui_dependencies()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a><ul>
@@ -878,8 +890,12 @@
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../../../index.html">Module code</a></li>
       <li class="breadcrumb-item active">kqcircuits.simulations.export.ansys.ansys_export</li>
+
+
       <li class="wy-breadcrumbs-aside">
       </li>
+
+
   </ul>
   <hr/>
 </div>
@@ -901,25 +917,26 @@
 <span class="c1"># https://www.gnu.org/licenses/gpl-3.0.html.</span>
 <span class="c1">#</span>
 <span class="c1"># The software distribution should follow IQM trademark policy for open-source software</span>
-<span class="c1"># (meetiqm.com/developers/osstmpolicy). IQM welcomes contributions to the code. Please see our contribution agreements</span>
-<span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
+<span class="c1"># (meetiqm.com/iqm-open-source-trademark-policy). IQM welcomes contributions to the code.</span>
+<span class="c1"># Please see our contribution agreements for individuals (meetiqm.com/iqm-individual-contributor-license-agreement)</span>
+<span class="c1"># and organizations (meetiqm.com/iqm-organization-contributor-license-agreement).</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">stat</span>
 
-<span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">from</span> <span class="nn">kqcircuits.simulations.export.ansys.ansys_solution</span> <span class="kn">import</span> <span class="n">AnsysSolution</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.simulations.export.ansys.ansys_solution</span> <span class="kn">import</span> <span class="n">AnsysSolution</span><span class="p">,</span> <span class="n">get_ansys_solution</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.simulations.export.simulation_export</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">copy_content_into_directory</span><span class="p">,</span>
     <span class="n">get_post_process_command_lines</span><span class="p">,</span>
     <span class="n">get_combined_parameters</span><span class="p">,</span>
+    <span class="n">export_simulation_json</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">kqcircuits.simulations.export.simulation_validate</span> <span class="kn">import</span> <span class="n">validate_simulation</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.util.export_helper</span> <span class="kn">import</span> <span class="n">write_commit_reference_file</span>
-<span class="kn">from</span> <span class="nn">kqcircuits.util.geometry_json_encoder</span> <span class="kn">import</span> <span class="n">GeometryJsonEncoder</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.simulations.export.util</span> <span class="kn">import</span> <span class="n">export_layers</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">ANSYS_EXECUTABLE</span><span class="p">,</span> <span class="n">ANSYS_SCRIPT_PATHS</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.simulations.simulation</span> <span class="kn">import</span> <span class="n">Simulation</span>
@@ -962,8 +979,7 @@
 
     <span class="c1"># write .json file</span>
     <span class="n">json_file_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="n">full_name</span> <span class="o">+</span> <span class="s2">&quot;.json&quot;</span><span class="p">))</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_file_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">GeometryJsonEncoder</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">export_simulation_json</span><span class="p">(</span><span class="n">json_data</span><span class="p">,</span> <span class="n">json_file_path</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">json_file_path</span></div>
 
@@ -1072,13 +1088,10 @@
     <span class="n">write_commit_reference_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="n">copy_content_into_directory</span><span class="p">(</span><span class="n">ANSYS_SCRIPT_PATHS</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">script_folder</span><span class="p">)</span>
     <span class="n">json_filenames</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">common_sol</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">simulations</span><span class="p">)</span> <span class="k">else</span> <span class="n">get_ansys_solution</span><span class="p">(</span><span class="o">**</span><span class="n">solution_params</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">sim_sol</span> <span class="ow">in</span> <span class="n">simulations</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sim_sol</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">):</span>
-            <span class="n">simulation</span><span class="p">,</span> <span class="n">solution</span> <span class="o">=</span> <span class="n">sim_sol</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">simulation</span> <span class="o">=</span> <span class="n">sim_sol</span>
-            <span class="n">solution</span> <span class="o">=</span> <span class="n">AnsysSolution</span><span class="p">(</span><span class="o">**</span><span class="n">solution_params</span><span class="p">)</span>
-
+        <span class="n">simulation</span><span class="p">,</span> <span class="n">solution</span> <span class="o">=</span> <span class="n">sim_sol</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sim_sol</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">sim_sol</span><span class="p">,</span> <span class="n">common_sol</span><span class="p">)</span>
+        <span class="n">validate_simulation</span><span class="p">(</span><span class="n">simulation</span><span class="p">,</span> <span class="n">solution</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">json_filenames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">export_ansys_json</span><span class="p">(</span><span class="n">simulation</span><span class="p">,</span> <span class="n">solution</span><span class="p">,</span> <span class="n">path</span><span class="p">))</span>
         <span class="k">except</span> <span class="p">(</span><span class="ne">IndexError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># pylint: disable=broad-except</span>

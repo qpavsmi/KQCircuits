@@ -169,7 +169,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../developer/index.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../developer/setup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developer/setup.html">Developer GUI Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#prerequisites">Prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#python">Python</a></li>
 </ul>
@@ -180,17 +180,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/setup.html#manual-installation">Manual installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#linux-or-macos">Linux or MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#symlinks-in-linux-or-macos">Symlinks in Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#symlinks-in-windows">Symlinks in Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/setup.html#installing-dependencies">Installing dependencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../developer/standalone.html">KLayout Standalone Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/standalone.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../developer/standalone.html#installation">Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#standard-not-secure-installation">Standard, Not Secure Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#reproducible-secure-installation">Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#basic-installation">1. Basic installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
@@ -280,6 +283,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.chips.lithography_test_twoface.html">kqcircuits.chips.lithography_test_twoface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.chips.lithography_test_twoface.html#kqcircuits.chips.lithography_test_twoface.LithographyTestTwoface"><code class="docutils literal notranslate"><span class="pre">LithographyTestTwoface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.chips.munch_qubits.html">kqcircuits.chips.munch_qubits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.chips.munch_qubits.html#kqcircuits.chips.munch_qubits.MunchQubits"><code class="docutils literal notranslate"><span class="pre">MunchQubits</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a><ul>
@@ -507,6 +514,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../api/kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.qubits.circular_transmon_single_island.html">kqcircuits.qubits.circular_transmon_single_island</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.qubits.circular_transmon_single_island.html#kqcircuits.qubits.circular_transmon_single_island.CircularTransmonSingleIsland"><code class="docutils literal notranslate"><span class="pre">CircularTransmonSingleIsland</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.qubits.concentric_transmon.html">kqcircuits.qubits.concentric_transmon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.qubits.concentric_transmon.html#kqcircuits.qubits.concentric_transmon.ConcentricTransmon"><code class="docutils literal notranslate"><span class="pre">ConcentricTransmon</span></code></a></li>
 </ul>
@@ -540,6 +551,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.export_singularity.html">kqcircuits.simulations.export.export_singularity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.remote_export_and_run.html">kqcircuits.simulations.export.remote_export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.simulation_validate.html">kqcircuits.simulations.export.simulation_validate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.solution.html">kqcircuits.simulations.export.solution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
@@ -658,7 +670,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_dependencies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_gui_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_gui_dependencies()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a><ul>
@@ -878,8 +890,12 @@
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../../../index.html">Module code</a></li>
       <li class="breadcrumb-item active">kqcircuits.simulations.export.elmer.elmer_solution</li>
+
+
       <li class="wy-breadcrumbs-aside">
       </li>
+
+
   </ul>
   <hr/>
 </div>
@@ -901,10 +917,11 @@
 <span class="c1"># https://www.gnu.org/licenses/gpl-3.0.html.</span>
 <span class="c1">#</span>
 <span class="c1"># The software distribution should follow IQM trademark policy for open-source software</span>
-<span class="c1"># (meetiqm.com/developers/osstmpolicy). IQM welcomes contributions to the code. Please see our contribution agreements</span>
-<span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
+<span class="c1"># (meetiqm.com/iqm-open-source-trademark-policy). IQM welcomes contributions to the code.</span>
+<span class="c1"># Please see our contribution agreements for individuals (meetiqm.com/iqm-individual-contributor-license-agreement)</span>
+<span class="c1"># and organizations (meetiqm.com/iqm-organization-contributor-license-agreement).</span>
 <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">ClassVar</span>
 <span class="kn">from</span> <span class="nn">kqcircuits.simulations.export.solution</span> <span class="kn">import</span> <span class="n">Solution</span>
 
 
@@ -916,9 +933,6 @@
 <span class="sd">    A Base class for Elmer Solution parameters</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        tool: Available: &quot;capacitance&quot;, &quot;wave_equation&quot; and &quot;cross-section&quot;</span>
-<span class="sd">        linear_system_method: Available: &#39;bicgstab&#39;, &#39;mg&#39;. Currently only applies to Capacitance Solver</span>
-<span class="sd">        p_element_order: polynomial order of p-elements</span>
 <span class="sd">        percent_error: Stopping criterion in adaptive meshing.</span>
 <span class="sd">        max_error_scale: Maximum element error, relative to percent_error, allowed in individual elements.</span>
 <span class="sd">        max_outlier_fraction: Maximum fraction of outliers from the total number of elements</span>
@@ -926,26 +940,24 @@
 <span class="sd">        minimum_passes: Minimum number of adaptive meshing iterations.</span>
 <span class="sd">        is_axisymmetric: Simulate with Axi Symmetric coordinates along :math:`y\\Big|_{x=0}` (Default: False)</span>
 <span class="sd">        mesh_levels: If set larger than 1 Elmer will make the mesh finer by dividing each element</span>
-<span class="sd">                          into 2^(dim) elements mesh_levels times. Default 1.</span>
-<span class="sd">        frequency: Units are in GHz. Give a list of frequencies if using interpolating sweep.</span>
-<span class="sd">        frequency_batch: Number of frequencies calculated between each round of fitting in interpolating sweep</span>
-<span class="sd">        sweep_type: Type of frequency sweep. Options &quot;explicit&quot; and &quot;interpolating&quot;.</span>
-<span class="sd">        max_delta_s: Convergence tolerance in interpolating sweep</span>
-<span class="sd">        boundary_conditions: Parameters to determine boundary conditions</span>
-<span class="sd">        integrate_energies: Calculate energy integrals over each object. Used in EPR simulations</span>
-<span class="sd">        mesh_levels: If set larger than 1 Elmer will make the mesh finer by dividing each element</span>
-<span class="sd">                          into 2^(dim) elements mesh_levels times. Default 1.</span>
-<span class="sd">        mesh_size: Parameters to determine mesh element sizes</span>
-<span class="sd">        solver_options: Can be used to set experimental solver options for Elmer wave-equation tool.</span>
-<span class="sd">                        Supports the options `use_av` (bool), `london_penetration_depth` (float),</span>
-<span class="sd">                        `conductivity` (float),`nested_iteration` (bool), `convergence_tolerance` (float),</span>
-<span class="sd">                        `max_iterations` (int), `quadratic_approximation` (bool), `second_kind_basis` (bool)</span>
+<span class="sd">                     into 2^(dim) elements mesh_levels times. Default 1.</span>
+<span class="sd">        mesh_size: Dictionary to determine mesh size where key (string) denotes material and value (double) denotes the</span>
+<span class="sd">            maximal length of mesh element. Additional mesh size terms can be determined, if the value type is</span>
+<span class="sd">            list. Then, term[0] is the maximal mesh element length inside at the entity and its expansion,</span>
+<span class="sd">            term[1] is expansion distance in which the maximal mesh element length is constant (default=term[0]),</span>
+<span class="sd">            and term[2] is the slope of the increase in the maximal mesh element length outside the entity.</span>
+<span class="sd">            To refine material interface the material names by should be separated by &#39;&amp;&#39; in the key. Key &#39;global_max&#39;</span>
+<span class="sd">            is reserved for setting global maximal element length. For example, if the dictionary is given as</span>
+<span class="sd">            {&#39;substrate&#39;: 10, &#39;substrate&amp;vacuum&#39;: [2, 5], &#39;global_max&#39;: 100}, then the maximal mesh element length is 10</span>
+<span class="sd">            inside the substrate and 2 on region which is less than 5 units away from the substrate-vacuum interface.</span>
+<span class="sd">            Outside these regions, the mesh element size can increase up to 100.</span>
+<span class="sd">        vtu_output: Output vtu files to view fields in Paraview.</span>
+<span class="sd">                    Turning this off will make the simulations slightly faster</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">tool</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;capacitance&quot;</span>  <span class="c1"># to be ClassVar</span>
-    <span class="n">linear_system_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;bicgstab&quot;</span>
-    <span class="n">p_element_order</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">tool</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
     <span class="n">percent_error</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.005</span>
     <span class="n">max_error_scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">2.0</span>
     <span class="n">max_outlier_fraction</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-3</span>
@@ -953,31 +965,172 @@
     <span class="n">minimum_passes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">is_axisymmetric</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">mesh_levels</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">mesh_size</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">vtu_output</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="ElmerSolution.get_solution_data">
+<a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.get_solution_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_solution_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the solution data in dictionary form.&quot;&quot;&quot;</span>
+        <span class="n">sol_dict</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">,</span> <span class="s2">&quot;tool&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tool</span><span class="p">}</span>
+        <span class="n">sol_dict</span><span class="p">[</span><span class="s2">&quot;solution_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sol_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sol_dict</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ElmerVectorHelmholtzSolution">
+<a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">ElmerVectorHelmholtzSolution</span><span class="p">(</span><span class="n">ElmerSolution</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for Elmer wave-equation solution parameters</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        frequency: Units are in GHz. Give a list of frequencies if using interpolating sweep.</span>
+<span class="sd">        frequency_batch: Number of frequencies calculated between each round of fitting in interpolating sweep</span>
+<span class="sd">        sweep_type: Type of frequency sweep. Options &quot;explicit&quot; and &quot;interpolating&quot;.</span>
+<span class="sd">        max_delta_s: Convergence tolerance in interpolating sweep</span>
+<span class="sd">        london_penetration_depth: Allows supercurrent to flow on the metal boundaries within a layer</span>
+<span class="sd">                                  of thickness `london_penetration_depth`</span>
+<span class="sd">        quadratic_approximation: Use edge finite elements of second degree</span>
+<span class="sd">        second_kind_basis: Use Nedelec finite elements of second kind</span>
+
+<span class="sd">        use_av: Use a formulation of VectorHelmHoltz equation based on potentials A-V instead of electric field E.</span>
+<span class="sd">                For details see https://www.nic.funet.fi/pub/sci/physics/elmer/doc/ElmerModelsManual.pdf</span>
+<span class="sd">                WARNING: This option is experimental and might lead to poor convergence.</span>
+<span class="sd">        conductivity: Adds a specified film conductivity on metal boundaries. Applies only when `use_av=True`</span>
+<span class="sd">        nested_iteration: Enables alternative nested iterative solver to be used. Applies only when `use_av=True`</span>
+<span class="sd">        convergence_tolerance: Convergence tolerance of the iterative solver. Applies only when `use_av=True`</span>
+<span class="sd">        max_iterations: Maximum number of iterations for the iterative solver.</span>
+<span class="sd">                        Applies only when `use_av=True` and only to the main solver (not to calc fields or port solver)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">tool</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;wave_equation&quot;</span>
+
     <span class="n">frequency</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="n">frequency_batch</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="n">sweep_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;explicit&quot;</span>
     <span class="n">max_delta_s</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.01</span>
-    <span class="n">boundary_conditions</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
-    <span class="n">integrate_energies</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="n">mesh_levels</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">mesh_size</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
-    <span class="n">solver_options</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">london_penetration_depth</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">quadratic_approximation</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">second_kind_basis</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">use_av</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">conductivity</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">nested_iteration</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">convergence_tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0e-10</span>
+    <span class="n">max_iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2000</span>
 
     <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Cast frequency to list. Automatically called after init&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">)):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">frequency</span><span class="p">]</span>
         <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frequency</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frequency</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">frequency</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frequency</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ElmerSolution.get_solution_data">
-<a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.get_solution_data">[docs]</a>
-    <span class="k">def</span> <span class="nf">get_solution_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the solution data in dictionary form.&quot;&quot;&quot;</span>
-        <span class="n">sol_dict</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">}</span>
-        <span class="n">sol_dict</span><span class="p">[</span><span class="s2">&quot;solution_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sol_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">sol_dict</span></div>
-</div>
+
+
+<div class="viewcode-block" id="ElmerCapacitanceSolution">
+<a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCapacitanceSolution">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">ElmerCapacitanceSolution</span><span class="p">(</span><span class="n">ElmerSolution</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for Elmer capacitance solution parameters</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        p_element_order: polynomial order of p-elements</span>
+<span class="sd">        linear_system_method: Options: 1. mg (multigrid), 2. bicgstab or any other iterative solver mentioned in</span>
+<span class="sd">                              ElmerSolver manual section 4.3.1</span>
+<span class="sd">        integrate_energies: Calculate energy integrals over each object. Used in EPR simulations</span>
+<span class="sd">        convergence_tolerance: Convergence tolerance of the iterative solver.</span>
+<span class="sd">        max_iterations: Maximum number of iterations for the iterative solver.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">tool</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;capacitance&quot;</span>
+
+    <span class="n">p_element_order</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">linear_system_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;mg&quot;</span>
+    <span class="n">integrate_energies</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">convergence_tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+    <span class="n">max_iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">500</span></div>
+
+
+
+<div class="viewcode-block" id="ElmerCrossSectionSolution">
+<a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCrossSectionSolution">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">ElmerCrossSectionSolution</span><span class="p">(</span><span class="n">ElmerSolution</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for Elmer cross-section solution parameters.</span>
+<span class="sd">    By default both 2D Capacitance and 2D Inductance simulation will be run when using this</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        p_element_order: polynomial order of p-elements</span>
+<span class="sd">        linear_system_method: Options: 1. mg (multigrid), 2. bicgstab or any other iterative solver mentioned in</span>
+<span class="sd">                              ElmerSolver manual section 4.3.1</span>
+<span class="sd">        integrate_energies: Calculate energy integrals over each object. Used in EPR simulations</span>
+<span class="sd">        boundary_conditions: Parameters to determine boundary conditions for potential on the edges</span>
+<span class="sd">                             of simulation box. Supported keys are `xmin` , `xmax` ,`ymin` and `ymax`</span>
+<span class="sd">                             Example: `boundary_conditions = {&quot;xmin&quot;: {&quot;potential&quot;: 0}}`</span>
+<span class="sd">        convergence_tolerance: Convergence tolerance of the iterative solver.</span>
+<span class="sd">                               Applies only to capacitance part of the simulation</span>
+<span class="sd">        max_iterations: Maximum number of iterations for the iterative solver.</span>
+<span class="sd">                        Applies only to capacitance part of the simulation</span>
+<span class="sd">        run_inductance_sim: Can be used to skip running the inductance simulation and just do 2D capacitance.</span>
+<span class="sd">                            No impendance can then be calculated but useful for making EPR simulations faster</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">tool</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;cross-section&quot;</span>
+
+    <span class="n">p_element_order</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">linear_system_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;mg&quot;</span>
+    <span class="n">integrate_energies</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">boundary_conditions</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">convergence_tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+    <span class="n">max_iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">500</span>
+    <span class="n">run_inductance_sim</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="ElmerEPR3DSolution">
+<a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerEPR3DSolution">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">ElmerEPR3DSolution</span><span class="p">(</span><span class="n">ElmerSolution</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for Elmer 3D EPR simulations. Similar to electrostatics simulations done with ElmerCapacitanceSolution,</span>
+<span class="sd">    but supports separating energies by PartitionRegions and produces no capacitance matrix</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        p_element_order: polynomial order of p-elements</span>
+<span class="sd">        linear_system_method: Options: 1. mg (multigrid), 2. bicgstab or any other iterative solver mentioned in</span>
+<span class="sd">                              ElmerSolver manual section 4.3.1</span>
+<span class="sd">        convergence_tolerance: Convergence tolerance of the iterative solver.</span>
+<span class="sd">        max_iterations: Maximum number of iterations for the iterative solver.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">tool</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;epr_3d&quot;</span>
+
+    <span class="n">p_element_order</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">linear_system_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;bicgstab&quot;</span>
+    <span class="n">convergence_tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
+    <span class="n">max_iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span></div>
+
+
+
+<div class="viewcode-block" id="get_elmer_solution">
+<a class="viewcode-back" href="../../../../../api/kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.get_elmer_solution">[docs]</a>
+<span class="k">def</span> <span class="nf">get_elmer_solution</span><span class="p">(</span><span class="n">tool</span><span class="o">=</span><span class="s2">&quot;capacitance&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">solution_params</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns an instance of ElmerSolution subclass.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        tool: Determines the subclass of ElmerSolution.</span>
+<span class="sd">        solution_params: Arguments passed for  ElmerSolution subclass.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="n">ElmerVectorHelmholtzSolution</span><span class="p">,</span> <span class="n">ElmerCapacitanceSolution</span><span class="p">,</span> <span class="n">ElmerCrossSectionSolution</span><span class="p">,</span> <span class="n">ElmerEPR3DSolution</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">tool</span> <span class="o">==</span> <span class="n">c</span><span class="o">.</span><span class="n">tool</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">c</span><span class="p">(</span><span class="o">**</span><span class="n">solution_params</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No ElmerSolution found for tool=</span><span class="si">{</span><span class="n">tool</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
 
 </pre></div>
 

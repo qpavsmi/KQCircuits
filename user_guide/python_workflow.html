@@ -172,7 +172,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer GUI Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#prerequisites">Prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#python">Python</a></li>
 </ul>
@@ -183,17 +183,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#manual-installation">Manual installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#linux-or-macos">Linux or MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#symlinks-in-linux-or-macos">Symlinks in Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#symlinks-in-windows">Symlinks in Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#installing-dependencies">Installing dependencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">KLayout Standalone Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#installation">Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#standard-not-secure-installation">Standard, Not Secure Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#basic-installation">1. Basic installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
@@ -283,6 +286,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.chips.lithography_test_twoface.html">kqcircuits.chips.lithography_test_twoface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.chips.lithography_test_twoface.html#kqcircuits.chips.lithography_test_twoface.LithographyTestTwoface"><code class="docutils literal notranslate"><span class="pre">LithographyTestTwoface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.chips.munch_qubits.html">kqcircuits.chips.munch_qubits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.chips.munch_qubits.html#kqcircuits.chips.munch_qubits.MunchQubits"><code class="docutils literal notranslate"><span class="pre">MunchQubits</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a><ul>
@@ -510,6 +517,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.circular_transmon_single_island.html">kqcircuits.qubits.circular_transmon_single_island</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.qubits.circular_transmon_single_island.html#kqcircuits.qubits.circular_transmon_single_island.CircularTransmonSingleIsland"><code class="docutils literal notranslate"><span class="pre">CircularTransmonSingleIsland</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.qubits.concentric_transmon.html">kqcircuits.qubits.concentric_transmon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.qubits.concentric_transmon.html#kqcircuits.qubits.concentric_transmon.ConcentricTransmon"><code class="docutils literal notranslate"><span class="pre">ConcentricTransmon</span></code></a></li>
 </ul>
@@ -543,6 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.export_singularity.html">kqcircuits.simulations.export.export_singularity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.remote_export_and_run.html">kqcircuits.simulations.export.remote_export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.simulation_validate.html">kqcircuits.simulations.export.simulation_validate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.solution.html">kqcircuits.simulations.export.solution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
@@ -661,7 +673,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_dependencies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_gui_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_gui_dependencies()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../api/kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a><ul>
@@ -881,9 +893,13 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">User Guide</a></li>
       <li class="breadcrumb-item active">Python workflow tutorial</li>
+
+
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/iqm-finland/KQCircuits/blob/main/docs/user_guide/python_workflow.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
+
+
   </ul>
   <hr/>
 </div>
@@ -896,7 +912,7 @@
 <p>To unlock the full potential of KQCircuits the user often needs to define new Chips and Elements,
 which is done by writing Python code. This can be done in the Macro Editor included in KLayout, or
 using any external code editor. To start working with the KQCircuits code base directly, see
-<a class="reference internal" href="../developer/setup.html#developer-setup"><span class="std std-ref">Developer Setup</span></a>. In addition to KQCircuits documentation it is useful
+<a class="reference internal" href="../developer/setup.html#developer-setup"><span class="std std-ref">Developer GUI Setup</span></a>. In addition to KQCircuits documentation it is useful
 to check the <a class="reference external" href="https://www.klayout.de/doc.html">KLayout documentation</a> when
 writing Python code for new elements.</p>
 <section id="file-system-hierarchy">
@@ -904,10 +920,11 @@ writing Python code for new elements.</p>
 <p>In the KQCircuits root folder the most important folder for most users is the
 <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//klayout_package">klayout_package</a> folder, which is also all that is included in the Salt
 package. Other folders are mainly for automatic tests and documentation.
-KQCircuits code is divided into the <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//klayout_package/python/kqcircuits">kqcircuits</a> and
-<a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//klayout_package/python/scripts">scripts</a> folders in <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//klayout_package/python">klayout_package/python</a>.
-These two folders are also (after installation process) linked as symbolic links <code class="docutils literal notranslate"><span class="pre">kqcircuits</span></code> and
-<code class="docutils literal notranslate"><span class="pre">kqcircuits_scripts</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/.klayout</span></code> or <code class="docutils literal notranslate"><span class="pre">~/KLayout</span></code> folder.</p>
+KQCircuits code is divided into the <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//klayout_package/python/kqcircuits">kqcircuits</a>,
+<a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//klayout_package/python/scripts">scripts</a> and <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//klayout_package/python/requirements">requirements</a>
+folders in <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//klayout_package/python">klayout_package/python</a>.
+These three folders are also (after installation process) linked as symbolic links <code class="docutils literal notranslate"><span class="pre">kqcircuits</span></code>,
+<code class="docutils literal notranslate"><span class="pre">kqcircuits_scripts</span></code> and <code class="docutils literal notranslate"><span class="pre">kqcircuits_requirements</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/.klayout</span></code> or <code class="docutils literal notranslate"><span class="pre">~/KLayout</span></code> folder.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">kqcircuits</span></code> folder contains all the KQCircuits elements and many
 other modules used by them or by scripts. Folders directly under
 <code class="docutils literal notranslate"><span class="pre">kqcircuits</span></code> containing Element classes correspond to different Element
@@ -917,6 +934,8 @@ scripts for generating simulation files or mask files. Usually, these files are
 not meant to be imported in other Python files. The outputs of
 simulation or mask scripts can be found in the <code class="docutils literal notranslate"><span class="pre">tmp</span></code> folder below the main
 KQCircuits folder.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">requirements</span></code> folder lists dependent libraires, their versions and their hashes
+needed for KQCircuits code.</p>
 </section>
 <section id="structure-of-element-code">
 <h2>Structure of Element code<a class="headerlink" href="#structure-of-element-code" title="Link to this heading"></a></h2>

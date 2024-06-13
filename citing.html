@@ -172,7 +172,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="developer/index.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="developer/setup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/setup.html">Developer GUI Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/setup.html#prerequisites">Prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="developer/setup.html#python">Python</a></li>
 </ul>
@@ -183,17 +183,20 @@
 <li class="toctree-l3"><a class="reference internal" href="developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="developer/setup.html#manual-installation">Manual installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/setup.html#linux-or-macos">Linux or MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/setup.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/setup.html#symlinks-in-linux-or-macos">Symlinks in Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/setup.html#symlinks-in-windows">Symlinks in Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/setup.html#installing-dependencies">Installing dependencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="developer/standalone.html">KLayout Standalone Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="developer/standalone.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="developer/standalone.html#installation">Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="developer/standalone.html#standard-not-secure-installation">Standard, Not Secure Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="developer/standalone.html#reproducible-secure-installation">Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/standalone.html#basic-installation">1. Basic installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
@@ -283,6 +286,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/kqcircuits.chips.lithography_test_twoface.html">kqcircuits.chips.lithography_test_twoface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.chips.lithography_test_twoface.html#kqcircuits.chips.lithography_test_twoface.LithographyTestTwoface"><code class="docutils literal notranslate"><span class="pre">LithographyTestTwoface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/kqcircuits.chips.munch_qubits.html">kqcircuits.chips.munch_qubits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.chips.munch_qubits.html#kqcircuits.chips.munch_qubits.MunchQubits"><code class="docutils literal notranslate"><span class="pre">MunchQubits</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a><ul>
@@ -510,6 +517,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/kqcircuits.qubits.circular_transmon_single_island.html">kqcircuits.qubits.circular_transmon_single_island</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.qubits.circular_transmon_single_island.html#kqcircuits.qubits.circular_transmon_single_island.CircularTransmonSingleIsland"><code class="docutils literal notranslate"><span class="pre">CircularTransmonSingleIsland</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="api/kqcircuits.qubits.concentric_transmon.html">kqcircuits.qubits.concentric_transmon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.qubits.concentric_transmon.html#kqcircuits.qubits.concentric_transmon.ConcentricTransmon"><code class="docutils literal notranslate"><span class="pre">ConcentricTransmon</span></code></a></li>
 </ul>
@@ -543,6 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.simulations.export.export_singularity.html">kqcircuits.simulations.export.export_singularity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.simulations.export.remote_export_and_run.html">kqcircuits.simulations.export.remote_export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.simulations.export.simulation_validate.html">kqcircuits.simulations.export.simulation_validate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.simulations.export.solution.html">kqcircuits.simulations.export.solution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
@@ -661,7 +673,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_dependencies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_gui_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_gui_dependencies()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a><ul>
@@ -880,9 +892,13 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Citing</li>
+
+
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/iqm-finland/KQCircuits/blob/main/docs/citing.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
+
+
   </ul>
   <hr/>
 </div>
@@ -899,6 +915,9 @@ including <code class="docutils literal notranslate"><span class="pre">.bib</spa
 the following <code class="docutils literal notranslate"><span class="pre">.bib</span></code> file can be used:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">kqcircuits</span><span class="p">,</span>
   <span class="n">author</span>       <span class="o">=</span> <span class="p">{</span><span class="n">Cucurachi</span><span class="p">,</span> <span class="n">Daniele</span> <span class="ow">and</span>
+                  <span class="n">Das</span><span class="p">,</span> <span class="n">Soumya</span> <span class="n">Ranjan</span> <span class="ow">and</span>
+                  <span class="n">Giri</span><span class="p">,</span> <span class="n">Rakshyakar</span> <span class="ow">and</span>
+                  <span class="n">Gusenkova</span><span class="p">,</span> <span class="n">Daria</span> <span class="ow">and</span>
                   <span class="n">Guthrie</span><span class="p">,</span> <span class="n">Andrew</span> <span class="ow">and</span>
                   <span class="n">Heinsoo</span><span class="p">,</span> <span class="n">Johannes</span> <span class="ow">and</span>
                   <span class="n">Inel</span><span class="p">,</span> <span class="n">Sinan</span> <span class="ow">and</span>
@@ -907,11 +926,14 @@ the following <code class="docutils literal notranslate"><span class="pre">.bib<
                   <span class="n">Juliusson</span><span class="p">,</span> <span class="n">Kristinn</span> <span class="ow">and</span>
                   <span class="n">Kotilahti</span><span class="p">,</span> <span class="n">Janne</span> <span class="ow">and</span>
                   <span class="n">Landra</span><span class="p">,</span> <span class="n">Alessandro</span> <span class="ow">and</span>
+                  <span class="n">Moretti</span><span class="p">,</span> <span class="n">Roberto</span> <span class="ow">and</span>
+                  <span class="n">Mylläri</span><span class="p">,</span> <span class="n">Tuomas</span> <span class="ow">and</span>
                   <span class="n">Ockeloen</span><span class="o">-</span><span class="n">Korppi</span><span class="p">,</span> <span class="n">Caspar</span> <span class="ow">and</span>
                   <span class="n">Räbinä</span><span class="p">,</span> <span class="n">Jukka</span> <span class="ow">and</span>
                   <span class="n">Savola</span><span class="p">,</span> <span class="n">Niko</span> <span class="ow">and</span>
                   <span class="n">Smirnov</span><span class="p">,</span> <span class="n">Pavel</span> <span class="ow">and</span>
-                  <span class="n">Takala</span><span class="p">,</span> <span class="n">Eelis</span><span class="p">},</span>
+                  <span class="n">Takala</span><span class="p">,</span> <span class="n">Eelis</span> <span class="ow">and</span>
+                  <span class="n">Wubben</span><span class="p">,</span> <span class="n">Leon</span><span class="p">},</span>
   <span class="n">title</span>        <span class="o">=</span> <span class="p">{{</span><span class="n">KQCircuits</span><span class="p">}},</span>
   <span class="n">month</span>        <span class="o">=</span> <span class="n">jun</span><span class="p">,</span>
   <span class="n">year</span>         <span class="o">=</span> <span class="mi">2021</span><span class="p">,</span>

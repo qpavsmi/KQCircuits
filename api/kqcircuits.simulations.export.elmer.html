@@ -172,7 +172,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer GUI Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#prerequisites">Prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#python">Python</a></li>
 </ul>
@@ -183,17 +183,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#manual-installation">Manual installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#linux-or-macos">Linux or MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#symlinks-in-linux-or-macos">Symlinks in Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#symlinks-in-windows">Symlinks in Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#installing-dependencies">Installing dependencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">KLayout Standalone Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#installation">Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#standard-not-secure-installation">Standard, Not Secure Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#basic-installation">1. Basic installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
@@ -283,6 +286,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.lithography_test_twoface.html">kqcircuits.chips.lithography_test_twoface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.chips.lithography_test_twoface.html#kqcircuits.chips.lithography_test_twoface.LithographyTestTwoface"><code class="docutils literal notranslate"><span class="pre">LithographyTestTwoface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.munch_qubits.html">kqcircuits.chips.munch_qubits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.chips.munch_qubits.html#kqcircuits.chips.munch_qubits.MunchQubits"><code class="docutils literal notranslate"><span class="pre">MunchQubits</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a><ul>
@@ -510,6 +517,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.circular_transmon_single_island.html">kqcircuits.qubits.circular_transmon_single_island</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.qubits.circular_transmon_single_island.html#kqcircuits.qubits.circular_transmon_single_island.CircularTransmonSingleIsland"><code class="docutils literal notranslate"><span class="pre">CircularTransmonSingleIsland</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.qubits.concentric_transmon.html">kqcircuits.qubits.concentric_transmon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.qubits.concentric_transmon.html#kqcircuits.qubits.concentric_transmon.ConcentricTransmon"><code class="docutils literal notranslate"><span class="pre">ConcentricTransmon</span></code></a></li>
 </ul>
@@ -543,6 +554,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.export_singularity.html">kqcircuits.simulations.export.export_singularity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.remote_export_and_run.html">kqcircuits.simulations.export.remote_export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.simulation_validate.html">kqcircuits.simulations.export.simulation_validate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.solution.html">kqcircuits.simulations.export.solution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
@@ -661,7 +673,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_dependencies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_gui_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_gui_dependencies()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a><ul>
@@ -883,9 +895,8 @@
           <li class="breadcrumb-item"><a href="kqcircuits.simulations.html">kqcircuits.simulations</a></li>
           <li class="breadcrumb-item"><a href="kqcircuits.simulations.export.html">kqcircuits.simulations.export</a></li>
       <li class="breadcrumb-item active">kqcircuits.simulations.export.elmer</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/iqm-finland/KQCircuits/blob/main/docs/api/kqcircuits.simulations.export.elmer.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
+
+
   </ul>
   <hr/>
 </div>
@@ -905,26 +916,63 @@
 <li class="toctree-l1"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html">kqcircuits.simulations.export.elmer.elmer_solution</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution"><code class="docutils literal notranslate"><span class="pre">ElmerSolution</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.tool"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.tool</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.linear_system_method"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.linear_system_method</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.p_element_order"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.p_element_order</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.percent_error"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.percent_error</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.max_error_scale"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.max_error_scale</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.max_outlier_fraction"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.max_outlier_fraction</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.maximum_passes"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.maximum_passes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.minimum_passes"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.minimum_passes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.is_axisymmetric"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.is_axisymmetric</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.frequency"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.frequency</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.frequency_batch"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.frequency_batch</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.sweep_type"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.sweep_type</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.max_delta_s"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.max_delta_s</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.boundary_conditions"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.boundary_conditions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.integrate_energies"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.integrate_energies</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.mesh_levels"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.mesh_levels</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.mesh_size"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.mesh_size</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.solver_options"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.solver_options</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.vtu_output"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.vtu_output</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerSolution.get_solution_data"><code class="docutils literal notranslate"><span class="pre">ElmerSolution.get_solution_data()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.tool"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.frequency"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.frequency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.frequency_batch"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.frequency_batch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.sweep_type"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.sweep_type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.max_delta_s"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.max_delta_s</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.london_penetration_depth"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.london_penetration_depth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.quadratic_approximation"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.quadratic_approximation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.second_kind_basis"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.second_kind_basis</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.use_av"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.use_av</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.conductivity"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.conductivity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.nested_iteration"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.nested_iteration</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.convergence_tolerance"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.convergence_tolerance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerVectorHelmholtzSolution.max_iterations"><code class="docutils literal notranslate"><span class="pre">ElmerVectorHelmholtzSolution.max_iterations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCapacitanceSolution"><code class="docutils literal notranslate"><span class="pre">ElmerCapacitanceSolution</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCapacitanceSolution.tool"><code class="docutils literal notranslate"><span class="pre">ElmerCapacitanceSolution.tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCapacitanceSolution.p_element_order"><code class="docutils literal notranslate"><span class="pre">ElmerCapacitanceSolution.p_element_order</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCapacitanceSolution.linear_system_method"><code class="docutils literal notranslate"><span class="pre">ElmerCapacitanceSolution.linear_system_method</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCapacitanceSolution.integrate_energies"><code class="docutils literal notranslate"><span class="pre">ElmerCapacitanceSolution.integrate_energies</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCapacitanceSolution.convergence_tolerance"><code class="docutils literal notranslate"><span class="pre">ElmerCapacitanceSolution.convergence_tolerance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCapacitanceSolution.max_iterations"><code class="docutils literal notranslate"><span class="pre">ElmerCapacitanceSolution.max_iterations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCrossSectionSolution"><code class="docutils literal notranslate"><span class="pre">ElmerCrossSectionSolution</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCrossSectionSolution.tool"><code class="docutils literal notranslate"><span class="pre">ElmerCrossSectionSolution.tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCrossSectionSolution.p_element_order"><code class="docutils literal notranslate"><span class="pre">ElmerCrossSectionSolution.p_element_order</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCrossSectionSolution.linear_system_method"><code class="docutils literal notranslate"><span class="pre">ElmerCrossSectionSolution.linear_system_method</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCrossSectionSolution.integrate_energies"><code class="docutils literal notranslate"><span class="pre">ElmerCrossSectionSolution.integrate_energies</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCrossSectionSolution.boundary_conditions"><code class="docutils literal notranslate"><span class="pre">ElmerCrossSectionSolution.boundary_conditions</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCrossSectionSolution.convergence_tolerance"><code class="docutils literal notranslate"><span class="pre">ElmerCrossSectionSolution.convergence_tolerance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCrossSectionSolution.max_iterations"><code class="docutils literal notranslate"><span class="pre">ElmerCrossSectionSolution.max_iterations</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerCrossSectionSolution.run_inductance_sim"><code class="docutils literal notranslate"><span class="pre">ElmerCrossSectionSolution.run_inductance_sim</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerEPR3DSolution"><code class="docutils literal notranslate"><span class="pre">ElmerEPR3DSolution</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerEPR3DSolution.tool"><code class="docutils literal notranslate"><span class="pre">ElmerEPR3DSolution.tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerEPR3DSolution.p_element_order"><code class="docutils literal notranslate"><span class="pre">ElmerEPR3DSolution.p_element_order</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerEPR3DSolution.linear_system_method"><code class="docutils literal notranslate"><span class="pre">ElmerEPR3DSolution.linear_system_method</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerEPR3DSolution.convergence_tolerance"><code class="docutils literal notranslate"><span class="pre">ElmerEPR3DSolution.convergence_tolerance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.ElmerEPR3DSolution.max_iterations"><code class="docutils literal notranslate"><span class="pre">ElmerEPR3DSolution.max_iterations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kqcircuits.simulations.export.elmer.elmer_solution.html#kqcircuits.simulations.export.elmer.elmer_solution.get_elmer_solution"><code class="docutils literal notranslate"><span class="pre">get_elmer_solution()</span></code></a></li>
 </ul>
 </li>
 </ul>

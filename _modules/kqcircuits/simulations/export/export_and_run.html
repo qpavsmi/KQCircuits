@@ -169,7 +169,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer/index.html">Developer Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../developer/setup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../developer/setup.html">Developer GUI Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#prerequisites">Prerequisites</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../developer/setup.html#python">Python</a></li>
 </ul>
@@ -180,17 +180,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#update">Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#secondary-install">Secondary install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/setup.html#manual-installation">Manual installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../developer/setup.html#linux-or-macos">Linux or MacOS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../developer/setup.html#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/setup.html#symlinks-in-linux-or-macos">Symlinks in Linux or MacOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/setup.html#symlinks-in-windows">Symlinks in Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/setup.html#installing-dependencies">Installing dependencies</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../developer/standalone.html">KLayout Standalone Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/standalone.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../developer/standalone.html#installation">Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../developer/standalone.html#standard-not-secure-installation">Standard, Not Secure Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../developer/standalone.html#reproducible-secure-installation">Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/standalone.html#basic-installation">1. Basic installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
@@ -280,6 +283,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.chips.lithography_test_twoface.html">kqcircuits.chips.lithography_test_twoface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.chips.lithography_test_twoface.html#kqcircuits.chips.lithography_test_twoface.LithographyTestTwoface"><code class="docutils literal notranslate"><span class="pre">LithographyTestTwoface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.chips.munch_qubits.html">kqcircuits.chips.munch_qubits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.chips.munch_qubits.html#kqcircuits.chips.munch_qubits.MunchQubits"><code class="docutils literal notranslate"><span class="pre">MunchQubits</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.chips.quality_factor.html">kqcircuits.chips.quality_factor</a><ul>
@@ -507,6 +514,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../api/kqcircuits.qubits.html">kqcircuits.qubits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.qubits.circular_transmon_single_island.html">kqcircuits.qubits.circular_transmon_single_island</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.qubits.circular_transmon_single_island.html#kqcircuits.qubits.circular_transmon_single_island.CircularTransmonSingleIsland"><code class="docutils literal notranslate"><span class="pre">CircularTransmonSingleIsland</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.qubits.concentric_transmon.html">kqcircuits.qubits.concentric_transmon</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.qubits.concentric_transmon.html#kqcircuits.qubits.concentric_transmon.ConcentricTransmon"><code class="docutils literal notranslate"><span class="pre">ConcentricTransmon</span></code></a></li>
 </ul>
@@ -540,6 +551,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.export_singularity.html">kqcircuits.simulations.export.export_singularity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.remote_export_and_run.html">kqcircuits.simulations.export.remote_export_and_run</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.simulation_export.html">kqcircuits.simulations.export.simulation_export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.simulation_validate.html">kqcircuits.simulations.export.simulation_validate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.solution.html">kqcircuits.simulations.export.solution</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.util.html">kqcircuits.simulations.export.util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.simulations.export.html#module-kqcircuits.simulations.export">Module contents</a></li>
@@ -658,7 +670,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.dependencies.html">kqcircuits.util.dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_dependencies()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.dependencies.html#kqcircuits.util.dependencies.install_kqc_gui_dependencies"><code class="docutils literal notranslate"><span class="pre">install_kqc_gui_dependencies()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.edit_node_plugin.html">kqcircuits.util.edit_node_plugin</a><ul>
@@ -878,8 +890,12 @@
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
       <li class="breadcrumb-item active">kqcircuits.simulations.export.export_and_run</li>
+
+
       <li class="wy-breadcrumbs-aside">
       </li>
+
+
   </ul>
   <hr/>
 </div>
@@ -901,13 +917,16 @@
 <span class="c1"># https://www.gnu.org/licenses/gpl-3.0.html.</span>
 <span class="c1">#</span>
 <span class="c1"># The software distribution should follow IQM trademark policy for open-source software</span>
-<span class="c1"># (meetiqm.com/developers/osstmpolicy). IQM welcomes contributions to the code. Please see our contribution agreements</span>
-<span class="c1"># for individuals (meetiqm.com/developers/clas/individual) and organizations (meetiqm.com/developers/clas/organization).</span>
+<span class="c1"># (meetiqm.com/iqm-open-source-trademark-policy). IQM welcomes contributions to the code.</span>
+<span class="c1"># Please see our contribution agreements for individuals (meetiqm.com/iqm-individual-contributor-license-agreement)</span>
+<span class="c1"># and organizations (meetiqm.com/iqm-organization-contributor-license-agreement).</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="kn">import</span> <span class="nn">platform</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">kqcircuits.defaults</span> <span class="kn">import</span> <span class="n">EXPORT_PATH_IDENTIFIER</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARN</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
 
@@ -920,7 +939,8 @@
 
 <span class="sd">    Args:</span>
 <span class="sd">        export_script(Path): path to the simulation export script</span>
-<span class="sd">        export_path(Path): path where simulation files are exported</span>
+<span class="sd">        export_path(Path): path where simulation files are exported set with `--export-path-basename`. If None, the</span>
+<span class="sd">                           path set in export script will be used.</span>
 <span class="sd">        quiet(bool): if True all the GUI dialogs are shown, otherwise not.</span>
 <span class="sd">        export_only(bool): if True no simulation is run, only export files.</span>
 <span class="sd">        args(list): a list of strings describing arguments to be passed to the simulation script</span>
@@ -929,33 +949,85 @@
 <span class="sd">        a tuple containing</span>
 
 <span class="sd">            * export_script(Path): path to the simulation export script</span>
-<span class="sd">            * export_path(Path): path where simulation files are exported</span>
+<span class="sd">            * export_path(list(Path)): list of paths where simulation files are exported</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">script_export_paths</span> <span class="o">=</span> <span class="n">run_export_script</span><span class="p">(</span><span class="n">export_script</span><span class="p">,</span> <span class="n">export_path</span><span class="p">,</span> <span class="n">quiet</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">export_only</span><span class="p">:</span>
+        <span class="n">run_simulations</span><span class="p">(</span><span class="n">script_export_paths</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">export_script</span><span class="p">,</span> <span class="n">script_export_paths</span></div>
+
+
+
+<div class="viewcode-block" id="run_export_script">
+<a class="viewcode-back" href="../../../../api/kqcircuits.simulations.export.export_and_run.html#kqcircuits.simulations.export.export_and_run.run_export_script">[docs]</a>
+<span class="k">def</span> <span class="nf">run_export_script</span><span class="p">(</span><span class="n">export_script</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">export_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">quiet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate the simulation files by running the export script. Returns list of paths where</span>
+<span class="sd">    simulation files are exported. Returned paths are parsed from stdout of the export script printed</span>
+<span class="sd">    by function `create_or_empty_tmp_directory`, based on the identifier `EXPORT_PATH_IDENTIFIER`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">args</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="s2">&quot;--simulation-export-path&quot;</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;--simulation-export-path is not allowed!&quot;</span><span class="p">)</span>
-            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="s2">&quot;--simulation-export-path&quot;</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;--simulation-export-path is not allowed!&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span>
-        <span class="p">[</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="n">export_script</span><span class="p">,</span> <span class="s2">&quot;--simulation-export-path&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">export_path</span><span class="p">)]</span> <span class="o">+</span> <span class="n">args</span> <span class="o">+</span> <span class="p">([</span><span class="s2">&quot;-q&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">quiet</span> <span class="k">else</span> <span class="p">[])</span>
+    <span class="n">export_cmd</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">[</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="n">export_script</span><span class="p">]</span>
+        <span class="o">+</span> <span class="p">([</span><span class="s2">&quot;--simulation-export-path&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">export_path</span><span class="p">)]</span> <span class="k">if</span> <span class="n">export_path</span> <span class="k">else</span> <span class="p">[])</span>
+        <span class="o">+</span> <span class="n">args</span>
+        <span class="o">+</span> <span class="p">([</span><span class="s2">&quot;-q&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">quiet</span> <span class="k">else</span> <span class="p">[])</span>
     <span class="p">)</span>
-    <span class="k">if</span> <span class="n">export_only</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">export_script</span><span class="p">,</span> <span class="n">export_path</span>
+    <span class="c1"># Run export script and capture stdout to be processed</span>
+    <span class="k">with</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">export_cmd</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">process</span><span class="p">:</span>
+        <span class="n">process_stdout</span><span class="p">,</span> <span class="n">process_stderr</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">process_stdout</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">process_stderr</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">process</span><span class="o">.</span><span class="n">returncode</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span><span class="p">(</span><span class="n">process</span><span class="o">.</span><span class="n">returncode</span><span class="p">,</span> <span class="n">export_cmd</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="n">export_path</span> <span class="o">/</span> <span class="s2">&quot;simulation.sh&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">:</span>  <span class="c1"># macOS</span>
-            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">&quot;bash&quot;</span><span class="p">,</span> <span class="s2">&quot;simulation.sh&quot;</span><span class="p">],</span> <span class="n">cwd</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">export_path</span><span class="p">))</span>
-        <span class="k">else</span><span class="p">:</span>  <span class="c1"># Linux</span>
-            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">&quot;bash&quot;</span><span class="p">,</span> <span class="s2">&quot;simulation.sh&quot;</span><span class="p">],</span> <span class="n">cwd</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">export_path</span><span class="p">))</span>
-    <span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Parse export paths from stdout printed in `create_or_empty_tmp_directory`</span>
+    <span class="n">script_export_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">process_stdout</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)]</span>
+    <span class="n">script_export_paths</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Path</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">removeprefix</span><span class="p">(</span><span class="n">EXPORT_PATH_IDENTIFIER</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">script_export_paths</span>
+        <span class="k">if</span> <span class="n">l</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">EXPORT_PATH_IDENTIFIER</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="c1"># remove duplicate paths</span>
+    <span class="n">unique_paths</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">script_export_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">script_export_paths</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">n</span> <span class="ow">in</span> <span class="n">unique_paths</span> <span class="ow">or</span> <span class="n">unique_paths</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span><span class="p">))]</span>
+
+    <span class="k">if</span> <span class="n">export_path</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">script_export_paths</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Using `--export-path-basename` is not supported with scripts exporting multiple simulations&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">script_export_paths</span></div>
+
+
+
+<div class="viewcode-block" id="run_simulations">
+<a class="viewcode-back" href="../../../../api/kqcircuits.simulations.export.export_and_run.html#kqcircuits.simulations.export.export_and_run.run_simulations">[docs]</a>
+<span class="k">def</span> <span class="nf">run_simulations</span><span class="p">(</span><span class="n">script_export_paths</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run exported simulations&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">script_export_path</span> <span class="ow">in</span> <span class="n">script_export_paths</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">script_export_path</span> <span class="o">/</span> <span class="s2">&quot;simulation.sh&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="n">simulation_shell_script</span> <span class="o">=</span> <span class="s2">&quot;simulation.sh&quot;</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">script_export_path</span> <span class="o">/</span> <span class="s2">&quot;simulation.bat&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="n">simulation_shell_script</span> <span class="o">=</span> <span class="s2">&quot;simulation.bat&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No simulation.sh or .bat script found in </span><span class="si">{</span><span class="n">script_export_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+
         <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>  <span class="c1"># Windows</span>
-            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;simulation.bat&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">export_path</span><span class="p">))</span>
-
-    <span class="k">return</span> <span class="n">export_script</span><span class="p">,</span> <span class="n">export_path</span></div>
+            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="n">simulation_shell_script</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">script_export_path</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Darwin&quot;</span><span class="p">:</span>  <span class="c1"># macOS</span>
+            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">&quot;bash&quot;</span><span class="p">,</span> <span class="n">simulation_shell_script</span><span class="p">],</span> <span class="n">cwd</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">script_export_path</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># Linux</span>
+            <span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">&quot;bash&quot;</span><span class="p">,</span> <span class="n">simulation_shell_script</span><span class="p">],</span> <span class="n">cwd</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">script_export_path</span><span class="p">))</span></div>
 
 </pre></div>
 
