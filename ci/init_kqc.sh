@@ -16,10 +16,8 @@ if [ $ret -ne 0 ]; then
     exit $ret
 fi
 python setup_within_klayout.py
-# TODO: We would check if GUI installation failed, but on Github CI we don't install KLayout UI app anyway
-# and we don't do UI related tests. So disable until we start doing any of that
-# ret=$?
-# if [ $ret -ne 0 ]; then
-#     echo "Can't install KQCircuits: couldn't set it up for KLayout app"
-#     exit $ret
-# fi
+ret=$?
+if [ $ret -ne 0 ]; then
+    echo "Can't install KQCircuits: couldn't set it up for KLayout app"
+    exit $ret
+fi
