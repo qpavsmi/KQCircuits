@@ -414,6 +414,10 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.meander.html#kqcircuits.elements.meander.Meander"><code class="docutils literal notranslate"><span class="pre">Meander</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.quarter_wave_cpw_resonator.html">kqcircuits.elements.quarter_wave_cpw_resonator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.quarter_wave_cpw_resonator.html#kqcircuits.elements.quarter_wave_cpw_resonator.QuarterWaveCpwResonator"><code class="docutils literal notranslate"><span class="pre">QuarterWaveCpwResonator</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.smooth_capacitor.html">kqcircuits.elements.smooth_capacitor</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.smooth_capacitor.html#kqcircuits.elements.smooth_capacitor.SmoothCapacitor"><code class="docutils literal notranslate"><span class="pre">SmoothCapacitor</span></code></a></li>
 </ul>
@@ -589,6 +593,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.simulations.simulation.html">kqcircuits.simulations.simulation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.get_simulation_layer_by_name"><code class="docutils literal notranslate"><span class="pre">get_simulation_layer_by_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.to_1d_list"><code class="docutils literal notranslate"><span class="pre">to_1d_list()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation"><code class="docutils literal notranslate"><span class="pre">Simulation</span></code></a></li>
 </ul>
 </li>
@@ -741,6 +746,11 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.label.html#kqcircuits.util.label.produce_label"><code class="docutils literal notranslate"><span class="pre">produce_label()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.label_polygons.html">kqcircuits.util.label_polygons</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.label_polygons.html#kqcircuits.util.label_polygons.get_text_polygon"><code class="docutils literal notranslate"><span class="pre">get_text_polygon()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.label_polygons.html#kqcircuits.util.label_polygons.load_font_polygons"><code class="docutils literal notranslate"><span class="pre">load_font_polygons()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.layout_to_code.html#kqcircuits.util.layout_to_code.convert_cells_to_code"><code class="docutils literal notranslate"><span class="pre">convert_cells_to_code()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.layout_to_code.html#kqcircuits.util.layout_to_code.get_node_params"><code class="docutils literal notranslate"><span class="pre">get_node_params()</span></code></a></li>
@@ -802,6 +812,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.replace_junctions.html">kqcircuits.util.replace_junctions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.JunctionEntry"><code class="docutils literal notranslate"><span class="pre">JunctionEntry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.extract_junctions"><code class="docutils literal notranslate"><span class="pre">extract_junctions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.check_static_cell_has_junctions"><code class="docutils literal notranslate"><span class="pre">check_static_cell_has_junctions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.place_junctions"><code class="docutils literal notranslate"><span class="pre">place_junctions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.get_tuned_junction_json"><code class="docutils literal notranslate"><span class="pre">get_tuned_junction_json()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.copy_one_layer_of_cell"><code class="docutils literal notranslate"><span class="pre">copy_one_layer_of_cell()</span></code></a></li>
@@ -965,6 +976,7 @@ the end of resonator will be on different faces.</p>
 <li><p><strong>input_path</strong><em> (Shape)</em><span> - Input waveguide path</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">(-200,0;0,0)</span> <span class="pre">w=10</span> <span class="pre">bx=0</span> <span class="pre">ex=0</span> <span class="pre">r=false</span></code></p></li>
 <li><p><strong>poly_path</strong><em> (Shape)</em><span> - Polygon path</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">(0,800;1000,0;0,-800)</span> <span class="pre">w=10</span> <span class="pre">bx=0</span> <span class="pre">ex=0</span> <span class="pre">r=false</span></code></p></li>
 <li><p><strong>auto_spacing</strong><em> (Boolean)</em><span> - Use automatic spacing</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><strong>include_connector_length</strong><em> (Boolean)</em><span> - Include connector length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>manual_spacing</strong><em> (List)</em><span> - Manual spacing pattern</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[300]</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[μm]</span></code></p></li>
 <li><p><strong>bridge_spacing</strong><em> (Double)</em><span> - Airbridge spacing</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>n_bridges_pattern</strong><em> (List)</em><span> - Pattern for number of airbridges on edges</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[0]</span></code></p></li>

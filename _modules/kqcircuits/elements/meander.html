@@ -411,6 +411,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.meander.html#kqcircuits.elements.meander.Meander"><code class="docutils literal notranslate"><span class="pre">Meander</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.quarter_wave_cpw_resonator.html">kqcircuits.elements.quarter_wave_cpw_resonator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.quarter_wave_cpw_resonator.html#kqcircuits.elements.quarter_wave_cpw_resonator.QuarterWaveCpwResonator"><code class="docutils literal notranslate"><span class="pre">QuarterWaveCpwResonator</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.smooth_capacitor.html">kqcircuits.elements.smooth_capacitor</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.smooth_capacitor.html#kqcircuits.elements.smooth_capacitor.SmoothCapacitor"><code class="docutils literal notranslate"><span class="pre">SmoothCapacitor</span></code></a></li>
 </ul>
@@ -586,6 +590,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.simulation.html">kqcircuits.simulations.simulation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.get_simulation_layer_by_name"><code class="docutils literal notranslate"><span class="pre">get_simulation_layer_by_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.to_1d_list"><code class="docutils literal notranslate"><span class="pre">to_1d_list()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation"><code class="docutils literal notranslate"><span class="pre">Simulation</span></code></a></li>
 </ul>
 </li>
@@ -738,6 +743,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.label.html#kqcircuits.util.label.produce_label"><code class="docutils literal notranslate"><span class="pre">produce_label()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.label_polygons.html">kqcircuits.util.label_polygons</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.label_polygons.html#kqcircuits.util.label_polygons.get_text_polygon"><code class="docutils literal notranslate"><span class="pre">get_text_polygon()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.label_polygons.html#kqcircuits.util.label_polygons.load_font_polygons"><code class="docutils literal notranslate"><span class="pre">load_font_polygons()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.layout_to_code.html#kqcircuits.util.layout_to_code.convert_cells_to_code"><code class="docutils literal notranslate"><span class="pre">convert_cells_to_code()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.layout_to_code.html#kqcircuits.util.layout_to_code.get_node_params"><code class="docutils literal notranslate"><span class="pre">get_node_params()</span></code></a></li>
@@ -799,6 +809,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html">kqcircuits.util.replace_junctions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.JunctionEntry"><code class="docutils literal notranslate"><span class="pre">JunctionEntry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.extract_junctions"><code class="docutils literal notranslate"><span class="pre">extract_junctions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.check_static_cell_has_junctions"><code class="docutils literal notranslate"><span class="pre">check_static_cell_has_junctions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.place_junctions"><code class="docutils literal notranslate"><span class="pre">place_junctions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.get_tuned_junction_json"><code class="docutils literal notranslate"><span class="pre">get_tuned_junction_json()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.copy_one_layer_of_cell"><code class="docutils literal notranslate"><span class="pre">copy_one_layer_of_cell()</span></code></a></li>
@@ -944,8 +955,9 @@
 
 <span class="sd">    Defined by two points, total length and number of meanders.</span>
 
-<span class="sd">    The start and end points can be moved in GUI using the &quot;Move&quot;-tool. Alternatively, if a list of ``[x, y]``</span>
-<span class="sd">    coordinates is given for ``start`` and ``end``, the GUI markers will not be shown. The latter is useful for</span>
+<span class="sd">    The ``start_point`` and ``end_point`` can be moved in GUI using the &quot;Move&quot;-tool.</span>
+<span class="sd">    Alternatively, if a list of ``[x, y]`` coordinates is given for ``start_point`` and ``end_point``,</span>
+<span class="sd">    the GUI markers will not be shown. The latter is useful for</span>
 <span class="sd">    code-generated cells that cannot be edited in the GUI.</span>
 
 <span class="sd">    By default, the number of meanders is automatically chosen to minimize the area taken by bounding box of</span>
@@ -955,8 +967,8 @@
 <span class="sd">       .. MARKERS_FOR_PNG 0,0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">start</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeShape</span><span class="p">,</span> <span class="s2">&quot;Start&quot;</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="n">end</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeShape</span><span class="p">,</span> <span class="s2">&quot;End&quot;</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">start_point</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeShape</span><span class="p">,</span> <span class="s2">&quot;Start&quot;</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">end_point</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeShape</span><span class="p">,</span> <span class="s2">&quot;End&quot;</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="n">length</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Length&quot;</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">)</span>
     <span class="n">meanders</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeInt</span><span class="p">,</span> <span class="s2">&quot;Number of meanders (non-positive means automatic)&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">n_bridges</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeInt</span><span class="p">,</span> <span class="s2">&quot;Number of bridges&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -971,21 +983,21 @@
 <a class="viewcode-back" href="../../../api/kqcircuits.elements.meander.html#kqcircuits.elements.meander.Meander.parameters_from_shape_impl">[docs]</a>
     <span class="k">def</span> <span class="nf">parameters_from_shape_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">points</span> <span class="o">=</span> <span class="p">[</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="n">point</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">each_point</span><span class="p">()]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_point</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_point</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
 
 
 <div class="viewcode-block" id="Meander.build">
 <a class="viewcode-back" href="../../../api/kqcircuits.elements.meander.html#kqcircuits.elements.meander.Meander.build">[docs]</a>
     <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-            <span class="n">start</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_point</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_point</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-            <span class="n">end</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_point</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_point</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_point</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_point</span>
 
         <span class="n">angle</span> <span class="o">=</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">atan2</span><span class="p">(</span><span class="n">end</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">start</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">start</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
         <span class="n">transf</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="n">start</span><span class="p">))</span>

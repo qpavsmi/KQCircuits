@@ -411,6 +411,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.meander.html#kqcircuits.elements.meander.Meander"><code class="docutils literal notranslate"><span class="pre">Meander</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.quarter_wave_cpw_resonator.html">kqcircuits.elements.quarter_wave_cpw_resonator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.quarter_wave_cpw_resonator.html#kqcircuits.elements.quarter_wave_cpw_resonator.QuarterWaveCpwResonator"><code class="docutils literal notranslate"><span class="pre">QuarterWaveCpwResonator</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.smooth_capacitor.html">kqcircuits.elements.smooth_capacitor</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.smooth_capacitor.html#kqcircuits.elements.smooth_capacitor.SmoothCapacitor"><code class="docutils literal notranslate"><span class="pre">SmoothCapacitor</span></code></a></li>
 </ul>
@@ -586,6 +590,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.simulation.html">kqcircuits.simulations.simulation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.get_simulation_layer_by_name"><code class="docutils literal notranslate"><span class="pre">get_simulation_layer_by_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.to_1d_list"><code class="docutils literal notranslate"><span class="pre">to_1d_list()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation"><code class="docutils literal notranslate"><span class="pre">Simulation</span></code></a></li>
 </ul>
 </li>
@@ -738,6 +743,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.label.html#kqcircuits.util.label.produce_label"><code class="docutils literal notranslate"><span class="pre">produce_label()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.label_polygons.html">kqcircuits.util.label_polygons</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.label_polygons.html#kqcircuits.util.label_polygons.get_text_polygon"><code class="docutils literal notranslate"><span class="pre">get_text_polygon()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.label_polygons.html#kqcircuits.util.label_polygons.load_font_polygons"><code class="docutils literal notranslate"><span class="pre">load_font_polygons()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.layout_to_code.html#kqcircuits.util.layout_to_code.convert_cells_to_code"><code class="docutils literal notranslate"><span class="pre">convert_cells_to_code()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.layout_to_code.html#kqcircuits.util.layout_to_code.get_node_params"><code class="docutils literal notranslate"><span class="pre">get_node_params()</span></code></a></li>
@@ -799,6 +809,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html">kqcircuits.util.replace_junctions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.JunctionEntry"><code class="docutils literal notranslate"><span class="pre">JunctionEntry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.extract_junctions"><code class="docutils literal notranslate"><span class="pre">extract_junctions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.check_static_cell_has_junctions"><code class="docutils literal notranslate"><span class="pre">check_static_cell_has_junctions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.place_junctions"><code class="docutils literal notranslate"><span class="pre">place_junctions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.get_tuned_junction_json"><code class="docutils literal notranslate"><span class="pre">get_tuned_junction_json()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.copy_one_layer_of_cell"><code class="docutils literal notranslate"><span class="pre">copy_one_layer_of_cell()</span></code></a></li>
@@ -991,10 +1002,10 @@
 <span class="sd">    Returns:</span>
 <span class="sd">         A dictionary of libraries that have been loaded, keys are library names and values are libraries.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1"># Try reloading all pcells before deleting libraries, otherwise classes are lost in case of errors</span>
-    <span class="n">all_pcell_classes</span> <span class="o">=</span> <span class="n">_get_all_pcell_classes</span><span class="p">(</span><span class="n">flush</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">flush</span><span class="p">:</span>
+        <span class="c1"># Try reloading all pcells before deleting libraries, otherwise classes are lost in case of errors</span>
+        <span class="n">_get_all_pcell_classes</span><span class="p">(</span><span class="n">flush</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
         <span class="n">delete_all_libraries</span><span class="p">()</span>
         <span class="n">_kqc_libraries</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Deleted all libraries.&quot;</span><span class="p">)</span>
@@ -1004,14 +1015,14 @@
             <span class="k">if</span> <span class="n">lib_path</span> <span class="o">==</span> <span class="n">path</span><span class="p">:</span>
                 <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">_kqc_libraries</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 
-    <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">all_pcell_classes</span><span class="p">:</span>
+    <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="n">_get_all_pcell_classes</span><span class="p">(</span><span class="n">flush</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
 
         <span class="n">library_name</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">LIBRARY_NAME</span>
         <span class="n">library_path</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">LIBRARY_PATH</span>
 
         <span class="n">library</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Library</span><span class="o">.</span><span class="n">library_by_name</span><span class="p">(</span><span class="n">library_name</span><span class="p">)</span>  <span class="c1"># returns only registered libraries</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">library</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="n">flush</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">library_name</span> <span class="ow">in</span> <span class="n">_kqc_libraries</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">library_name</span> <span class="ow">in</span> <span class="n">_kqc_libraries</span><span class="p">:</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;Using created library &quot;</span><span class="si">%s</span><span class="s1">&quot;.&#39;</span><span class="p">,</span> <span class="n">library_name</span><span class="p">)</span>
                 <span class="n">library</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_kqc_libraries</span><span class="p">[</span><span class="n">library_name</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
@@ -1076,7 +1087,7 @@
     <span class="k">if</span> <span class="n">library</span><span class="o">.</span><span class="n">_destroyed</span><span class="p">():</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully deleted library &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">SystemError</span><span class="p">(</span><span class="s2">&quot;Failed to delete library &#39;[]&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span></div>
+        <span class="k">raise</span> <span class="ne">SystemError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to delete library &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span></div>
 
 
 
@@ -1192,7 +1203,7 @@
     <span class="n">library</span><span class="p">,</span> <span class="n">rel_path</span> <span class="o">=</span> <span class="n">_kqc_libraries</span><span class="p">[</span><span class="n">library_name</span><span class="p">]</span>
 
     <span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">SRC_PATHS</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">src</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">/**/*.oas&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rel_path</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">src</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">rel_path</span><span class="si">}</span><span class="s2">/**/*.oas&quot;</span><span class="p">):</span>
             <span class="n">library</span><span class="o">.</span><span class="n">layout</span><span class="p">()</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">absolute</span><span class="p">()))</span>
 
 
@@ -1285,11 +1296,11 @@
 <span class="k">def</span> <span class="nf">_is_valid_class_name</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if string value is valid PEP-8 compliant Python class name.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot convert nil or non-string class name &#39;</span><span class="si">{}</span><span class="s2">&#39; to library name.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot convert nil or non-string class name &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39; to library name.&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[a-zA-Z_][a-zA-Z0-9_]*&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot convert invalid Python class name &#39;</span><span class="si">{}</span><span class="s2">&#39; to library name.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot convert invalid Python class name &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39; to library name.&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([A-Z][a-z0-9]*)+&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;PEP8 compliant class name &#39;</span><span class="si">{}</span><span class="s2">&#39; must be PascalCase without underscores.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PEP8 compliant class name &#39;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&#39; must be PascalCase without underscores.&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_join_module_words</span><span class="p">(</span><span class="n">words</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>

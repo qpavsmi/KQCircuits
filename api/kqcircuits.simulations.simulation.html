@@ -414,6 +414,10 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.meander.html#kqcircuits.elements.meander.Meander"><code class="docutils literal notranslate"><span class="pre">Meander</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.quarter_wave_cpw_resonator.html">kqcircuits.elements.quarter_wave_cpw_resonator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.quarter_wave_cpw_resonator.html#kqcircuits.elements.quarter_wave_cpw_resonator.QuarterWaveCpwResonator"><code class="docutils literal notranslate"><span class="pre">QuarterWaveCpwResonator</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.smooth_capacitor.html">kqcircuits.elements.smooth_capacitor</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.smooth_capacitor.html#kqcircuits.elements.smooth_capacitor.SmoothCapacitor"><code class="docutils literal notranslate"><span class="pre">SmoothCapacitor</span></code></a></li>
 </ul>
@@ -589,6 +593,7 @@
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">kqcircuits.simulations.simulation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#kqcircuits.simulations.simulation.get_simulation_layer_by_name"><code class="docutils literal notranslate"><span class="pre">get_simulation_layer_by_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kqcircuits.simulations.simulation.to_1d_list"><code class="docutils literal notranslate"><span class="pre">to_1d_list()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#kqcircuits.simulations.simulation.Simulation"><code class="docutils literal notranslate"><span class="pre">Simulation</span></code></a></li>
 </ul>
 </li>
@@ -741,6 +746,11 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.label.html#kqcircuits.util.label.produce_label"><code class="docutils literal notranslate"><span class="pre">produce_label()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.label_polygons.html">kqcircuits.util.label_polygons</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.label_polygons.html#kqcircuits.util.label_polygons.get_text_polygon"><code class="docutils literal notranslate"><span class="pre">get_text_polygon()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.label_polygons.html#kqcircuits.util.label_polygons.load_font_polygons"><code class="docutils literal notranslate"><span class="pre">load_font_polygons()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.layout_to_code.html">kqcircuits.util.layout_to_code</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.layout_to_code.html#kqcircuits.util.layout_to_code.convert_cells_to_code"><code class="docutils literal notranslate"><span class="pre">convert_cells_to_code()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.layout_to_code.html#kqcircuits.util.layout_to_code.get_node_params"><code class="docutils literal notranslate"><span class="pre">get_node_params()</span></code></a></li>
@@ -802,6 +812,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.replace_junctions.html">kqcircuits.util.replace_junctions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.JunctionEntry"><code class="docutils literal notranslate"><span class="pre">JunctionEntry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.extract_junctions"><code class="docutils literal notranslate"><span class="pre">extract_junctions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.check_static_cell_has_junctions"><code class="docutils literal notranslate"><span class="pre">check_static_cell_has_junctions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.place_junctions"><code class="docutils literal notranslate"><span class="pre">place_junctions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.get_tuned_junction_json"><code class="docutils literal notranslate"><span class="pre">get_tuned_junction_json()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.copy_one_layer_of_cell"><code class="docutils literal notranslate"><span class="pre">copy_one_layer_of_cell()</span></code></a></li>
@@ -909,6 +920,12 @@
 <span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.simulation.</span></span><span class="sig-name descname"><span class="pre">get_simulation_layer_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/simulation.html#get_simulation_layer_by_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.simulation.get_simulation_layer_by_name" title="Link to this definition"></a></dt>
 <dd><p>Returns layer info of given name. If layer doesn’t exist, a new layer is created.
 New layers are created with data type = 0 and layer numbering starts from 1000.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.simulations.simulation.to_1d_list">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.simulation.</span></span><span class="sig-name descname"><span class="pre">to_1d_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/simulation.html#to_1d_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.simulation.to_1d_list" title="Link to this definition"></a></dt>
+<dd><p>Helper function to cast a scalar or a nested list into a one dimensional list</p>
 </dd></dl>
 
 <dl class="py class">
@@ -1334,8 +1351,6 @@ By default places one point at the middle of the region’s boundary box.</p></l
 <li><p><strong>substrate_material</strong><em> (List)</em><span> - Value can be string or list of strings. Use only keywords introduced in material_dict. Set as list to use individual materials from bottom to top.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['silicon']</span></code></p></li>
 <li><p><strong>material_dict</strong><em> (String)</em><span> - Material property keywords follow Ansys Electromagnetics property names. For example ‘permittivity’, ‘dielectric_loss_tangent’, etc.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">{'silicon':</span> <span class="pre">{'permittivity':</span> <span class="pre">11.45}}</span></code></p></li>
 <li><p><strong>chip_distance</strong><em> (List)</em><span> - The value can be scalar or list of scalars. Set as list to use individual chip distances from bottom to top. The chip distances are measured between the closest layers of the opposing chips.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[8.0]</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">[µm]</span></code></p></li>
-<li><p><strong>ground_metal_height</strong><em> (Double)</em><span> - Only used in Xsection tool and doesn’t affect the 3D model</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.2</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
-<li><p><strong>signal_metal_height</strong><em> (Double)</em><span> - Only used in Xsection tool and doesn’t affect the 3D model</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.2</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>airbridge_height</strong><em> (Double)</em><span> - Height of airbridges.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">3.4</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>metal_height</strong><em> (List)</em><span> - Height of metal sheet on each face.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[0.0]</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>dielectric_height</strong><em> (List)</em><span> - Height of insulator dielectric on each face.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[0.0]</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
@@ -1353,6 +1368,10 @@ By default places one point at the middle of the region’s boundary box.</p></l
 <li><p><strong>polygon_tolerance</strong><em> (Double)</em><span> - Tolerance for merging adjacent polygons in a layer</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.004</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>extra_json_data</strong><em> (None)</em><span> - This field may be used to store ‘virtual’ parameters useful for your simulations</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>junction_total_length</strong><em> (Double)</em><span> - Simulation junction total length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">33</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
+<li><p><strong>junction_upper_pad_width</strong><em> (Double)</em><span> - Simulation junction upper metal pad width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">8</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
+<li><p><strong>junction_upper_pad_length</strong><em> (Double)</em><span> - Simulation junction upper metal pad length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">13</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
+<li><p><strong>junction_lower_pad_width</strong><em> (Double)</em><span> - Simulation junction lower metal pad width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">8</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
+<li><p><strong>junction_lower_pad_length</strong><em> (Double)</em><span> - Simulation junction lower metal pad length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">12</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>a</strong><em> (Double)</em><span> - Width of center conductor</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>b</strong><em> (Double)</em><span> - Width of gap</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">6</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>n</strong><em> (Int)</em><span> - Number of points on turns</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">64</span></code></p></li>
