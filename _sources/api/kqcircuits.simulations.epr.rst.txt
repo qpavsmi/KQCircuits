@@ -1,0 +1,15 @@
+:github_url: hide
+
+kqcircuits.simulations.epr
+==========================
+
+
+.. toctree::
+
+   kqcircuits.simulations.epr.circular_capacitor
+   kqcircuits.simulations.epr.example
+   kqcircuits.simulations.epr.gui_config
+   kqcircuits.simulations.epr.smooth_capacitor
+   kqcircuits.simulations.epr.spiral_capacitor
+   kqcircuits.simulations.epr.swissmon
+   kqcircuits.simulations.epr.util
