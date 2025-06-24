@@ -27,7 +27,7 @@ jobs:
         # Was previously run: ci/init_kqc.sh
         run: |
           python -m pip install -r klayout_package/python/requirements/linux/pip-requirements.txt
-          pip-sync klayout_package/python/requirements/linux/requirements.txt klayout_package/python/requirements/linux/test-requirements.txt
+          pip-sync klayout_package/python/requirements/linux/requirements.txt klayout_package/python/requirements/linux/dev-requirements.txt
           pip install --no-deps -e "klayout_package/python/"
       - name: Select KLayout version
         run: pip install --force-reinstall -r "ci/requirements/${{ matrix.klayout_version }}-requirements.txt"
@@ -65,7 +65,7 @@ jobs:
       - name: Init KQCircuits
         run: |
           python -m pip install -r klayout_package/python/requirements/${{ matrix.os-folder }}/pip-requirements.txt
-          pip-sync klayout_package/python/requirements/${{ matrix.os-folder }}/requirements.txt klayout_package/python/requirements/${{ matrix.os-folder }}/test-requirements.txt
+          pip-sync klayout_package/python/requirements/${{ matrix.os-folder }}/requirements.txt klayout_package/python/requirements/${{ matrix.os-folder }}/dev-requirements.txt
           pip3 install --no-deps -e "klayout_package/python/"
       - name: Select KLayout version
         run: pip3 install --force-reinstall -r "ci/requirements/${{ matrix.klayout_version }}-requirements.txt"
@@ -108,7 +108,7 @@ jobs:
         # Was previously run: ci/init_kqc.sh
         run: |
           python -m pip install -r klayout_package/python/requirements/linux/pip-requirements.txt
-          pip-sync klayout_package/python/requirements/linux/requirements.txt klayout_package/python/requirements/linux/test-requirements.txt
+          pip-sync klayout_package/python/requirements/linux/requirements.txt klayout_package/python/requirements/linux/dev-requirements.txt
           pip install --no-deps -e "klayout_package/python/"
       - name: Run static code analysis
         run: tox -e static_analysis
@@ -142,7 +142,7 @@ jobs:
         # Was previously run: ci/init_kqc.sh
         run: |
           python -m pip install -r klayout_package/python/requirements/linux/pip-requirements.txt
-          pip-sync klayout_package/python/requirements/linux/requirements.txt klayout_package/python/requirements/linux/test-requirements.txt klayout_package/python/requirements/linux/doc-requirements.txt
+          pip-sync klayout_package/python/requirements/linux/requirements.txt klayout_package/python/requirements/linux/dev-requirements.txt
           pip install --no-deps -e "klayout_package/python/"
       - name: Make docs
         run: |
@@ -195,7 +195,7 @@ jobs:
         # Was previously run: ci/init_kqc.sh
         run: |
           python -m pip install -r klayout_package/python/requirements/linux/pip-requirements.txt
-          pip-sync klayout_package/python/requirements/linux/requirements.txt klayout_package/python/requirements/linux/test-requirements.txt
+          pip-sync klayout_package/python/requirements/linux/requirements.txt klayout_package/python/requirements/linux/dev-requirements.txt
           pip install --no-deps -e "klayout_package/python/"
       - name: Run check_layer_props.py
         run:  python util/check_layer_props.py
