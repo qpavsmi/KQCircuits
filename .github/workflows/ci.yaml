@@ -63,16 +63,11 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      - name: macOS setup
-        run: |
-          brew install python
-          ln -s -f /usr/local/bin/python3.10 /usr/local/bin/python
-        if: ${{ matrix.os == 'macos-latest' }}
       - name: Init KQCircuits
         run: |
           python -m pip install -r ci/requirements/tomli-requirements.txt
           python -m pip install -r klayout_package/python/requirements/${{ matrix.os-folder }}/pip-requirements.txt
-          pip-sync klayout_package/python/requirements/${{ matrix.os-folder }}/requirements.txt klayout_package/python/requirements/linux/test-requirements.txt
+          pip-sync klayout_package/python/requirements/${{ matrix.os-folder }}/requirements.txt klayout_package/python/requirements/${{ matrix.os-folder }}/test-requirements.txt
           pip3 install --no-deps -e "klayout_package/python/"
       - name: Select KLayout version
         run: pip3 install --force-reinstall -r "ci/requirements/${{ matrix.klayout_version }}-requirements.txt"
