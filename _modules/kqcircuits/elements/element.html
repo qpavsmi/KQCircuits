@@ -523,6 +523,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.junctions.squid.html#kqcircuits.junctions.squid.Squid"><code class="docutils literal notranslate"><span class="pre">Squid</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.super_inductor.html">kqcircuits.junctions.super_inductor</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.junctions.super_inductor.html#kqcircuits.junctions.super_inductor.SuperInductor"><code class="docutils literal notranslate"><span class="pre">SuperInductor</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.junctions.html#module-kqcircuits.junctions">Module contents</a></li>
 </ul>
 </li>
@@ -591,6 +595,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../api/kqcircuits.simulations.html">kqcircuits.simulations</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.simulations.epr.html">kqcircuits.simulations.epr</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.epr.circular_capacitor.html">kqcircuits.simulations.epr.circular_capacitor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.epr.circular_transmon_single_island.html">kqcircuits.simulations.epr.circular_transmon_single_island</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.epr.double_pads.html">kqcircuits.simulations.epr.double_pads</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.epr.example.html">kqcircuits.simulations.epr.example</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.epr.gui_config.html">kqcircuits.simulations.epr.gui_config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.simulations.epr.smooth_capacitor.html">kqcircuits.simulations.epr.smooth_capacitor</a></li>
@@ -1207,9 +1213,12 @@
             <span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_param_value_map</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">epr_part_reg_prefix</span><span class="p">)</span>
         <span class="p">}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_param_decls</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_param_decls</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">epr_part_reg_prefix</span><span class="p">)]</span>
-        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
-            <span class="k">if</span> <span class="n">attr</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">epr_part_reg_prefix</span><span class="p">):</span>
-                <span class="nb">delattr</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">attr</span><span class="p">)</span>
+        <span class="c1"># Clearing class attributes somehow causes elements derived from superclasses that have</span>
+        <span class="c1"># EPR partition regions to not load in GUI. Seems that not clearing attributes so far</span>
+        <span class="c1"># does not cause bad side-effects</span>
+        <span class="c1"># for attr in dir(type(self)):</span>
+        <span class="c1">#     if attr.startswith(epr_part_reg_prefix):</span>
+        <span class="c1">#         delattr(type(self), attr)</span>
         <span class="c1"># Now add the new parameters</span>
         <span class="k">if</span> <span class="n">to_library_name</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span> <span class="ow">in</span> <span class="n">epr_gui_visualised_partition_regions</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">pr</span> <span class="ow">in</span> <span class="n">epr_gui_visualised_partition_regions</span><span class="p">[</span><span class="n">to_library_name</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)]:</span>
@@ -1680,8 +1689,7 @@
                 <span class="k">if</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">group</span><span class="p">:</span>
                     <span class="k">for</span> <span class="n">other_face</span> <span class="ow">in</span> <span class="n">group</span><span class="p">:</span>
                         <span class="k">if</span> <span class="n">other_face</span> <span class="o">!=</span> <span class="n">face</span><span class="p">:</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">shapes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">,</span> <span class="n">other_face</span><span class="p">))</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span>
-                    <span class="k">break</span></div>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">shapes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">,</span> <span class="n">other_face</span><span class="p">))</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Element.get_sim_ports">
