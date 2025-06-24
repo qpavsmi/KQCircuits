@@ -1,5 +1,5 @@
 klayout
-numpy
+numpy==2.2.6
 scipy
 tqdm
 versiontag
