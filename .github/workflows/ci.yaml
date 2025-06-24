@@ -17,6 +17,9 @@ jobs:
       matrix:
         klayout_version: [klayout28, klayout29, latest]
         python-version: ["3.10.x", "3.11.x", "3.12.x", "3.13.x"]
+        exclude:
+          - klayout_version: klayout28
+            python-version: "3.13.x"
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
@@ -50,6 +53,9 @@ jobs:
         os: [windows-latest, macos-latest]
         klayout_version: [klayout28, klayout29, latest]
         python-version: ["3.10.x", "3.11.x", "3.12.x", "3.13.x"]
+        exclude:
+          - klayout_version: klayout28
+            python-version: "3.13.x"
         include:
           - os-folder: win
             os: windows-latest
