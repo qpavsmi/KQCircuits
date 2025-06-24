@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         klayout_version: [klayout28, klayout29, latest]
-        python-version: ["3.9.x", "3.10.x", "3.11.x", "3.12.x", "3.13.x"]
+        python-version: ["3.10.x", "3.11.x", "3.12.x", "3.13.x"]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
@@ -39,7 +39,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Test results (KLayout=${{ matrix.klayout_version }})
+          name: Test results (KLayout=${{ matrix.klayout_version }} python=${{ matrix.python-version }})
           path: test_report.xml
 
   test_non_linux:
@@ -50,7 +50,7 @@ jobs:
       matrix:
         os: [windows-latest, macos-latest]
         klayout_version: [klayout28, klayout29, latest]
-        python-version: ["3.9.x", "3.10.x", "3.11.x", "3.12.x", "3.13.x"]
+        python-version: ["3.10.x", "3.11.x", "3.12.x", "3.13.x"]
         include:
           - os-folder: win
             os: windows-latest
@@ -83,7 +83,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Test results (${{ matrix.os }} KLayout=${{ matrix.klayout_version }})
+          name: Test results (${{ matrix.os }} KLayout=${{ matrix.klayout_version }} python=${{ matrix.python-version }})
           path: test_report.xml
 
   publish_test_results:
@@ -135,7 +135,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9.x", "3.10.x", "3.11.x", "3.12.x", "3.13.x"]
+        python-version: ["3.10.x", "3.11.x", "3.12.x", "3.13.x"]
     steps:
       - uses: actions/checkout@v2
         with:
