@@ -790,7 +790,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_grid"><code class="docutils literal notranslate"><span class="pre">make_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -810,6 +811,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.label.html">kqcircuits.util.label</a><ul>
@@ -1084,11 +1086,21 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="kqcircuits.simulations.export.simulation_validate.check_elmer_3d_epr_settings">
-<span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.export.simulation_validate.</span></span><span class="sig-name descname"><span class="pre">check_elmer_3d_epr_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/export/simulation_validate.html#check_elmer_3d_epr_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.export.simulation_validate.check_elmer_3d_epr_settings" title="Link to this definition"></a></dt>
-<dd><p>Validation check: Ensures that non-zero metal thickness and <cite>detach_tls_sheets_from_body=False</cite> are used
-with <cite>ElmerEPR3DSolution</cite></p>
+<dt class="sig sig-object py" id="kqcircuits.simulations.export.simulation_validate.check_tls_sheet_generation">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.export.simulation_validate.</span></span><span class="sig-name descname"><span class="pre">check_tls_sheet_generation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/export/simulation_validate.html#check_tls_sheet_generation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.export.simulation_validate.check_tls_sheet_generation" title="Link to this definition"></a></dt>
+<dd><p>Validation check: Ensures that TLS sheets are correctly generated and not overlapping with sheet metals</p>
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.simulations.export.simulation_validate.check_tls_sheets_by_solution">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.export.simulation_validate.</span></span><span class="sig-name descname"><span class="pre">check_tls_sheets_by_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simulation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/export/simulation_validate.html#check_tls_sheets_by_solution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.export.simulation_validate.check_tls_sheets_by_solution" title="Link to this definition"></a></dt>
+<dd><p>Validation check: enforces solution type specific restrictions on TLS sheets</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kqcircuits.simulations.export.simulation_validate.recursive_all">
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.export.simulation_validate.</span></span><span class="sig-name descname"><span class="pre">recursive_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/export/simulation_validate.html#recursive_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.export.simulation_validate.recursive_all" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="kqcircuits.simulations.export.simulation_validate.get_port_names">

@@ -790,7 +790,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_grid"><code class="docutils literal notranslate"><span class="pre">make_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -810,6 +811,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.label.html">kqcircuits.util.label</a><ul>
@@ -1186,9 +1188,7 @@ Defaults to the value of the <cite>r</cite> parameter</p>
 <dt class="sig sig-object py" id="kqcircuits.util.refpoints.JunctionSimPort">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.util.refpoints.</span></span><span class="sig-name descname"><span class="pre">JunctionSimPort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">refpoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'port_squid_a'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_refpoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'port_squid_b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">face</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">floating</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/refpoints.html#JunctionSimPort"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.refpoints.JunctionSimPort" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#kqcircuits.util.refpoints.RefpointToSimPort" title="kqcircuits.util.refpoints.RefpointToSimPort"><code class="xref py py-class docutils literal notranslate"><span class="pre">RefpointToSimPort</span></code></a></p>
-<p>Creates internal ports for a junction in the Simulation object.</p>
-<p>Depending on the value of the <cite>separate_island_internal_ports</cite> parameter, will either create
-two internal ports at both ends of the junction, or one port that covers both junctions.</p>
+<p>Creates internal port for a junction in the Simulation object.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="kqcircuits.util.refpoints.JunctionSimPort.refpoint">
 <span class="sig-name descname"><span class="pre">refpoint</span></span><a class="headerlink" href="#kqcircuits.util.refpoints.JunctionSimPort.refpoint" title="Link to this definition"></a></dt>

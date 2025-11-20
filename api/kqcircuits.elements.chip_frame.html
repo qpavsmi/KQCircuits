@@ -790,7 +790,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_grid"><code class="docutils literal notranslate"><span class="pre">make_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -810,6 +811,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.label.html">kqcircuits.util.label</a><ul>
@@ -1021,12 +1023,16 @@
 <li><p><strong>text_margin</strong><em> (Double)</em><span> - Margin of the ground grid avoidance layer around the text</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code></p></li>
 <li><p><strong>marker_dist</strong><em> (Double)</em><span> - Distance of markers from closest edges of the chip face</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">1500</span></code></p></li>
 <li><p><strong>diagonal_squares</strong><em> (Int)</em><span> - Number of diagonal squares for the markers</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10</span></code></p></li>
-<li><p><strong>use_face_prefix</strong><em> (Boolean)</em><span> - Use face prefix for chip name label</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>marker_types</strong><em> (List)</em><span> - Marker type for each chip corner, clockwise starting from lower left</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard',</span> <span class="pre">'Marker</span> <span class="pre">Standard']</span></code></p></li>
 <li><p><strong>chip_dicing_width</strong><em> (Double)</em><span> - Width of the chip dicing reference line</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">10.0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>chip_dicing_line_length</strong><em> (Double)</em><span> - Length of the chip dicing reference line</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100.0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>chip_dicing_gap_length</strong><em> (Double)</em><span> - Gap between two chip dicing reference dashes</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">50.0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>chip_dicing_in_base_metal</strong><em> (Boolean)</em><span> - Insert chip dicing lines in base metal addition</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>face_label_show</strong><em> (Boolean)</em><span> - Show face label below variant label</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><strong>face_label_size</strong><em> (Double)</em><span> - Vertical size of character in face label</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">75</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
+<li><p><strong>face_label_margin</strong><em> (Double)</em><span> - Margin of the ground grid avoidance layer around the text in face label</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">50</span></code></p></li>
+<li><p><strong>face_label_x</strong><em> (Double)</em><span> - X offset of face label, from top right corner of chip</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">100</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
+<li><p><strong>face_label_y</strong><em> (Double)</em><span> - Y offset of face label, from top right corner of chip</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">450</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 </ul>
 <img alt="../_images/kqcircuits.elements.chip_frame.png" src="../_images/kqcircuits.elements.chip_frame.png" />
 </section>

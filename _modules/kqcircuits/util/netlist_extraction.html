@@ -787,7 +787,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_grid"><code class="docutils literal notranslate"><span class="pre">make_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -807,6 +808,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.label.html">kqcircuits.util.label</a><ul>
@@ -1159,12 +1161,16 @@
     <span class="c1"># retrieve all instances in last_cell hierarchy</span>
     <span class="c1"># instances in original layout are identified by cell index and transformation</span>
     <span class="c1"># the concatenated transformation of instance&#39;s predecessors is stored as tuple&#39;s second element</span>
-    <span class="n">original_instances</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">original_instances_by_cell_index</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">instance_queue</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">last_cell</span><span class="o">.</span><span class="n">each_inst</span><span class="p">())</span>
     <span class="n">instance_queue</span> <span class="o">=</span> <span class="p">[(</span><span class="n">instance</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="o">.</span><span class="n">R0</span><span class="p">)</span> <span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">instance_queue</span><span class="p">]</span>
     <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">instance_queue</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">instance</span><span class="p">,</span> <span class="n">instance_trans</span> <span class="o">=</span> <span class="n">instance_queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">original_instances</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">instance</span><span class="p">,</span> <span class="n">instance_trans</span><span class="p">))</span>
+        <span class="n">cell_index</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">cell_index</span> <span class="ow">in</span> <span class="n">original_instances_by_cell_index</span><span class="p">:</span>
+            <span class="n">original_instances_by_cell_index</span><span class="p">[</span><span class="n">cell_index</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">instance</span><span class="p">,</span> <span class="n">instance_trans</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">original_instances_by_cell_index</span><span class="p">[</span><span class="n">cell_index</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="n">instance</span><span class="p">,</span> <span class="n">instance_trans</span><span class="p">)]</span>
         <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">each_inst</span><span class="p">():</span>
             <span class="n">instance_queue</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">child</span><span class="p">,</span> <span class="n">instance_trans</span> <span class="o">*</span> <span class="n">instance</span><span class="o">.</span><span class="n">dcplx_trans</span><span class="p">))</span>
 
@@ -1177,9 +1183,7 @@
         <span class="n">internal_cell</span> <span class="o">=</span> <span class="n">internal_layout</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">subcircuit</span><span class="o">.</span><span class="n">circuit_ref</span><span class="p">()</span><span class="o">.</span><span class="n">cell_index</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">cell_mapping</span><span class="o">.</span><span class="n">has_mapping</span><span class="p">(</span><span class="n">internal_cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">()):</span>
             <span class="n">original_cell_index</span> <span class="o">=</span> <span class="n">cell_mapping</span><span class="o">.</span><span class="n">cell_mapping</span><span class="p">(</span><span class="n">internal_cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">())</span>
-            <span class="n">possible_instances</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i_trans</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">i_trans</span> <span class="ow">in</span> <span class="n">original_instances</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">()</span> <span class="o">==</span> <span class="n">original_cell_index</span>
-            <span class="p">]</span>
+            <span class="n">possible_instances</span> <span class="o">=</span> <span class="n">original_instances_by_cell_index</span><span class="p">[</span><span class="n">original_cell_index</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">original_cell</span> <span class="o">=</span> <span class="n">original_layout</span><span class="o">.</span><span class="n">cell</span><span class="p">(</span><span class="n">internal_cell</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">original_cell</span><span class="p">:</span>
@@ -1201,9 +1205,7 @@
                     <span class="p">)</span>
                 <span class="p">)</span>
                 <span class="n">original_cell_index</span> <span class="o">=</span> <span class="n">original_cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">()</span>
-                <span class="n">possible_instances</span> <span class="o">=</span> <span class="p">[</span>
-                    <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i_trans</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">i_trans</span> <span class="ow">in</span> <span class="n">original_instances</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">()</span> <span class="o">==</span> <span class="n">original_cell_index</span>
-                <span class="p">]</span>
+                <span class="n">possible_instances</span> <span class="o">=</span> <span class="n">original_instances_by_cell_index</span><span class="p">[</span><span class="n">original_cell_index</span><span class="p">]</span>
 
         <span class="n">used_internal_cells</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">internal_cell</span><span class="p">)</span>
 

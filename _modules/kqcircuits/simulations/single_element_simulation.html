@@ -787,7 +787,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_grid"><code class="docutils literal notranslate"><span class="pre">make_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -807,6 +808,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.label.html">kqcircuits.util.label</a><ul>
@@ -1043,6 +1045,8 @@
 
         <span class="k">if</span> <span class="n">deembed_cross_sections</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">deembed_cs_names</span> <span class="o">=</span> <span class="n">deembed_cross_sections</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">deembed_cs_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
         <span class="c1"># Add ports</span>
         <span class="n">port_i</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1050,7 +1054,7 @@
             <span class="k">if</span> <span class="n">ignore_ports</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">port</span><span class="o">.</span><span class="n">refpoint</span> <span class="ow">in</span> <span class="n">ignore_ports</span><span class="p">:</span>
                 <span class="k">continue</span>
 
-            <span class="k">if</span> <span class="n">deembed_cross_sections</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">port</span><span class="o">.</span><span class="n">refpoint</span> <span class="ow">in</span> <span class="n">deembed_cs_names</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">port</span><span class="o">.</span><span class="n">refpoint</span> <span class="ow">in</span> <span class="n">deembed_cs_names</span><span class="p">:</span>
                 <span class="n">port</span><span class="o">.</span><span class="n">deembed_cross_section</span> <span class="o">=</span> <span class="n">deembed_cross_sections</span><span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">refpoint</span><span class="p">]</span>
 
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">RefpointToInternalPort</span><span class="p">):</span>
@@ -1104,21 +1108,17 @@
                 <span class="p">)</span>
 
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="n">JunctionSimPort</span><span class="p">):</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">separate_island_internal_ports</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InternalPort</span><span class="p">((</span><span class="n">port_i</span> <span class="o">:=</span> <span class="n">port_i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">refp</span><span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">refpoint</span><span class="p">],</span> <span class="n">face</span><span class="o">=</span><span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">))</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">InternalPort</span><span class="p">((</span><span class="n">port_i</span> <span class="o">:=</span> <span class="n">port_i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">refp</span><span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">other_refpoint</span><span class="p">],</span> <span class="n">face</span><span class="o">=</span><span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">))</span>
-                <span class="k">else</span><span class="p">:</span>  <span class="c1"># Junction between the islands</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                        <span class="n">InternalPort</span><span class="p">(</span>
-                            <span class="p">(</span><span class="n">port_i</span> <span class="o">:=</span> <span class="n">port_i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
-                            <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">etched_line</span><span class="p">(</span><span class="n">refp</span><span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">refpoint</span><span class="p">],</span> <span class="n">refp</span><span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">other_refpoint</span><span class="p">]),</span>
-                            <span class="n">face</span><span class="o">=</span><span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">,</span>
-                            <span class="n">inductance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">junction_inductance</span><span class="p">,</span>
-                            <span class="n">capacitance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">junction_capacitance</span><span class="p">,</span>
-                            <span class="n">junction</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                            <span class="n">floating</span><span class="o">=</span><span class="n">port</span><span class="o">.</span><span class="n">floating</span><span class="p">,</span>
-                        <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">InternalPort</span><span class="p">(</span>
+                        <span class="p">(</span><span class="n">port_i</span> <span class="o">:=</span> <span class="n">port_i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                        <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">etched_line</span><span class="p">(</span><span class="n">refp</span><span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">refpoint</span><span class="p">],</span> <span class="n">refp</span><span class="p">[</span><span class="n">port</span><span class="o">.</span><span class="n">other_refpoint</span><span class="p">]),</span>
+                        <span class="n">face</span><span class="o">=</span><span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">,</span>
+                        <span class="n">inductance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">junction_inductance</span><span class="p">,</span>
+                        <span class="n">capacitance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">junction_capacitance</span><span class="p">,</span>
+                        <span class="n">junction</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                        <span class="n">floating</span><span class="o">=</span><span class="n">port</span><span class="o">.</span><span class="n">floating</span><span class="p">,</span>
                     <span class="p">)</span>
+                <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">_build_for_element_class</span>
 
@@ -1152,11 +1152,6 @@
 <span class="sd">            `simulation.epr.smooth_capacitor.py`, deembed_cross_sections[&#39;port_a&#39;]=&#39;port_amer&#39;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">overriden_class_attributes</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;separate_island_internal_ports&quot;</span><span class="p">:</span> <span class="n">Param</span><span class="p">(</span>
-            <span class="n">pdt</span><span class="o">.</span><span class="n">TypeBoolean</span><span class="p">,</span>
-            <span class="s2">&quot;Add InternalPorts on both islands (if applicable). Use for capacitive simulations&quot;</span><span class="p">,</span>
-            <span class="kc">False</span><span class="p">,</span>
-        <span class="p">),</span>
         <span class="s2">&quot;junction_inductance&quot;</span><span class="p">:</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeList</span><span class="p">,</span> <span class="s2">&quot;Junction inductance (if junction exists)&quot;</span><span class="p">,</span> <span class="mf">11.497e-9</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;H&quot;</span><span class="p">),</span>
         <span class="s2">&quot;junction_capacitance&quot;</span><span class="p">:</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeList</span><span class="p">,</span> <span class="s2">&quot;Junction capacitance (if junction exists)&quot;</span><span class="p">,</span> <span class="mf">0.1e-15</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">),</span>
         <span class="s2">&quot;build&quot;</span><span class="p">:</span> <span class="n">_get_build_function</span><span class="p">(</span>
@@ -1164,7 +1159,14 @@
         <span class="p">),</span>
     <span class="p">}</span>
     <span class="k">if</span> <span class="n">partition_region_function</span><span class="p">:</span>
-        <span class="n">overriden_class_attributes</span><span class="p">[</span><span class="s2">&quot;get_partition_regions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">partition_region_function</span>
+        <span class="n">_cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">_get_partition_regions</span><span class="p">(</span><span class="n">simulation</span><span class="p">:</span> <span class="n">Simulation</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">simulation</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_cache</span><span class="p">:</span>
+                <span class="n">_cache</span><span class="p">[</span><span class="n">simulation</span><span class="p">]</span> <span class="o">=</span> <span class="n">partition_region_function</span><span class="p">(</span><span class="n">simulation</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">_cache</span><span class="p">[</span><span class="n">simulation</span><span class="p">]</span>
+
+        <span class="n">overriden_class_attributes</span><span class="p">[</span><span class="s2">&quot;get_partition_regions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_get_partition_regions</span>
     <span class="n">element_sim_class</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span>
         <span class="sa">f</span><span class="s2">&quot;SingleElementSimulationClassFor</span><span class="si">{</span><span class="n">element_class</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
         <span class="p">(</span><span class="n">Simulation</span><span class="p">,),</span>

@@ -787,7 +787,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_grid"><code class="docutils literal notranslate"><span class="pre">make_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -807,6 +808,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.label.html">kqcircuits.util.label</a><ul>
@@ -1076,6 +1078,18 @@
         <span class="n">step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_len</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">inter_space</span>
         <span class="n">stripe_step</span> <span class="o">=</span> <span class="n">step</span> <span class="o">*</span> <span class="mi">2</span>
 
+        <span class="p">(</span>
+            <span class="n">stripe_start</span><span class="p">,</span>
+            <span class="n">stripe_reach</span><span class="p">,</span>
+            <span class="n">stripe_bottom_left_x</span><span class="p">,</span>
+            <span class="n">stripe_bottom_left_y</span><span class="p">,</span>
+            <span class="n">stripe_top_right_x</span><span class="p">,</span>
+            <span class="n">stripe_top_right_y</span><span class="p">,</span>
+            <span class="n">square_y_start</span><span class="p">,</span>
+            <span class="n">square_x_step</span><span class="p">,</span>
+            <span class="n">square_y_step</span><span class="p">,</span>
+        <span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">==</span> <span class="s2">&quot;Vertical&quot;</span><span class="p">:</span>
             <span class="n">stripe_start</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">dice_width</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">inter_space</span>
             <span class="n">stripe_reach</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">width</span>
@@ -1099,6 +1113,9 @@
 
             <span class="n">square_y_step</span> <span class="o">=</span> <span class="n">step</span> <span class="o">*</span> <span class="mi">2</span>
             <span class="n">square_x_step</span> <span class="o">=</span> <span class="n">step</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported axis value: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">axis</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="c1"># creating the stripes for all of the ground grid</span>
         <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">stripe_start</span><span class="p">,</span> <span class="n">stripe_reach</span><span class="p">,</span> <span class="n">stripe_step</span><span class="p">):</span>

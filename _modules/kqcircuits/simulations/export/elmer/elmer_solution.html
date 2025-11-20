@@ -787,7 +787,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_grid"><code class="docutils literal notranslate"><span class="pre">make_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -807,6 +808,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../api/kqcircuits.util.label.html">kqcircuits.util.label</a><ul>
@@ -1030,16 +1032,20 @@
 <span class="sd">        is_axisymmetric: Simulate with Axi Symmetric coordinates along :math:`y\\Big|_{x=0}` (Default: False)</span>
 <span class="sd">        mesh_levels: If set larger than 1 Elmer will make the mesh finer by dividing each element</span>
 <span class="sd">                     into 2^(dim) elements mesh_levels times. Default 1.</span>
-<span class="sd">        mesh_size: Dictionary to determine mesh size where key (string) denotes material and value (double) denotes the</span>
-<span class="sd">            maximal length of mesh element. Additional mesh size terms can be determined, if the value type is</span>
-<span class="sd">            list. Then, term[0] is the maximal mesh element length inside at the entity and its expansion,</span>
-<span class="sd">            term[1] is expansion distance in which the maximal mesh element length is constant (default=term[0]),</span>
-<span class="sd">            and term[2] is the slope of the increase in the maximal mesh element length outside the entity.</span>
-<span class="sd">            To refine material interface the material names by should be separated by &#39;&amp;&#39; in the key. Key &#39;global_max&#39;</span>
-<span class="sd">            is reserved for setting global maximal element length. For example, if the dictionary is given as</span>
-<span class="sd">            {&#39;substrate&#39;: 10, &#39;substrate&amp;vacuum&#39;: [2, 5], &#39;global_max&#39;: 100}, then the maximal mesh element length is 10</span>
-<span class="sd">            inside the substrate and 2 on region which is less than 5 units away from the substrate-vacuum interface.</span>
-<span class="sd">            Outside these regions, the mesh element size can increase up to 100.</span>
+<span class="sd">        mesh_size: Dictionary to determine the mesh refinement. The keys (string) denote the entities where to apply the</span>
+<span class="sd">            refinement and values (double) denote the maximal length of the mesh elements.</span>
+<span class="sd">            Optionally, the values can be set as a lists of doubles. Then, value[0] is the maximal mesh element length</span>
+<span class="sd">            inside at the entity and its expansion, value[1] is expansion distance in which the maximal mesh element</span>
+<span class="sd">            length is constant (default=value[0]), and value[2] is the slope of the increase in the maximal mesh element</span>
+<span class="sd">            length outside the entity.</span>
+<span class="sd">            The key can be a single layer name, or it can consist of multiple layer names separated with the &amp; symbol,</span>
+<span class="sd">            meaning the entity will be an intersection of listed layers. Optionally, one can use a pattern for layer</span>
+<span class="sd">            names with the * symbol representing any string in a layer name. The ! symbol before the layer name or</span>
+<span class="sd">            pattern means that the complement of layer(s) is used instead.</span>
+<span class="sd">            The key &#39;global_max&#39; is reserved for setting global maximal element length.</span>
+<span class="sd">            For example, if the dictionary is {&#39;substrate*&#39;: 10, &#39;substrate*&amp;vacuum&#39;: [2, 5], &#39;global_max&#39;: 100}, then</span>
+<span class="sd">            the maximal mesh element length is 10 inside the substrates and 2 on region which is less than 5 units away</span>
+<span class="sd">            from any substrate-vacuum interface. Outside these regions, the mesh element size can increase up to 100.</span>
 <span class="sd">        mesh_optimizer: Dictionary to determine mesh optimization, or None (default) to ignore optimization. The</span>
 <span class="sd">            dictionary can contain keywords &#39;method&#39;, &#39;force&#39;, &#39;niter&#39; and &#39;dimTags&#39;. See Gmsh manual</span>
 <span class="sd">            (gmsh.model.mesh.optimize) for details. The default value for &#39;method&#39; is &#39;Netgen&#39;.</span>
@@ -1145,6 +1151,7 @@
 <span class="sd">        convergence_tolerance: Convergence tolerance of the iterative solver.</span>
 <span class="sd">        max_iterations: Maximum number of iterations for the iterative solver.</span>
 <span class="sd">        linear_system_preconditioning: Choice of preconditioner before using an iterative linear system solver</span>
+<span class="sd">        electric_infinity_bc: effectively extend the model domain to infinity using spherical boundary conditions</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">tool</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;capacitance&quot;</span>
@@ -1154,7 +1161,8 @@
     <span class="n">integrate_energies</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">convergence_tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
     <span class="n">max_iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">500</span>
-    <span class="n">linear_system_preconditioning</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ILU0&quot;</span></div>
+    <span class="n">linear_system_preconditioning</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ILU0&quot;</span>
+    <span class="n">electric_infinity_bc</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></div>
 
 
 
@@ -1186,6 +1194,7 @@
 <span class="sd">        linear_system_preconditioning: Choice of preconditioner before using an iterative linear system solver</span>
 <span class="sd">        voltage_excitations: Can be used to excite signals with arbitrary voltages, instead of 1V. If this parameter is</span>
 <span class="sd">                             used, no capacitances will be computed.</span>
+<span class="sd">        electric_infinity_bc: effectively extend the model domain to infinity using spherical boundary conditions</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">tool</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;cross-section&quot;</span>
@@ -1198,7 +1207,8 @@
     <span class="n">max_iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">500</span>
     <span class="n">run_inductance_sim</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">linear_system_preconditioning</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ILU0&quot;</span>
-    <span class="n">voltage_excitations</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+    <span class="n">voltage_excitations</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">electric_infinity_bc</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></div>
 
 
 
@@ -1222,7 +1232,7 @@
 <span class="sd">        linear_system_preconditioning: Choice of preconditioner before using an iterative linear system solver</span>
 <span class="sd">        voltage_excitations: Can be used to excite signals with arbitrary voltages, instead of 1V. If this parameter is</span>
 <span class="sd">                             used, no capacitances will be computed.</span>
-
+<span class="sd">        electric_infinity_bc: effectively extend the model domain to infinity using spherical boundary conditions</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">tool</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;epr_3d&quot;</span>
@@ -1232,7 +1242,8 @@
     <span class="n">convergence_tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0e-9</span>
     <span class="n">max_iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span>
     <span class="n">linear_system_preconditioning</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ILU0&quot;</span>
-    <span class="n">voltage_excitations</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+    <span class="n">voltage_excitations</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">electric_infinity_bc</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span></div>
 
 
 

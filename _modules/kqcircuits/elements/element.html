@@ -787,7 +787,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_grid"><code class="docutils literal notranslate"><span class="pre">make_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -807,6 +808,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.label.html">kqcircuits.util.label</a><ul>
@@ -1015,7 +1017,7 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">importlib.util</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">inspect</span><span class="w"> </span><span class="kn">import</span> <span class="n">isclass</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.defaults</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_layers</span><span class="p">,</span> <span class="n">default_faces</span><span class="p">,</span> <span class="n">default_parameter_values</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.defaults</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_layers</span><span class="p">,</span> <span class="n">default_faces</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.pya_resolver</span><span class="w"> </span><span class="kn">import</span> <span class="n">pya</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.simulations.epr.gui_config</span><span class="w"> </span><span class="kn">import</span> <span class="n">epr_gui_visualised_partition_regions</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.util.geometry_helper</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_cell_path_length</span>
@@ -1170,7 +1172,6 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="bp">cls</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="n">mro</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__mro__</span>
 
         <span class="c1"># We may need to redefine a Param object, because multiple classes may refer to the same Param object</span>
         <span class="c1"># due to inheritance, so modifying the existing Param object could affect other classes.</span>
@@ -1193,16 +1194,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_param_value_map</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">get_schema</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="n">parameter_order_key</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_param_value_map</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_param_decls</span><span class="p">)</span>  <span class="c1"># pylint: disable=access-member-before-definition</span>
-            <span class="c1"># Override default value based on default_parameter_values if needed.</span>
-            <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="n">mro</span><span class="p">:</span>
-                <span class="n">cls_name</span> <span class="o">=</span> <span class="n">cl</span><span class="o">.</span><span class="vm">__qualname__</span>
-                <span class="k">if</span> <span class="n">cls_name</span> <span class="ow">in</span> <span class="n">default_parameter_values</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">default_parameter_values</span><span class="p">[</span><span class="n">cls_name</span><span class="p">]:</span>
-                    <span class="c1"># Ensure that the `cl` default overrides the value only if it is not overridden</span>
-                    <span class="c1"># by another class below `cl` in the hierarchy.</span>
-                    <span class="k">if</span> <span class="n">cl</span> <span class="o">!=</span> <span class="bp">cls</span> <span class="ow">and</span> <span class="n">cl</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">!=</span> <span class="n">p</span><span class="p">:</span>
-                        <span class="k">break</span>
-                    <span class="n">p</span> <span class="o">=</span> <span class="n">_redef_param</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">default_parameter_values</span><span class="p">[</span><span class="n">cls_name</span><span class="p">][</span><span class="n">name</span><span class="p">])</span>
-                    <span class="k">break</span>
+
             <span class="bp">self</span><span class="o">.</span><span class="n">_add_parameter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">data_type</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">description</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="o">**</span><span class="n">p</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
 
         <span class="c1"># Allocate PCell parameters for partition regions to draw in GUI.</span>

@@ -787,7 +787,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_grid"><code class="docutils literal notranslate"><span class="pre">make_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -807,6 +808,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.label.html">kqcircuits.util.label</a><ul>
@@ -1012,7 +1014,7 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.pya_resolver</span><span class="w"> </span><span class="kn">import</span> <span class="n">pya</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.simulations.partition_region</span><span class="w"> </span><span class="kn">import</span> <span class="n">PartitionRegion</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.simulations.epr.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_bulk_and_mer_partition_regions</span>
 
 
 <div class="viewcode-block" id="partition_regions">
@@ -1056,15 +1058,14 @@
 
         <span class="n">coupler_region</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPolygon</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
 
-        <span class="n">regions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="n">PartitionRegion</span><span class="p">(</span>
-                <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">cplrmer&quot;</span><span class="p">,</span>
-                <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                <span class="n">region</span><span class="o">=</span><span class="n">coupler_region</span><span class="p">,</span>
-                <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
-                <span class="n">vertical_dimensions</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
-                <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="p">)</span>
+        <span class="n">regions</span> <span class="o">+=</span> <span class="n">create_bulk_and_mer_partition_regions</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">cplr&quot;</span><span class="p">,</span>
+            <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+            <span class="n">region</span><span class="o">=</span><span class="n">coupler_region</span><span class="p">,</span>
+            <span class="n">vertical_dimensions</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
+            <span class="n">bulk</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="c1"># Junction hall partition region</span>
@@ -1090,27 +1091,25 @@
     <span class="n">hall_transform</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">simulation</span><span class="o">.</span><span class="n">squid_angle</span> <span class="o">-</span> <span class="mi">90</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">junction_pos</span> <span class="o">+</span> <span class="n">simulation</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;base&quot;</span><span class="p">])</span>
     <span class="n">hall_region</span> <span class="o">=</span> <span class="n">hall_transform</span> <span class="o">*</span> <span class="n">hall_rect</span>
 
-    <span class="n">regions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-        <span class="n">PartitionRegion</span><span class="p">(</span>
-            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;leadsmer&quot;</span><span class="p">,</span>
-            <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-            <span class="n">region</span><span class="o">=</span><span class="n">hall_region</span><span class="p">,</span>
-            <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
-            <span class="n">vertical_dimensions</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
-            <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="p">)</span>
+    <span class="n">regions</span> <span class="o">+=</span> <span class="n">create_bulk_and_mer_partition_regions</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;leads&quot;</span><span class="p">,</span>
+        <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+        <span class="n">region</span><span class="o">=</span><span class="n">hall_region</span><span class="p">,</span>
+        <span class="n">vertical_dimensions</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
+        <span class="n">bulk</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="c1"># Main island complement region</span>
-    <span class="n">regions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-        <span class="n">PartitionRegion</span><span class="p">(</span>
-            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;bcomplementmer&quot;</span><span class="p">,</span>
-            <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-            <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
-            <span class="n">vertical_dimensions</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
-            <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="p">)</span>
+    <span class="n">regions</span> <span class="o">+=</span> <span class="n">create_bulk_and_mer_partition_regions</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">complement&quot;</span><span class="p">,</span>
+        <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+        <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">vertical_dimensions</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
+        <span class="n">bulk</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">regions</span></div>
@@ -1208,7 +1207,7 @@
         <span class="p">(</span><span class="n">simulation</span><span class="o">.</span><span class="n">r_island</span> <span class="o">+</span> <span class="n">simulation</span><span class="o">.</span><span class="n">ground_gap</span> <span class="o">+</span> <span class="n">gap_distance</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">complement_angle</span><span class="p">),</span>
     <span class="p">)</span>
 
-    <span class="n">cuts</span><span class="p">[</span><span class="s2">&quot;bcomplementmer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">cuts</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">complementmer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;p1&quot;</span><span class="p">:</span> <span class="n">inner_point</span> <span class="o">+</span> <span class="n">simulation</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;base&quot;</span><span class="p">],</span>
         <span class="s2">&quot;p2&quot;</span><span class="p">:</span> <span class="n">outer_point</span> <span class="o">+</span> <span class="n">simulation</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;base&quot;</span><span class="p">],</span>
     <span class="p">}</span>

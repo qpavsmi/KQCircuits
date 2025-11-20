@@ -787,7 +787,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_grid"><code class="docutils literal notranslate"><span class="pre">make_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -807,6 +808,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../api/kqcircuits.util.label.html">kqcircuits.util.label</a><ul>
@@ -1013,7 +1015,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.pya_resolver</span><span class="w"> </span><span class="kn">import</span> <span class="n">pya</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.elements.smooth_capacitor</span><span class="w"> </span><span class="kn">import</span> <span class="n">SmoothCapacitor</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.elements.finger_capacitor_square</span><span class="w"> </span><span class="kn">import</span> <span class="n">eval_a2</span><span class="p">,</span> <span class="n">eval_b2</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.simulations.epr.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">in_gui</span><span class="p">,</span> <span class="n">EPRTarget</span><span class="p">,</span> <span class="n">get_mer_z</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.simulations.epr.util</span><span class="w"> </span><span class="kn">import</span> <span class="n">in_gui</span><span class="p">,</span> <span class="n">EPRTarget</span><span class="p">,</span> <span class="n">get_mer_z</span><span class="p">,</span> <span class="n">create_bulk_and_mer_partition_regions</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.simulations.partition_region</span><span class="w"> </span><span class="kn">import</span> <span class="n">PartitionRegion</span>
 
 
@@ -1076,97 +1078,52 @@
             <span class="n">port_b_middley</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">port_b_middle</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
             <span class="n">port_b_region</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DBox</span><span class="p">(</span><span class="n">port_b_middle</span> <span class="o">-</span> <span class="n">port_b_dp</span><span class="p">,</span> <span class="n">port_b_dpx_edge</span> <span class="o">+</span> <span class="n">port_b_middley</span> <span class="o">+</span> <span class="n">port_b_dpy</span><span class="p">)</span>
 
-        <span class="n">result</span> <span class="o">+=</span> <span class="p">[</span>
-            <span class="n">PartitionRegion</span><span class="p">(</span>
-                <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">port_bmer&quot;</span><span class="p">,</span>
-                <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="n">metal_edge_dimension</span><span class="p">,</span>
-                <span class="n">region</span><span class="o">=</span><span class="n">port_b_region</span><span class="p">,</span>
-                <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
-                <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="n">PartitionRegion</span><span class="p">(</span>
-                <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">port_bbulk&quot;</span><span class="p">,</span>
-                <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                <span class="n">region</span><span class="o">=</span><span class="n">port_b_region</span><span class="p">,</span>
-                <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
-                <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="n">PartitionRegion</span><span class="p">(</span>
-                <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">port_amer&quot;</span><span class="p">,</span>
-                <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="n">metal_edge_dimension</span><span class="p">,</span>
-                <span class="n">region</span><span class="o">=</span><span class="n">port_a_region</span><span class="p">,</span>
-                <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
-                <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="n">PartitionRegion</span><span class="p">(</span>
-                <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">port_abulk&quot;</span><span class="p">,</span>
-                <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                <span class="n">region</span><span class="o">=</span><span class="n">port_a_region</span><span class="p">,</span>
-                <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
-                <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="p">),</span>
-        <span class="p">]</span>
-
-    <span class="n">result</span> <span class="o">+=</span> <span class="p">[</span>
-        <span class="n">PartitionRegion</span><span class="p">(</span>
-            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">fingersmer&quot;</span><span class="p">,</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">create_bulk_and_mer_partition_regions</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">port_b&quot;</span><span class="p">,</span>
             <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
             <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="n">metal_edge_dimension</span><span class="p">,</span>
-            <span class="n">region</span><span class="o">=</span><span class="n">fingers</span><span class="p">,</span>
+            <span class="n">region</span><span class="o">=</span><span class="n">port_b_region</span><span class="p">,</span>
             <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
             <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="p">),</span>
-        <span class="n">PartitionRegion</span><span class="p">(</span>
-            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">fingersbulk&quot;</span><span class="p">,</span>
-            <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-            <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">region</span><span class="o">=</span><span class="n">fingers</span><span class="p">,</span>
-            <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
-            <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="p">),</span>
-        <span class="n">PartitionRegion</span><span class="p">(</span>
-            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">bcomplementmer&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">create_bulk_and_mer_partition_regions</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">port_a&quot;</span><span class="p">,</span>
             <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
             <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="n">metal_edge_dimension</span><span class="p">,</span>
-            <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">region</span><span class="o">=</span><span class="n">port_a_region</span><span class="p">,</span>
             <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
             <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="p">),</span>
-        <span class="n">PartitionRegion</span><span class="p">(</span>
-            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">bcomplementbulk&quot;</span><span class="p">,</span>
-            <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-            <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
-            <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="p">),</span>
-    <span class="p">]</span>
-
+        <span class="p">)</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="n">create_bulk_and_mer_partition_regions</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">fingers&quot;</span><span class="p">,</span>
+        <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="n">metal_edge_dimension</span><span class="p">,</span>
+        <span class="n">region</span><span class="o">=</span><span class="n">fingers</span><span class="p">,</span>
+        <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
+        <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="n">create_bulk_and_mer_partition_regions</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}{</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">complement&quot;</span><span class="p">,</span>
+        <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="n">metal_edge_dimension</span><span class="p">,</span>
+        <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
+        <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="k">if</span> <span class="n">in_gui</span><span class="p">(</span><span class="n">simulation</span><span class="p">):</span>
         <span class="n">make_t_regions</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">make_t_regions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_stack</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">make_t_regions</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">+=</span> <span class="p">[</span>
-            <span class="n">PartitionRegion</span><span class="p">(</span>
-                <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">tcomplementmer&quot;</span><span class="p">,</span>
-                <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="n">metal_edge_dimension</span><span class="p">,</span>
-                <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
-                <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="n">PartitionRegion</span><span class="p">(</span>
-                <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">tcomplementbulk&quot;</span><span class="p">,</span>
-                <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
-                <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="p">),</span>
-        <span class="p">]</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">create_bulk_and_mer_partition_regions</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}{</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">complement&quot;</span><span class="p">,</span>
+            <span class="n">face</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">metal_edge_dimensions</span><span class="o">=</span><span class="n">metal_edge_dimension</span><span class="p">,</span>
+            <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">vertical_dimensions</span><span class="o">=</span><span class="n">vertical_dimension</span><span class="p">,</span>
+            <span class="n">visualise</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">result</span></div>
 
@@ -1218,7 +1175,7 @@
                 <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">fingersmer_end</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span> <span class="o">-</span> <span class="n">simulation</span><span class="o">.</span><span class="n">finger_width</span> <span class="o">*</span> <span class="mf">0.9</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="n">z_me</span><span class="p">},</span>
             <span class="p">],</span>
         <span class="p">},</span>
-        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">bcomplementmer&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}{</span><span class="n">simulation</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">complementmer&quot;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">&quot;p1&quot;</span><span class="p">:</span> <span class="n">finger_top</span> <span class="o">+</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">simulation</span><span class="o">.</span><span class="n">ground_gap</span> <span class="o">+</span> <span class="n">half_cut_len</span><span class="p">),</span>
             <span class="s2">&quot;p2&quot;</span><span class="p">:</span> <span class="n">finger_top</span> <span class="o">-</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">simulation</span><span class="o">.</span><span class="n">finger_width</span> <span class="o">*</span> <span class="mf">0.9</span><span class="p">),</span>
             <span class="s2">&quot;metal_edges&quot;</span><span class="p">:</span> <span class="p">[</span>
