@@ -95,6 +95,7 @@ class CutSimulation(CrossSectionSimulation):
 
         regions = {}
         sheet_metals = {}
+        skew_edge_intersections = {}
         for name, data in self.source_sim.layers.items():
             if "layer" not in data:
                 segments = [(0.0, cut_length)]
@@ -105,13 +106,11 @@ class CutSimulation(CrossSectionSimulation):
                 for polygon in intersection.each():
                     crossing_edges = [e for e in polygon.each_edge() if cut_edge.crossed_by(e)]
 
-                    # Warn if cross-section is taken with non-orthogonal edges
+                    # Save intersections with non-orthogonal cuts
                     skew_edges = [e for e in crossing_edges if abs(cut_vector.sprod(e.d())) > max_cut_vector_sprod]
                     for skew_edge in skew_edges:
-                        logging.warning(
-                            f"Cross section is taken with non-orthogonal edge from simulation '{self.source_sim.name}' "
-                            f"layer '{name}' at location ({cut_edge.crossing_point(skew_edge).to_dtype(layout.dbu)})."
-                        )
+                        skew_p = cut_edge.crossing_point(skew_edge).to_dtype(layout.dbu)
+                        skew_edge_intersections[name] = skew_edge_intersections.get(name, []) + [skew_p]
 
                     # Calculate intersection as value between 0 and cut length
                     dists = [
@@ -147,6 +146,13 @@ class CutSimulation(CrossSectionSimulation):
             if data.get("material") is not None:
                 excitation = {"excitation": data["excitation"]} if "excitation" in data else {}
                 self.insert_layer(name, regions[name], data["material"], **excitation)
+
+        # Warn if cross-section is taken with non-orthogonal edges
+        if skew_edge_intersections:
+            logging.warning(
+                f"Cross section '{self.name}' is taken with non-orthogonal edge from simulation"
+                f" '{self.source_sim.name}'. Layers and intersections: {skew_edge_intersections}"
+            )
 
         self.insert_sheet_metals(sheet_metals)
 
