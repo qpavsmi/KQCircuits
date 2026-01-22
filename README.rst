@@ -103,7 +103,8 @@ For standalone installation run command
 
    python -m pip install -e "klayout_package/python[dev,sim]"
 
-Further details available in the `documentation <https://iqm-finland.github.io/KQCircuits/developer/standalone.html>`__.
+For further installation details when it comes
+to setting up a reproducible KQCircuits python environment, see `this documentation <https://iqm-finland.github.io/KQCircuits/developer/standalone.html>`__.
 
 Documentation
 -------------

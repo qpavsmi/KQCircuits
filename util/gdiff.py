@@ -92,7 +92,7 @@ if __name__ == "__main__":
         print("B only:", f)
 
     file_pairs = ((a.joinpath(f), b.joinpath(f)) for f in sorted(list(db & da)))
-    pmap = Pool(int(argv[argv.index("-c") + 1])).map if "-c" in argv else map  # pylint: disable=consider-using-with
+    pmap = Pool(int(argv[argv.index("-c") + 1])).map if "-c" in argv else map  # pylint: disable=C0103,R1732
 
     for d in pmap(_filediff, file_pairs):
         if d and "-k" in argv:

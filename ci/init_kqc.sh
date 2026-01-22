@@ -1,14 +1,19 @@
 #!/bin/sh
 mkdir -p "$HOME"/.klayout/python .pip-cache
-python -m pip install -r klayout_package/python/requirements/linux/pip-requirements.txt
-pip-sync klayout_package/python/requirements/linux/requirements.txt \
-    klayout_package/python/requirements/linux/dev-requirements.txt --pip-args "--cache-dir=.pip-cache"
+# Using --break-system-packages looks scary.
+# Python encourages to install pip packages on a dedicated virtual environment.
+# For CI this causes headaches that I'd rather not deal with,
+# so for simplicity we force the installation to "system" python
+# since this script is only intended to be executed by a Docker image.
+python -m pip install --cache-dir=.pip-cache --break-system-packages \
+    -r klayout_package/python/requirements/linux/requirements.txt \
+    -r klayout_package/python/requirements/linux/dev-requirements.txt
 ret=$?
 if [ $ret -ne 0 ]; then
-    echo "Can't install KQCircuits: pip-sync failed"
+    echo "Can't install KQCircuits: installing requirements.txt failed"
     exit $ret
 fi
-pip --cache-dir=.pip-cache install --no-deps -e "klayout_package/python/"
+pip --cache-dir=.pip-cache install --break-system-packages --no-deps -e "klayout_package/python/"
 ret=$?
 if [ $ret -ne 0 ]; then
     echo "Can't install KQCircuits: pip install --no-deps failed"

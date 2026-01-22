@@ -6,7 +6,7 @@ define_variables () {
     ####################
 
     # Only applies to CentOS. Ubuntu uses the latest python
-    export PYTHON_VERSION="3.10.11"
+    export PYTHON_VERSION="3.13.11"
 
     export OPENSSL_VERSION="1.1.1t"
     # KLayout version
@@ -61,8 +61,8 @@ install_yum_packages () {
 }
 
 install_deb_packages () {
-    KL_FILE="klayout_0.30.1-1_amd64.deb"
-    KL_HASH="11953ce5009a0e83f9840b506f80df49"
+    KL_FILE="klayout_0.30.5-1_amd64.deb"
+    KL_HASH="c63629bdebe20261c2cfaaa0827c6ab8"
 
     apt update ; apt install -y apt-utils; apt upgrade -y
     DEBIAN_FRONTEND=noninteractive apt install -y tzdata
@@ -70,7 +70,7 @@ install_deb_packages () {
     apt install -y libopenblas-dev m4 libhdf5-dev gfortran build-essential cmake
     # These were needed by gmsh
     apt install -y libxcursor-dev libgl1 libglib2.0-0 libxinerama1
-    wget -q https://www.klayout.org/downloads/Ubuntu-22/$KL_FILE
+    wget -q https://www.klayout.org/downloads/Ubuntu-24/$KL_FILE
     echo "$KL_HASH  $KL_FILE" > klayout.md5
     md5sum --check klayout.md5 || exit
     apt install -y ./$KL_FILE
@@ -318,8 +318,8 @@ install_kqcircuits_and_deps_centos () {
     # KQCircuits installation #
     ###########################
 
-    KL_FILE="klayout-0.30.1-0.x86_64.rpm"
-    KL_HASH="368143dfdbfe5119f915fbf6d1efa067"
+    KL_FILE="klayout-0.30.5-0.x86_64.rpm"
+    KL_HASH="3a93b2c52b4620b6a495dc411451606d"
 
     yum -y install -y xorg-x11-server-Xvfb mesa-libGL libXft-devel
     yum -y install -y paraview

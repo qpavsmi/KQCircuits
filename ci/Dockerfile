@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 LABEL version="0.4"
 LABEL description="KQCircuits image for CLI and CI"
@@ -8,12 +8,12 @@ WORKDIR /kqc
 ENV DISPLAY :99
 ENV XDG_RUNTIME_DIR=/tmp
 ARG DEBIAN_FRONTEND=noninteractive
-ARG KL_FILE=klayout_0.30.1-1_amd64.deb
-ARG KL_HASH=11953ce5009a0e83f9840b506f80df49
+ARG KL_FILE=klayout_0.30.5-1_amd64.deb
+ARG KL_HASH=c63629bdebe20261c2cfaaa0827c6ab8
 
 RUN apt-get update && apt-get install -y apt-utils && apt-get upgrade -y && \
     apt-get install -y wget xvfb python-is-python3 python3-pip git libcurl4 libglu1-mesa libxft-dev jq shellcheck graphviz && \
-    wget -q https://www.klayout.org/downloads/Ubuntu-22/$KL_FILE && \
+    wget -q https://www.klayout.org/downloads/Ubuntu-24/$KL_FILE && \
     echo "$KL_HASH  $KL_FILE" > klayout.md5 && \
     md5sum --check klayout.md5  && \
     apt-get install -y ./$KL_FILE && \

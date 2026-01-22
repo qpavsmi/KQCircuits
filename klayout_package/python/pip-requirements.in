@@ -1,3 +1,0 @@
-pip-tools
-# tomli needed for python3.10 environment
-tomli
