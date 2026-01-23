@@ -468,7 +468,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_composite.html">kqcircuits.elements.waveguide_composite</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.WaveguideComposite"><code class="docutils literal notranslate"><span class="pre">WaveguideComposite</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.produce_fixed_length_bend"><code class="docutils literal notranslate"><span class="pre">produce_fixed_length_bend()</span></code></a></li>
 </ul>
@@ -743,6 +742,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.error_on_cell.html">kqcircuits.util.error_on_cell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.all_cell_parents"><code class="docutils literal notranslate"><span class="pre">all_cell_parents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.find_cells_with_error"><code class="docutils literal notranslate"><span class="pre">find_cells_with_error()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.formatted_errors_on_cells"><code class="docutils literal notranslate"><span class="pre">formatted_errors_on_cells()</span></code></a></li>
 </ul>
@@ -798,6 +798,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.replace_node"><code class="docutils literal notranslate"><span class="pre">replace_node()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.get_all_node_elements"><code class="docutils literal notranslate"><span class="pre">get_all_node_elements()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.get_valid_node_elements"><code class="docutils literal notranslate"><span class="pre">get_valid_node_elements()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_waveguide_editing.html">kqcircuits.util.gui_waveguide_editing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_waveguide_editing.html#kqcircuits.util.gui_waveguide_editing.coerce_nodes_with_gui_path"><code class="docutils literal notranslate"><span class="pre">coerce_nodes_with_gui_path()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.import_helper.html">kqcircuits.util.import_helper</a><ul>
@@ -862,6 +866,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.netlist_graph.html#kqcircuits.util.netlist_graph.network_as_graph"><code class="docutils literal notranslate"><span class="pre">network_as_graph()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.netlist_graph.html#kqcircuits.util.netlist_graph.draw_graph"><code class="docutils literal notranslate"><span class="pre">draw_graph()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.node.html">kqcircuits.util.node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.node.html#kqcircuits.util.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.parameters.html">kqcircuits.util.parameters</a><ul>
@@ -1083,9 +1091,11 @@
         <span class="c1"># Create temporary SQUID cell to calculate SQUID height</span>
         <span class="n">temp_squid_cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">Squid</span><span class="p">,</span> <span class="n">junction_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">junction_type</span><span class="p">)</span>
         <span class="n">temp_squid_ref</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_refpoints</span><span class="p">(</span><span class="n">temp_squid_cell</span><span class="p">)</span>
-        <span class="n">squid_height</span> <span class="o">=</span> <span class="n">temp_squid_ref</span><span class="p">[</span><span class="s2">&quot;port_common&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">squid_height</span> <span class="o">=</span> <span class="n">temp_squid_ref</span><span class="p">[</span><span class="s2">&quot;port_common&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">temp_squid_ref</span><span class="p">[</span><span class="s2">&quot;origin_squid&quot;</span><span class="p">])</span>
         <span class="c1"># Now actually add SQUID</span>
-        <span class="n">squid_transf</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">squid_offset</span> <span class="o">-</span> <span class="n">squid_height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">squid_transf</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span>
+            <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">squid_offset</span> <span class="o">-</span> <span class="n">squid_height</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">temp_squid_ref</span><span class="p">[</span><span class="s2">&quot;origin_squid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_squid</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">produce_squid</span><span class="p">(</span><span class="n">squid_transf</span><span class="p">)</span>
@@ -1142,11 +1152,7 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;probe_island_2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span>
             <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">squid_offset</span> <span class="o">-</span> <span class="n">squid_height</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">taper_height</span> <span class="o">-</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">island2_extent</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
-        <span class="p">)</span>
-
-        <span class="c1"># Now actually add SQUID</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;junction1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">squid_height</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">refpoints</span><span class="p">[</span><span class="s2">&quot;junction2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">squid_height</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span></div>
+        <span class="p">)</span></div>
 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_build_coupler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_island_top_edge</span><span class="p">):</span>
@@ -1233,7 +1239,7 @@
 <a class="viewcode-back" href="../../../api/kqcircuits.qubits.double_pads.html#kqcircuits.qubits.double_pads.DoublePads.get_sim_ports">[docs]</a>
     <span class="nd">@classmethod</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_sim_ports</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">simulation</span><span class="p">):</span>  <span class="c1"># pylint: disable=unused-argument</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">JunctionSimPort</span><span class="p">(</span><span class="n">floating</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">WaveguideToSimPort</span><span class="p">(</span><span class="s2">&quot;port_cplr&quot;</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)]</span></div>
+        <span class="k">return</span> <span class="p">[</span><span class="n">JunctionSimPort</span><span class="p">(</span><span class="n">floating</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">WaveguideToSimPort</span><span class="p">(</span><span class="s2">&quot;port_cplr&quot;</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">simulation</span><span class="o">.</span><span class="n">coupler_a</span><span class="p">)]</span></div>
 </div>
 
 </pre></div>
@@ -1245,7 +1251,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021-2025, IQM.</p>
+    <p>&#169; Copyright 2021-2026, IQM.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

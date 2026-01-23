@@ -471,7 +471,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html">kqcircuits.elements.waveguide_composite</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.WaveguideComposite"><code class="docutils literal notranslate"><span class="pre">WaveguideComposite</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.produce_fixed_length_bend"><code class="docutils literal notranslate"><span class="pre">produce_fixed_length_bend()</span></code></a></li>
 </ul>
@@ -746,6 +745,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.error_on_cell.html">kqcircuits.util.error_on_cell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.all_cell_parents"><code class="docutils literal notranslate"><span class="pre">all_cell_parents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.find_cells_with_error"><code class="docutils literal notranslate"><span class="pre">find_cells_with_error()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.formatted_errors_on_cells"><code class="docutils literal notranslate"><span class="pre">formatted_errors_on_cells()</span></code></a></li>
 </ul>
@@ -801,6 +801,10 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.replace_node"><code class="docutils literal notranslate"><span class="pre">replace_node()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.get_all_node_elements"><code class="docutils literal notranslate"><span class="pre">get_all_node_elements()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.get_valid_node_elements"><code class="docutils literal notranslate"><span class="pre">get_valid_node_elements()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.gui_waveguide_editing.html">kqcircuits.util.gui_waveguide_editing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_waveguide_editing.html#kqcircuits.util.gui_waveguide_editing.coerce_nodes_with_gui_path"><code class="docutils literal notranslate"><span class="pre">coerce_nodes_with_gui_path()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.import_helper.html">kqcircuits.util.import_helper</a><ul>
@@ -865,6 +869,10 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.netlist_graph.html#kqcircuits.util.netlist_graph.network_as_graph"><code class="docutils literal notranslate"><span class="pre">network_as_graph()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.netlist_graph.html#kqcircuits.util.netlist_graph.draw_graph"><code class="docutils literal notranslate"><span class="pre">draw_graph()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.node.html">kqcircuits.util.node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.node.html#kqcircuits.util.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.parameters.html">kqcircuits.util.parameters</a><ul>
@@ -997,7 +1005,7 @@
 <span id="kqcircuits-util-groundgrid"></span><h1>kqcircuits.util.groundgrid<a class="headerlink" href="#module-kqcircuits.util.groundgrid" title="Link to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="kqcircuits.util.groundgrid.insert_ground_grid">
-<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.groundgrid.</span></span><span class="sig-name descname"><span class="pre">insert_ground_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_cell</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">LayerInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_area</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Box</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Region</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">RecursiveShapeIterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/groundgrid.html#insert_ground_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.groundgrid.insert_ground_grid" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.groundgrid.</span></span><span class="sig-name descname"><span class="pre">insert_ground_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_cell</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">LayerInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_area</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Box</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Region</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">RecursiveShapeIterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/groundgrid.html#insert_ground_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.groundgrid.insert_ground_grid" title="Link to this definition"></a></dt>
 <dd><p>Generates ground grid as shapes in a target cell, without cell hierarchy.
 This function uses integer database units for all inputs.</p>
 <dl class="field-list simple">
@@ -1009,6 +1017,9 @@ This function uses integer database units for all inputs.</p>
 <li><p><strong>protection</strong> – Region to avoid when filling grid</p></li>
 <li><p><strong>grid_step</strong> – distance between grid rectangles</p></li>
 <li><p><strong>grid_size</strong> – size of grid rectangles</p></li>
+<li><p><strong>grid_offset</strong> – Value between 0 (inclusive) and grid_step/grid_size (exclusive) to place grid rectangle.
+0 (default) for bottom left of grid_step * grid_step tile, increasing integer value places rectangle
+further up and right. Ensures multiple grids don’t overlap.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1016,7 +1027,7 @@ This function uses integer database units for all inputs.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="kqcircuits.util.groundgrid.make_ground_grid_region">
-<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.groundgrid.</span></span><span class="sig-name descname"><span class="pre">make_ground_grid_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_area</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Box</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Region</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">RecursiveShapeIterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Region</span></span></span><a class="reference internal" href="../_modules/kqcircuits/util/groundgrid.html#make_ground_grid_region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.groundgrid.make_ground_grid_region" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">kqcircuits.util.groundgrid.</span></span><span class="sig-name descname"><span class="pre">make_ground_grid_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_area</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Box</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Region</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">RecursiveShapeIterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_step</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Region</span></span></span><a class="reference internal" href="../_modules/kqcircuits/util/groundgrid.html#make_ground_grid_region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.groundgrid.make_ground_grid_region" title="Link to this definition"></a></dt>
 <dd><p>Returns ground grid as a <code class="docutils literal notranslate"><span class="pre">Region</span></code>. This function uses integer database units for all inputs.</p>
 <p>Note: <code class="docutils literal notranslate"><span class="pre">insert_ground_grid</span></code> is more efficient if the grid will be inserted into a cell.</p>
 <dl class="field-list simple">
@@ -1027,6 +1038,9 @@ This function uses integer database units for all inputs.</p>
 <li><p><strong>protection</strong> – Region to avoid when filling grid</p></li>
 <li><p><strong>grid_step</strong> – distance between grid rectangles</p></li>
 <li><p><strong>grid_size</strong> – size of grid rectangles</p></li>
+<li><p><strong>grid_offset</strong> – Value between 0 (inclusive) and grid_step/grid_size (exclusive) to place grid rectangle.
+0 (default) for bottom left of grid_step * grid_step tile, increasing integer value places rectangle
+further up and right. Ensures multiple grids don’t overlap.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1047,7 +1061,7 @@ This function uses integer database units for all inputs.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021-2025, IQM.</p>
+    <p>&#169; Copyright 2021-2026, IQM.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

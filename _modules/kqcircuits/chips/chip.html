@@ -468,7 +468,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_composite.html">kqcircuits.elements.waveguide_composite</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.WaveguideComposite"><code class="docutils literal notranslate"><span class="pre">WaveguideComposite</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.produce_fixed_length_bend"><code class="docutils literal notranslate"><span class="pre">produce_fixed_length_bend()</span></code></a></li>
 </ul>
@@ -743,6 +742,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.error_on_cell.html">kqcircuits.util.error_on_cell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.all_cell_parents"><code class="docutils literal notranslate"><span class="pre">all_cell_parents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.find_cells_with_error"><code class="docutils literal notranslate"><span class="pre">find_cells_with_error()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.formatted_errors_on_cells"><code class="docutils literal notranslate"><span class="pre">formatted_errors_on_cells()</span></code></a></li>
 </ul>
@@ -798,6 +798,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.replace_node"><code class="docutils literal notranslate"><span class="pre">replace_node()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.get_all_node_elements"><code class="docutils literal notranslate"><span class="pre">get_all_node_elements()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.get_valid_node_elements"><code class="docutils literal notranslate"><span class="pre">get_valid_node_elements()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_waveguide_editing.html">kqcircuits.util.gui_waveguide_editing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_waveguide_editing.html#kqcircuits.util.gui_waveguide_editing.coerce_nodes_with_gui_path"><code class="docutils literal notranslate"><span class="pre">coerce_nodes_with_gui_path()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.import_helper.html">kqcircuits.util.import_helper</a><ul>
@@ -862,6 +866,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.netlist_graph.html#kqcircuits.util.netlist_graph.network_as_graph"><code class="docutils literal notranslate"><span class="pre">network_as_graph()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.netlist_graph.html#kqcircuits.util.netlist_graph.draw_graph"><code class="docutils literal notranslate"><span class="pre">draw_graph()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.node.html">kqcircuits.util.node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.node.html#kqcircuits.util.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.parameters.html">kqcircuits.util.parameters</a><ul>
@@ -1115,6 +1123,7 @@
         <span class="n">pdt</span><span class="o">.</span><span class="n">TypeList</span><span class="p">,</span> <span class="s2">&quot;List of booleans specifying if the frame is mirrored for each chip frame&quot;</span><span class="p">,</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
     <span class="p">)</span>
     <span class="n">frames_dice_width</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeList</span><span class="p">,</span> <span class="s2">&quot;Dicing street width for each chip frame&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">140</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;[μm]&quot;</span><span class="p">)</span>
+    <span class="n">frames_dice_grid_margin</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeList</span><span class="p">,</span> <span class="s2">&quot;Dicing street margin for each chip frame&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;[μm]&quot;</span><span class="p">)</span>
 
     <span class="n">face_boxes</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span>
         <span class="n">pdt</span><span class="o">.</span><span class="n">TypeShape</span><span class="p">,</span>
@@ -1343,16 +1352,14 @@
                 <span class="n">marker_dist</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frames_marker_dist</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
                 <span class="n">diagonal_squares</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frames_diagonal_squares</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
                 <span class="n">marker_types</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">marker_types</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">4</span> <span class="p">:</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">],</span>
+                <span class="n">dice_grid_margin</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frames_dice_grid_margin</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
             <span class="p">)</span>
 
             <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">frames_mirrored</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;true&quot;</span><span class="p">:</span>  <span class="c1"># Accept both boolean and string representation</span>
                 <span class="n">frame_trans</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="n">frame_box</span><span class="o">.</span><span class="n">center</span><span class="p">())</span> <span class="o">*</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="o">.</span><span class="n">M90</span> <span class="o">*</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="o">-</span><span class="n">frame_box</span><span class="o">.</span><span class="n">center</span><span class="p">())</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">frame_trans</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">produce_frame</span><span class="p">(</span><span class="n">frame_parameters</span><span class="p">,</span> <span class="n">frame_trans</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_gnd_tsvs</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_produce_ground_tsvs</span><span class="p">(</span><span class="n">tsv_box</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">enlarged</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_tsv</span><span class="p">),</span> <span class="n">faces</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">produce_frame</span><span class="p">(</span><span class="n">frame_parameters</span><span class="p">,</span> <span class="n">frame_trans</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Chip.get_box">
@@ -1498,6 +1505,8 @@
 <a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip.post_build">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">post_build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">produce_structures</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_gnd_tsvs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_produce_ground_tsvs</span><span class="p">(</span><span class="n">tsv_box</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">enlarged</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_tsv</span><span class="p">),</span> <span class="n">faces</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_gnd_bumps</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_produce_ground_bumps</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">with_grid</span><span class="p">:</span>
@@ -1808,7 +1817,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021-2025, IQM.</p>
+    <p>&#169; Copyright 2021-2026, IQM.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -471,7 +471,6 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html">kqcircuits.elements.waveguide_composite</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.WaveguideComposite"><code class="docutils literal notranslate"><span class="pre">WaveguideComposite</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.waveguide_composite.html#kqcircuits.elements.waveguide_composite.produce_fixed_length_bend"><code class="docutils literal notranslate"><span class="pre">produce_fixed_length_bend()</span></code></a></li>
 </ul>
@@ -746,6 +745,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.error_on_cell.html">kqcircuits.util.error_on_cell</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.all_cell_parents"><code class="docutils literal notranslate"><span class="pre">all_cell_parents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.find_cells_with_error"><code class="docutils literal notranslate"><span class="pre">find_cells_with_error()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.error_on_cell.html#kqcircuits.util.error_on_cell.formatted_errors_on_cells"><code class="docutils literal notranslate"><span class="pre">formatted_errors_on_cells()</span></code></a></li>
 </ul>
@@ -801,6 +801,10 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.replace_node"><code class="docutils literal notranslate"><span class="pre">replace_node()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.get_all_node_elements"><code class="docutils literal notranslate"><span class="pre">get_all_node_elements()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_helper.html#kqcircuits.util.gui_helper.get_valid_node_elements"><code class="docutils literal notranslate"><span class="pre">get_valid_node_elements()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.gui_waveguide_editing.html">kqcircuits.util.gui_waveguide_editing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_waveguide_editing.html#kqcircuits.util.gui_waveguide_editing.coerce_nodes_with_gui_path"><code class="docutils literal notranslate"><span class="pre">coerce_nodes_with_gui_path()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.import_helper.html">kqcircuits.util.import_helper</a><ul>
@@ -865,6 +869,10 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.netlist_graph.html">kqcircuits.util.netlist_graph</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.netlist_graph.html#kqcircuits.util.netlist_graph.network_as_graph"><code class="docutils literal notranslate"><span class="pre">network_as_graph()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.netlist_graph.html#kqcircuits.util.netlist_graph.draw_graph"><code class="docutils literal notranslate"><span class="pre">draw_graph()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.node.html">kqcircuits.util.node</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.node.html#kqcircuits.util.node.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.parameters.html">kqcircuits.util.parameters</a><ul>
@@ -1055,6 +1063,12 @@ is excluded from the dictionary.</p>
 <dd><p>Returns a list of positions.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="kqcircuits.util.refpoints.Refpoints.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/util/refpoints.html#Refpoints.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.util.refpoints.Refpoints.get" title="Link to this definition"></a></dt>
+<dd><p>Get value under <cite>key</cite> if it exists, otherwise return <cite>default</cite></p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -1230,7 +1244,7 @@ Defaults to “port_squid_b” as most commonly used junction port name</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021-2025, IQM.</p>
+    <p>&#169; Copyright 2021-2026, IQM.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
