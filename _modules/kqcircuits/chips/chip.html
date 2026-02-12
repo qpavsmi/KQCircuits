@@ -48,9 +48,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation/klayout.html#python">Python</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../installation/known_issues.html">Known installation issues</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#standalone-klayout-python-library">Standalone KLayout python library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#gui-klayout-application">GUI KLayout application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../installation/known_issues.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -204,10 +211,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/setup.html">Developer GUI Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#prerequisites">Prerequisites</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/setup.html#python">Python</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#install">Install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#unlinking">Unlinking</a></li>
@@ -223,12 +227,13 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#installation">Installation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#basic-installation">1. Basic installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#pypi-installation">4. PyPI Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#usage">Usage</a></li>
@@ -1461,7 +1466,7 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the element which will be used for the ground bumps&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">FlipChipConnector</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_produce_ground_bumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">faces</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]):</span>  <span class="c1"># pylint: disable=dangerous-default-value</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_produce_ground_bumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">faces</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">extra_filter_regions</span><span class="o">=</span><span class="p">[]):</span>  <span class="c1"># pylint: disable=dangerous-default-value</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produces a grid of indium bumps between given faces.</span>
 
 <span class="sd">        The bumps avoid ground grid avoidance on both faces, and keep a minimum distance to existing bumps.</span>
@@ -1481,6 +1486,7 @@
             <span class="p">[(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">]</span>
             <span class="o">+</span> <span class="p">[(</span><span class="s2">&quot;indium_bump&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bump_edge_to_bump_edge_separation</span><span class="p">)</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">]</span>
             <span class="o">+</span> <span class="p">[(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tsv_edge_to_nearest_element</span><span class="p">)</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">]</span>
+            <span class="o">+</span> <span class="n">extra_filter_regions</span>
         <span class="p">)</span>
         <span class="n">bump_box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_box</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">enlarged</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_bump</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_bump</span><span class="p">))</span>
         <span class="n">locations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ground_bump_locations</span><span class="p">(</span><span class="n">bump_box</span><span class="p">)</span>

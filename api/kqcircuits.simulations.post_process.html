@@ -51,9 +51,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/klayout.html">Installing KLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/klayout.html">Installing KLayout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation/klayout.html#python">Python</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/known_issues.html">Known installation issues</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/known_issues.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation/known_issues.html#standalone-klayout-python-library">Standalone KLayout python library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation/known_issues.html#gui-klayout-application">GUI KLayout application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../installation/known_issues.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -207,10 +214,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Developer Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../developer/setup.html">Developer GUI Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#prerequisites">Prerequisites</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../developer/setup.html#python">Python</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#install">Install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/setup.html#unlinking">Unlinking</a></li>
@@ -226,12 +230,13 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#installation">Installation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#basic-installation">1. Basic installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#pypi-installation">4. PyPI Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../developer/standalone.html#usage">Usage</a></li>
@@ -1005,14 +1010,15 @@
 <span id="kqcircuits-simulations-post-process"></span><h1>kqcircuits.simulations.post_process<a class="headerlink" href="#module-kqcircuits.simulations.post_process" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="kqcircuits.simulations.post_process.PostProcess">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.post_process.</span></span><span class="sig-name descname"><span class="pre">PostProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'python'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'scripts'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat_for_each</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_file_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/post_process.html#PostProcess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.post_process.PostProcess" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.post_process.</span></span><span class="sig-name descname"><span class="pre">PostProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'python'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arguments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'scripts'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat_for_each</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_file_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/post_process.html#PostProcess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.post_process.PostProcess" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base class for adding post-processing scripts into the simulation batch</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>script</strong> – name of the post-processing script</p></li>
-<li><p><strong>command</strong> – command to run the post-processing script</p></li>
+<li><p><strong>script</strong> – name of the post-processing script.
+If script has no extension, a platform dependent .sh or .bat is used.</p></li>
+<li><p><strong>command</strong> – command to run the post-processing script. If None, a platform dependent “sh” or “call” is used.</p></li>
 <li><p><strong>arguments</strong> – command line arguments for the post-processing script given as string</p></li>
 <li><p><strong>folder</strong> – path where to look for the post-processing script file</p></li>
 <li><p><strong>repeat_for_each</strong> – whether to repeat the post-processing script for every simulation. The simulation json file

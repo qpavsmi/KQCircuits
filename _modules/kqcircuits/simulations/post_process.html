@@ -48,9 +48,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation/klayout.html#python">Python</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../installation/known_issues.html">Known installation issues</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#standalone-klayout-python-library">Standalone KLayout python library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#gui-klayout-application">GUI KLayout application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../installation/known_issues.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -204,10 +211,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/setup.html">Developer GUI Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#prerequisites">Prerequisites</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/setup.html#python">Python</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#install">Install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#unlinking">Unlinking</a></li>
@@ -223,12 +227,13 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#installation">Installation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#basic-installation">1. Basic installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#pypi-installation">4. PyPI Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#usage">Usage</a></li>
@@ -1020,6 +1025,7 @@
 <span class="c1"># Please see our contribution agreements for individuals (meetiqm.com/iqm-individual-contributor-license-agreement)</span>
 <span class="c1"># and organizations (meetiqm.com/iqm-organization-contributor-license-agreement).</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
 
@@ -1031,7 +1037,7 @@
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">script</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-        <span class="n">command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
+        <span class="n">command</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="s2">&quot;python&quot;</span><span class="p">,</span>
         <span class="n">arguments</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="n">folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;scripts&quot;</span><span class="p">,</span>
         <span class="n">repeat_for_each</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -1040,8 +1046,9 @@
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
-<span class="sd">            script: name of the post-processing script</span>
-<span class="sd">            command: command to run the post-processing script</span>
+<span class="sd">            script: name of the post-processing script.</span>
+<span class="sd">                    If script has no extension, a platform dependent .sh or .bat is used.</span>
+<span class="sd">            command: command to run the post-processing script. If None, a platform dependent &quot;sh&quot; or &quot;call&quot; is used.</span>
 <span class="sd">            arguments: command line arguments for the post-processing script given as string</span>
 <span class="sd">            folder: path where to look for the post-processing script file</span>
 <span class="sd">            repeat_for_each: whether to repeat the post-processing script for every simulation. The simulation json file</span>
@@ -1049,6 +1056,13 @@
 <span class="sd">            data_file_prefix: prefix of the saved data file if data is given</span>
 <span class="sd">            data: additional data to be saved into a file. The data file name becomes the last command line argument.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">Path</span><span class="p">(</span><span class="n">script</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="n">script</span> <span class="o">=</span> <span class="n">script</span> <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;.bat&quot;</span> <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span> <span class="k">else</span> <span class="s2">&quot;.sh&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">command</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;call&quot;</span> <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span> <span class="k">else</span> <span class="s2">&quot;sh&quot;</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">script</span> <span class="o">=</span> <span class="n">script</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="n">command</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span> <span class="o">=</span> <span class="n">arguments</span>

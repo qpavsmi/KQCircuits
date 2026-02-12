@@ -48,9 +48,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation/klayout.html#python">Python</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../installation/known_issues.html">Known installation issues</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#standalone-klayout-python-library">Standalone KLayout python library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#gui-klayout-application">GUI KLayout application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../installation/known_issues.html#installing-different-python-package-versions-to-klayout-manually">Installing different Python package versions to KLayout manually</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -204,10 +211,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer/index.html">Developer Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/setup.html">Developer GUI Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#prerequisites">Prerequisites</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/setup.html#python">Python</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#install">Install</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/setup.html#unlinking">Unlinking</a></li>
@@ -223,12 +227,13 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developer/standalone.html">Developer Standalone module Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#sources">Sources</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#installation">Installation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#basic-installation">1. Basic installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#reproducible-secure-installation">2. Reproducible, Secure Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#kqcircuits-exclusive-python-environment">3. KQCircuits exclusive python environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#pypi-installation">4. PyPI Installation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#dependency-extensions">Dependency extensions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../developer/standalone.html#pypi-installation">PyPI Installation</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../developer/standalone.html#usage">Usage</a></li>
@@ -1292,12 +1297,11 @@
     <span class="n">chip_for_export</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">if</span> <span class="n">pcell</span><span class="o">.</span><span class="n">pcell_declaration</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">chip_params</span> <span class="o">=</span> <span class="n">pcell</span><span class="o">.</span><span class="n">pcell_parameters_by_name</span><span class="p">()</span>
-        <span class="k">if</span> <span class="p">{</span><span class="s2">&quot;frames_enabled&quot;</span><span class="p">,</span> <span class="s2">&quot;face_boxes&quot;</span><span class="p">,</span> <span class="s2">&quot;face_ids&quot;</span><span class="p">,</span> <span class="s2">&quot;box&quot;</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">chip_params</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-            <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">chip_params</span><span class="p">[</span><span class="s2">&quot;frames_enabled&quot;</span><span class="p">]:</span>
-                <span class="n">face_box</span> <span class="o">=</span> <span class="n">chip_params</span><span class="p">[</span><span class="s2">&quot;face_boxes&quot;</span><span class="p">][</span><span class="nb">int</span><span class="p">(</span><span class="n">face</span><span class="p">)]</span>
+        <span class="n">chip_for_export</span><span class="p">[</span><span class="s2">&quot;face_ids&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">chip_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;face_ids&quot;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">if</span> <span class="p">{</span><span class="s2">&quot;face_boxes&quot;</span><span class="p">,</span> <span class="s2">&quot;face_ids&quot;</span><span class="p">,</span> <span class="s2">&quot;box&quot;</span><span class="p">}</span> <span class="o">&lt;=</span> <span class="nb">set</span><span class="p">(</span><span class="n">chip_params</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+            <span class="k">for</span> <span class="n">face_id</span><span class="p">,</span> <span class="n">face_box</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">chip_params</span><span class="p">[</span><span class="s2">&quot;face_ids&quot;</span><span class="p">],</span> <span class="n">chip_params</span><span class="p">[</span><span class="s2">&quot;face_boxes&quot;</span><span class="p">]):</span>
                 <span class="k">if</span> <span class="n">face_box</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">face_box</span> <span class="o">=</span> <span class="n">chip_params</span><span class="p">[</span><span class="s2">&quot;box&quot;</span><span class="p">]</span>
-                <span class="n">face_id</span> <span class="o">=</span> <span class="n">chip_params</span><span class="p">[</span><span class="s2">&quot;face_ids&quot;</span><span class="p">][</span><span class="nb">int</span><span class="p">(</span><span class="n">face</span><span class="p">)]</span>
                 <span class="n">chip_for_export</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">face_id</span><span class="si">}</span><span class="s2">_face_dimensions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">face_box</span>
 
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
