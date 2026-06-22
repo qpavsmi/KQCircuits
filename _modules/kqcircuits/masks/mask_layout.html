@@ -48,10 +48,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../installation/klayout.html#python">Python</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../installation/known_issues.html">Known installation issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#standalone-klayout-python-library">Standalone KLayout python library</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#gui-klayout-application">GUI KLayout application</a><ul>
@@ -488,7 +485,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html">kqcircuits.elements.waveguide_coplanar_splitter</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.WaveguideCoplanarSplitter"><code class="docutils literal notranslate"><span class="pre">WaveguideCoplanarSplitter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.t_cross_parameters"><code class="docutils literal notranslate"><span class="pre">t_cross_parameters()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_straight.html">kqcircuits.elements.waveguide_coplanar_straight</a><ul>
@@ -720,6 +716,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.area.html#kqcircuits.util.area.get_area_and_density"><code class="docutils literal notranslate"><span class="pre">get_area_and_density()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.chip_helpers.html">kqcircuits.util.chip_helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.chip_helpers.html#kqcircuits.util.chip_helpers.produce_instance_name_labels"><code class="docutils literal notranslate"><span class="pre">produce_instance_name_labels()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.count_instances.html">kqcircuits.util.count_instances</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.count_instances.html#kqcircuits.util.count_instances.count_instances_in_cell"><code class="docutils literal notranslate"><span class="pre">count_instances_in_cell()</span></code></a></li>
 </ul>
@@ -781,7 +781,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.arc_points"><code class="docutils literal notranslate"><span class="pre">arc_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_points"><code class="docutils literal notranslate"><span class="pre">bspline_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bezier_points"><code class="docutils literal notranslate"><span class="pre">bezier_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_path"><code class="docutils literal notranslate"><span class="pre">bspline_path()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.force_rounded_corners"><code class="docutils literal notranslate"><span class="pre">force_rounded_corners()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.get_center_of_bounding_box"><code class="docutils literal notranslate"><span class="pre">get_center_of_bounding_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.rotate_arbitrary_degrees"><code class="docutils literal notranslate"><span class="pre">rotate_arbitrary_degrees()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a><ul>
@@ -794,6 +797,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html">kqcircuits.util.gui_epr_preview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_markers"><code class="docutils literal notranslate"><span class="pre">draw_epr_markers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_cross_section_cuts"><code class="docutils literal notranslate"><span class="pre">draw_epr_cross_section_cuts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_partition_regions"><code class="docutils literal notranslate"><span class="pre">draw_epr_partition_regions()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -816,6 +825,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html">kqcircuits.util.instance_hierarchy_helpers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_instance_marker_polygons"><code class="docutils literal notranslate"><span class="pre">get_instance_marker_polygons()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
@@ -907,6 +917,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squids"><code class="docutils literal notranslate"><span class="pre">replace_squids()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squid"><code class="docutils literal notranslate"><span class="pre">replace_squid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.convert_cells_to_static"><code class="docutils literal notranslate"><span class="pre">convert_cells_to_static()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html">kqcircuits.util.static_chip_helper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.clear_layer"><code class="docutils literal notranslate"><span class="pre">clear_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.strip_faces"><code class="docutils literal notranslate"><span class="pre">strip_faces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.get_chip_boundary_box"><code class="docutils literal notranslate"><span class="pre">get_chip_boundary_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.copy_chip_cell_from_face"><code class="docutils literal notranslate"><span class="pre">copy_chip_cell_from_face()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.swap_face"><code class="docutils literal notranslate"><span class="pre">swap_face()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a><ul>
@@ -1048,6 +1066,11 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.util.geometry_helper</span><span class="w"> </span><span class="kn">import</span> <span class="n">circle_polygon</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.util.label</span><span class="w"> </span><span class="kn">import</span> <span class="n">produce_label</span><span class="p">,</span> <span class="n">LabelOrigin</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.util.merge</span><span class="w"> </span><span class="kn">import</span> <span class="n">merge_layout_layers_on_face</span><span class="p">,</span> <span class="n">convert_child_instances_to_static</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.util.static_chip_helper</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_chip_boundary_box</span><span class="p">,</span>
+    <span class="n">copy_chip_cell_from_face</span><span class="p">,</span>
+    <span class="n">swap_face</span><span class="p">,</span>
+<span class="p">)</span>
 
 
 <div class="viewcode-block" id="MaskLayout">
@@ -1201,6 +1224,60 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">extra_chips_maps</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">chips_map</span><span class="p">,</span> <span class="n">chip_size</span><span class="p">,</span> <span class="n">align</span><span class="p">,</span> <span class="n">align_to</span><span class="p">,</span> <span class="n">chip_trans</span><span class="p">))</span></div>
 
 
+<div class="viewcode-block" id="MaskLayout.copy_chip_cell">
+<a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_layout.html#kqcircuits.masks.mask_layout.MaskLayout.copy_chip_cell">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">copy_chip_cell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orig_cell</span><span class="p">,</span> <span class="n">chip_name</span><span class="p">,</span> <span class="n">from_face</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bbox_face_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Copies ``orig_cell`` to a separate cell, with irrelevant faces stripped</span>
+
+<span class="sd">        Adds entry to ``self.chip_bounding_boxes`` as boundary box of the chip</span>
+<span class="sd">        and  entry to ``self.chips_map_legend`` as the cell copy.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            orig_cell: Original cell, not affected after this call</span>
+<span class="sd">            chip_name: Name of the chip, used as key in ``self.chip_bounding_boxes`` and ``self.chips_map_legend``</span>
+<span class="sd">            from_face: Optional. If set, will copy geometry only from this face, instead of ``self.face_id``.</span>
+<span class="sd">                If set, the key ``(chip_name, from_face)`` is used in</span>
+<span class="sd">                ``self.chip_bounding_boxes`` and ``self.chips_map_legend``</span>
+<span class="sd">            bbox_face_ids: Optional. If set, will take the superset bounding box from this list of faces.</span>
+<span class="sd">                Otherwise will only get bounding box from ``from_face``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">from_face</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_cell_name</span> <span class="o">=</span> <span class="n">chip_name</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">chip_name</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new_cell_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">chip_name</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">from_face</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">chip_name</span><span class="p">,</span> <span class="n">from_face</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">bbox_face_ids</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">bbox_face_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">from_face</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chip_bounding_boxes</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_chip_boundary_box</span><span class="p">(</span><span class="n">orig_cell</span><span class="p">,</span> <span class="n">bbox_face_ids</span><span class="p">)</span>
+        <span class="n">new_cell</span> <span class="o">=</span> <span class="n">copy_chip_cell_from_face</span><span class="p">(</span><span class="n">orig_cell</span><span class="p">,</span> <span class="n">new_cell_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">face_id</span> <span class="k">if</span> <span class="n">from_face</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">from_face</span><span class="p">)</span>
+        <span class="c1"># chip_bounding_boxes set to empty box, try finding explicit &#39;box&#39; parameter</span>
+        <span class="k">if</span> <span class="n">from_face</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">chip_bounding_boxes</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>
+            <span class="n">boxes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+                <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;box&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chips_map</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;chip_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">chip_name</span> <span class="ow">and</span> <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;from_face&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">from_face</span> <span class="ow">and</span> <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;box&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">boxes</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Chip </span><span class="si">{</span><span class="n">chip_name</span><span class="si">}</span><span class="s2"> taken from face </span><span class="si">{</span><span class="n">from_face</span><span class="si">}</span><span class="s2"> can&#39;t infer bounding box from geometry, &quot;</span>
+                    <span class="s2">&quot;and didn&#39;t have &#39;box&#39; field in &#39;chips_map&#39;. &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;Expect empty slots in mask layout on face </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">face_id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">boxes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Chip </span><span class="si">{</span><span class="n">chip_name</span><span class="si">}</span><span class="s2"> taken from face </span><span class="si">{</span><span class="n">from_face</span><span class="si">}</span><span class="s2"> has inconsistent &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;&#39;box&#39; values in &#39;chips_map&#39;. Using value </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">boxes</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">chip_bounding_boxes</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">boxes</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_cell</span>
+        <span class="c1"># Swap layers from &quot;from_face&quot; to mask layout&#39;s face_id</span>
+        <span class="k">if</span> <span class="n">from_face</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">from_face</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">face_id</span><span class="p">:</span>
+            <span class="n">swap_face</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">from_face</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">face_id</span><span class="p">)</span></div>
+
+
 <div class="viewcode-block" id="MaskLayout.build">
 <a class="viewcode-back" href="../../../api/kqcircuits.masks.mask_layout.html#kqcircuits.masks.mask_layout.MaskLayout.build">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chips_map_legend</span><span class="p">):</span>
@@ -1221,27 +1298,21 @@
         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">chips_map_legend</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;Building cell hierarchy&quot;</span><span class="p">,</span> <span class="n">bar_format</span><span class="o">=</span><span class="n">default_bar_format</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">chip_counts</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="c1"># create copies of the chips, so that modifying these only affects the ones in this MaskLayout</span>
-            <span class="n">new_cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">create_cell</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-            <span class="n">new_cell</span><span class="o">.</span><span class="n">copy_tree</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">copy_chip_cell</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bbox_face_ids</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">bbox_face_ids</span><span class="p">)</span>
 
-            <span class="c1"># Find the bounding box encompassing base metal gap shapes in all in bbox_face_ids</span>
-            <span class="n">bboxes</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="n">new_cell</span><span class="o">.</span><span class="n">dbbox_per_layer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">default_faces</span><span class="p">[</span><span class="n">face_id</span><span class="p">][</span><span class="s2">&quot;base_metal_gap_wo_grid&quot;</span><span class="p">]))</span>
-                <span class="k">for</span> <span class="n">face_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bbox_face_ids</span>
-            <span class="p">]</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">empty</span><span class="p">()</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bboxes</span><span class="p">):</span>
-                <span class="n">p1_xs</span><span class="p">,</span> <span class="n">p1_ys</span><span class="p">,</span> <span class="n">p2_xs</span><span class="p">,</span> <span class="n">p2_ys</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[(</span><span class="n">b</span><span class="o">.</span><span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bboxes</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">b</span><span class="o">.</span><span class="n">empty</span><span class="p">()])</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">chip_bounding_boxes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DBox</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">p1_xs</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">p1_ys</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">p2_xs</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">p2_ys</span><span class="p">))</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">chip_bounding_boxes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DBox</span><span class="p">()</span>
-
-            <span class="c1"># remove layers belonging to another face</span>
-            <span class="k">for</span> <span class="n">face_id</span><span class="p">,</span> <span class="n">face_dictionary</span> <span class="ow">in</span> <span class="n">default_faces</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                <span class="k">if</span> <span class="n">face_id</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">face_id</span><span class="p">:</span>
-                    <span class="k">for</span> <span class="n">layer_info</span> <span class="ow">in</span> <span class="n">face_dictionary</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-                        <span class="n">new_cell</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">clear</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">layer_info</span><span class="p">))</span>
-
-            <span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_cell</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chips_map</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="c1"># Face swapping feature not currently supported when mask layout built using ``_add_chips_from_map``</span>
+                <span class="c1"># instead of ``_add_chips_map_dict``</span>
+                <span class="k">continue</span>
+            <span class="c1"># From one chip we might take a different geometry set from different faces</span>
+            <span class="c1"># Make separate cell copies for them</span>
+            <span class="n">other_faces</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+                <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;from_face&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chips_map</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;from_face&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;chip_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">other_face</span> <span class="ow">in</span> <span class="n">other_faces</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">copy_chip_cell</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">from_face</span><span class="o">=</span><span class="n">other_face</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">region_covered</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mask_create_geometry</span><span class="p">()</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">submasks</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -1521,6 +1592,7 @@
                     <span class="n">allowed_region</span><span class="o">=</span><span class="n">allowed_region</span><span class="p">,</span>
                     <span class="n">chip_width</span><span class="o">=</span><span class="n">chip_width</span><span class="p">,</span>
                     <span class="n">adjust_trans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">other_face</span><span class="o">=</span><span class="n">chip_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;from_face&quot;</span><span class="p">),</span>
                 <span class="p">)</span>
                 <span class="n">region_used</span> <span class="o">+=</span> <span class="n">region_chip</span>
                 <span class="k">if</span> <span class="n">added_chip</span><span class="p">:</span>
@@ -1581,15 +1653,26 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_max_y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">box</span><span class="o">.</span><span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_y</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_add_chip</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">trans</span><span class="p">,</span> <span class="n">position_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowed_region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chip_width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">adjust_trans</span><span class="o">=</span><span class="kc">True</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">,</span>
+        <span class="n">position</span><span class="p">,</span>
+        <span class="n">trans</span><span class="p">,</span>
+        <span class="n">position_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">allowed_region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">chip_width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">adjust_trans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">other_face</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a tuple (Boolean telling if the chip was added, Region which the chip covers).&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">chip_width</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">chip_width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chip_width</span>
         <span class="n">chip_region</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span><span class="p">:</span>
-            <span class="n">chip_cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-            <span class="n">bounding_box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chip_bounding_boxes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="n">other_face</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">other_face</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span><span class="p">:</span>
+            <span class="n">chip_cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chips_map_legend</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="n">bounding_box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chip_bounding_boxes</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
             <span class="n">bbox_offset</span> <span class="o">=</span> <span class="n">chip_width</span> <span class="o">-</span> <span class="n">bounding_box</span><span class="o">.</span><span class="n">width</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">adjust_trans</span><span class="p">:</span>
                 <span class="n">trans</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="n">position</span> <span class="o">+</span> <span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="n">bbox_offset</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">chip_box_offset</span><span class="p">)</span> <span class="o">*</span> <span class="n">trans</span>

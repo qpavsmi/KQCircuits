@@ -48,10 +48,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../installation/klayout.html#python">Python</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../installation/known_issues.html">Known installation issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#standalone-klayout-python-library">Standalone KLayout python library</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#gui-klayout-application">GUI KLayout application</a><ul>
@@ -488,7 +485,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html">kqcircuits.elements.waveguide_coplanar_splitter</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.WaveguideCoplanarSplitter"><code class="docutils literal notranslate"><span class="pre">WaveguideCoplanarSplitter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.t_cross_parameters"><code class="docutils literal notranslate"><span class="pre">t_cross_parameters()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_straight.html">kqcircuits.elements.waveguide_coplanar_straight</a><ul>
@@ -720,6 +716,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.area.html#kqcircuits.util.area.get_area_and_density"><code class="docutils literal notranslate"><span class="pre">get_area_and_density()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.chip_helpers.html">kqcircuits.util.chip_helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.chip_helpers.html#kqcircuits.util.chip_helpers.produce_instance_name_labels"><code class="docutils literal notranslate"><span class="pre">produce_instance_name_labels()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.count_instances.html">kqcircuits.util.count_instances</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.count_instances.html#kqcircuits.util.count_instances.count_instances_in_cell"><code class="docutils literal notranslate"><span class="pre">count_instances_in_cell()</span></code></a></li>
 </ul>
@@ -781,7 +781,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.arc_points"><code class="docutils literal notranslate"><span class="pre">arc_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_points"><code class="docutils literal notranslate"><span class="pre">bspline_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bezier_points"><code class="docutils literal notranslate"><span class="pre">bezier_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_path"><code class="docutils literal notranslate"><span class="pre">bspline_path()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.force_rounded_corners"><code class="docutils literal notranslate"><span class="pre">force_rounded_corners()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.get_center_of_bounding_box"><code class="docutils literal notranslate"><span class="pre">get_center_of_bounding_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.rotate_arbitrary_degrees"><code class="docutils literal notranslate"><span class="pre">rotate_arbitrary_degrees()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a><ul>
@@ -794,6 +797,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html">kqcircuits.util.gui_epr_preview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_markers"><code class="docutils literal notranslate"><span class="pre">draw_epr_markers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_cross_section_cuts"><code class="docutils literal notranslate"><span class="pre">draw_epr_cross_section_cuts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_partition_regions"><code class="docutils literal notranslate"><span class="pre">draw_epr_partition_regions()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -816,6 +825,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html">kqcircuits.util.instance_hierarchy_helpers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_instance_marker_polygons"><code class="docutils literal notranslate"><span class="pre">get_instance_marker_polygons()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
@@ -907,6 +917,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squids"><code class="docutils literal notranslate"><span class="pre">replace_squids()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squid"><code class="docutils literal notranslate"><span class="pre">replace_squid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.convert_cells_to_static"><code class="docutils literal notranslate"><span class="pre">convert_cells_to_static()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html">kqcircuits.util.static_chip_helper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.clear_layer"><code class="docutils literal notranslate"><span class="pre">clear_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.strip_faces"><code class="docutils literal notranslate"><span class="pre">strip_faces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.get_chip_boundary_box"><code class="docutils literal notranslate"><span class="pre">get_chip_boundary_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.copy_chip_cell_from_face"><code class="docutils literal notranslate"><span class="pre">copy_chip_cell_from_face()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.swap_face"><code class="docutils literal notranslate"><span class="pre">swap_face()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a><ul>
@@ -1028,10 +1046,10 @@
 <span class="c1"># TODO: Consider refactoring to reduce number of public methods</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.defaults</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-    <span class="n">default_layers</span><span class="p">,</span>
     <span class="n">default_junction_type</span><span class="p">,</span>
     <span class="n">default_sampleholders</span><span class="p">,</span>
     <span class="n">default_mask_parameters</span><span class="p">,</span>
@@ -1040,16 +1058,16 @@
 <span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.elements.chip_frame</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChipFrame</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.elements.element</span><span class="w"> </span><span class="kn">import</span> <span class="n">Element</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.elements.flip_chip_connectors.flip_chip_connector</span><span class="w"> </span><span class="kn">import</span> <span class="n">FlipChipConnector</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.elements.launcher</span><span class="w"> </span><span class="kn">import</span> <span class="n">Launcher</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.elements.launcher_dc</span><span class="w"> </span><span class="kn">import</span> <span class="n">LauncherDC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.elements.tsvs.tsv</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tsv</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.pya_resolver</span><span class="w"> </span><span class="kn">import</span> <span class="n">pya</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.test_structures.junction_test_pads.junction_test_pads</span><span class="w"> </span><span class="kn">import</span> <span class="n">JunctionTestPads</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.util.chip_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">produce_instance_name_labels</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.util.groundgrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">insert_ground_grid</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.util.merge</span><span class="w"> </span><span class="kn">import</span> <span class="n">merge_layout_layers_on_face</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.util.parameters</span><span class="w"> </span><span class="kn">import</span> <span class="n">Param</span><span class="p">,</span> <span class="n">pdt</span><span class="p">,</span> <span class="n">add_parameters_from</span><span class="p">,</span> <span class="n">add_parameter</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.test_structures.junction_test_pads.junction_test_pads</span><span class="w"> </span><span class="kn">import</span> <span class="n">JunctionTestPads</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.test_structures.stripes_test</span><span class="w"> </span><span class="kn">import</span> <span class="n">StripesTest</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.util.groundgrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">insert_ground_grid</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.elements.tsvs.tsv</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tsv</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.elements.flip_chip_connectors.flip_chip_connector</span><span class="w"> </span><span class="kn">import</span> <span class="n">FlipChipConnector</span>
 
 
 <div class="viewcode-block" id="Chip">
@@ -1118,6 +1136,13 @@
         <span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span>
         <span class="s2">&quot;Bump grid clearance to existing bumps (edge to edge)&quot;</span><span class="p">,</span>
         <span class="n">default_bump_parameters</span><span class="p">[</span><span class="s2">&quot;bump_edge_to_bump_edge_separation&quot;</span><span class="p">],</span>
+        <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">bump_edge_to_metal_gap</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span>
+        <span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span>
+        <span class="s2">&quot;Bump edge clearance to metal gap&quot;</span><span class="p">,</span>
+        <span class="n">default_bump_parameters</span><span class="p">[</span><span class="s2">&quot;bump_edge_to_metal_gap&quot;</span><span class="p">],</span>
         <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;μm&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 
@@ -1213,52 +1238,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">junction_tests_w</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="p">(</span><span class="mf">10e3</span> <span class="o">-</span> <span class="mf">2.5e3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.35e3</span><span class="p">),</span> <span class="s2">&quot;testarray_s&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">junction_tests_h</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mf">9.65e3</span> <span class="o">-</span> <span class="mf">1.3e3</span><span class="p">,</span> <span class="p">(</span><span class="mf">10e3</span> <span class="o">-</span> <span class="mf">2.5e3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;testarray_e&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">junction_tests_w</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DTrans</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="p">(</span><span class="mf">10e3</span> <span class="o">-</span> <span class="mf">2.5e3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">9.65e3</span> <span class="o">-</span> <span class="mf">1.3e3</span><span class="p">),</span> <span class="s2">&quot;testarray_n&quot;</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="Chip.produce_opt_lit_tests">
-<a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip.produce_opt_lit_tests">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">produce_opt_lit_tests</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Produces optical lithography test stripes at chip corners.&quot;&quot;&quot;</span>
-
-        <span class="n">num_stripes</span> <span class="o">=</span> <span class="mi">20</span>
-        <span class="n">length</span> <span class="o">=</span> <span class="mi">100</span>
-        <span class="n">min_width</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">max_width</span> <span class="o">=</span> <span class="mi">15</span>
-        <span class="n">step</span> <span class="o">=</span> <span class="mi">3</span>
-        <span class="n">first_stripes_width</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">num_stripes</span> <span class="o">*</span> <span class="n">min_width</span>
-
-        <span class="n">combined_cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">create_cell</span><span class="p">(</span><span class="s2">&quot;Stripes&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">width</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">max_width</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">step</span><span class="p">,</span> <span class="n">min_width</span><span class="p">,</span> <span class="o">-</span><span class="n">step</span><span class="p">)):</span>
-            <span class="n">stripes_cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span>
-                <span class="n">StripesTest</span><span class="p">,</span> <span class="n">num_stripes</span><span class="o">=</span><span class="n">num_stripes</span><span class="p">,</span> <span class="n">stripe_width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">stripe_length</span><span class="o">=</span><span class="n">length</span>
-            <span class="p">)</span>
-            <span class="c1"># horizontal</span>
-            <span class="n">combined_cell</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
-                <span class="n">pya</span><span class="o">.</span><span class="n">DCellInstArray</span><span class="p">(</span>
-                    <span class="n">stripes_cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">(),</span>
-                    <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="o">-</span><span class="mi">880</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">length</span> <span class="o">+</span> <span class="n">first_stripes_width</span> <span class="o">-</span> <span class="mi">200</span><span class="p">),</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
-            <span class="c1"># vertical</span>
-            <span class="n">combined_cell</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
-                <span class="n">pya</span><span class="o">.</span><span class="n">DCellInstArray</span><span class="p">(</span>
-                    <span class="n">stripes_cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">(),</span>
-                    <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">length</span> <span class="o">+</span> <span class="n">length</span> <span class="o">+</span> <span class="n">first_stripes_width</span> <span class="o">-</span> <span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">880</span><span class="p">),</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
-            <span class="c1"># diagonal</span>
-            <span class="n">diag_offset</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">num_stripes</span> <span class="o">*</span> <span class="n">width</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
-            <span class="n">combined_cell</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
-                <span class="n">pya</span><span class="o">.</span><span class="n">DCellInstArray</span><span class="p">(</span>
-                    <span class="n">stripes_cell</span><span class="o">.</span><span class="n">cell_index</span><span class="p">(),</span>
-                    <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">250</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">length</span> <span class="o">-</span> <span class="n">diag_offset</span><span class="p">,</span> <span class="mi">250</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">length</span> <span class="o">+</span> <span class="n">diag_offset</span><span class="p">),</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">combined_cell</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">1500</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">combined_cell</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">8500</span><span class="p">,</span> <span class="mi">1500</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">combined_cell</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">8500</span><span class="p">,</span> <span class="mi">8500</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">combined_cell</span><span class="p">,</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">8500</span><span class="p">))</span></div>
 
 
 <div class="viewcode-block" id="Chip.produce_ground_grid">
@@ -1461,12 +1440,13 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_grid_locations</span><span class="p">(</span><span class="n">bump_box</span><span class="p">,</span> <span class="n">delta_x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">bump_grid_spacing</span><span class="p">,</span> <span class="n">delta_y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">bump_grid_spacing</span><span class="p">)</span></div>
 
 
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_get_ground_bump_element</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_ground_bump_element</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the element which will be used for the ground bumps&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">FlipChipConnector</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_produce_ground_bumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">faces</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">extra_filter_regions</span><span class="o">=</span><span class="p">[]):</span>  <span class="c1"># pylint: disable=dangerous-default-value</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_produce_ground_bumps</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">faces</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">extra_filter_regions</span><span class="o">=</span><span class="p">[],</span> <span class="n">bump_box</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>  <span class="c1"># pylint: disable=dangerous-default-value</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produces a grid of indium bumps between given faces.</span>
 
 <span class="sd">        The bumps avoid ground grid avoidance on both faces, and keep a minimum distance to existing bumps.</span>
@@ -1481,14 +1461,15 @@
 
         <span class="c1"># Specify bump element, filter regions, and locations</span>
         <span class="n">bump</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_ground_bump_element</span><span class="p">(),</span> <span class="n">face_ids</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="n">face</span><span class="p">]</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">])</span>
-        <span class="n">shape_layers</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;underbump_metallization&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">]</span>
+        <span class="n">shape_layers</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;indium_bump&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">)</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">]</span>
         <span class="n">filter_regions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_filter_regions</span><span class="p">(</span>
-            <span class="p">[(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">]</span>
+            <span class="p">[(</span><span class="s2">&quot;ground_grid_avoidance&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bump_edge_to_metal_gap</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">margin</span><span class="p">)</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">]</span>
             <span class="o">+</span> <span class="p">[(</span><span class="s2">&quot;indium_bump&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bump_edge_to_bump_edge_separation</span><span class="p">)</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">]</span>
             <span class="o">+</span> <span class="p">[(</span><span class="s2">&quot;through_silicon_via&quot;</span><span class="p">,</span> <span class="n">face</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tsv_edge_to_nearest_element</span><span class="p">)</span> <span class="k">for</span> <span class="n">face</span> <span class="ow">in</span> <span class="n">faces</span><span class="p">]</span>
             <span class="o">+</span> <span class="n">extra_filter_regions</span>
         <span class="p">)</span>
-        <span class="n">bump_box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_box</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">enlarged</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_bump</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_bump</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">bump_box</span><span class="p">:</span>
+            <span class="n">bump_box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_box</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">enlarged</span><span class="p">(</span><span class="n">pya</span><span class="o">.</span><span class="n">DVector</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_bump</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_bump</span><span class="p">))</span>
         <span class="n">locations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ground_bump_locations</span><span class="p">(</span><span class="n">bump_box</span><span class="p">)</span>
 
         <span class="c1"># Produce bump grid</span>
@@ -1523,24 +1504,7 @@
 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_produce_instance_name_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-        <span class="k">for</span> <span class="n">inst</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">each_inst</span><span class="p">():</span>
-            <span class="n">inst_id</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">inst_id</span><span class="p">:</span>
-                <span class="n">cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">create_cell</span><span class="p">(</span>
-                    <span class="s2">&quot;TEXT&quot;</span><span class="p">,</span> <span class="s2">&quot;Basic&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span> <span class="n">default_layers</span><span class="p">[</span><span class="s2">&quot;instance_names&quot;</span><span class="p">],</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">inst_id</span><span class="p">,</span> <span class="s2">&quot;mag&quot;</span><span class="p">:</span> <span class="mf">400.0</span><span class="p">}</span>
-                <span class="p">)</span>
-                <span class="n">label_trans</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">dcplx_trans</span>
-                <span class="c1"># prevent the label from being upside-down or mirrored</span>
-                <span class="k">if</span> <span class="mi">90</span> <span class="o">&lt;</span> <span class="n">label_trans</span><span class="o">.</span><span class="n">angle</span> <span class="o">&lt;</span> <span class="mi">270</span><span class="p">:</span>
-                    <span class="n">label_trans</span><span class="o">.</span><span class="n">angle</span> <span class="o">+=</span> <span class="mi">180</span>
-                <span class="n">label_trans</span><span class="o">.</span><span class="n">mirror</span> <span class="o">=</span> <span class="kc">False</span>
-                <span class="c1"># optionally apply relative transformation to the label</span>
-                <span class="n">rel_label_trans_str</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">property</span><span class="p">(</span><span class="s2">&quot;label_trans&quot;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">rel_label_trans_str</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="n">rel_label_trans</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">DCplxTrans</span><span class="o">.</span><span class="n">from_s</span><span class="p">(</span><span class="n">rel_label_trans_str</span><span class="p">)</span>
-                    <span class="n">label_trans</span> <span class="o">=</span> <span class="n">label_trans</span> <span class="o">*</span> <span class="n">rel_label_trans</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">insert_cell</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">label_trans</span><span class="p">)</span>
+        <span class="n">produce_instance_name_labels</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cell</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Chip.produce_launchers">
 <a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip.produce_launchers">[docs]</a>
@@ -1750,12 +1714,14 @@
 
 <div class="viewcode-block" id="Chip.get_ground_tsv_locations">
 <a class="viewcode-back" href="../../../api/kqcircuits.chips.chip.html#kqcircuits.chips.chip.Chip.get_ground_tsv_locations">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_ground_tsv_locations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tsv_box</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_ground_tsv_locations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tsv_box</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># pylint: disable=unused-argument</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Define the locations for a grid. This method returns the full grid.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            box: DBox specifying the region that should be filled with TSVs</span>
+<span class="sd">            kwargs: additional keyword arguments</span>
 
 <span class="sd">        Returns: list of DPoint coordinates where a ground bump can be placed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -1763,10 +1729,7 @@
 
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_produce_ground_tsvs</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">tsv_box</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">faces</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-        <span class="n">extra_filter_regions</span><span class="o">=</span><span class="p">[],</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">tsv_box</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">faces</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">extra_filter_regions</span><span class="o">=</span><span class="p">[],</span> <span class="o">**</span><span class="n">kwargs</span>
     <span class="p">):</span>  <span class="c1"># pylint: disable=dangerous-default-value</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Produces a grid of TSVs between given faces.</span>
 
@@ -1774,6 +1737,8 @@
 <span class="sd">        Args:</span>
 <span class="sd">            tsv_box: DBox specifying the region that should be filled with TSVs</span>
 <span class="sd">            faces: indices of faces in self.face_ids that should have the TSVs</span>
+<span class="sd">            extra_filter_regions: extra inputs lists to self.get_filter_regions</span>
+<span class="sd">            kwargs: auxiliary inputs to be passed to self.get_ground_tsv_locations</span>
 <span class="sd">        Returns: list of DPoint coordinates where a ground TSVs will be placed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting TSV grid generation on face(s) </span><span class="si">{</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">[</span><span class="n">face</span><span class="p">]</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">face</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">faces</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1798,7 +1763,7 @@
 
         <span class="k">if</span> <span class="n">tsv_box</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">tsv_box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">enlarged</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_from_tsv</span><span class="p">)</span>
-        <span class="n">locations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ground_tsv_locations</span><span class="p">(</span><span class="n">tsv_box</span><span class="p">)</span>
+        <span class="n">locations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ground_tsv_locations</span><span class="p">(</span><span class="n">tsv_box</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
         <span class="c1"># Produce TSV grid</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">locations</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>

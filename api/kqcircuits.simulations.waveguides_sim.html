@@ -51,10 +51,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/klayout.html">Installing KLayout</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/klayout.html#python">Python</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/klayout.html">Installing KLayout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/known_issues.html">Known installation issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../installation/known_issues.html#standalone-klayout-python-library">Standalone KLayout python library</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../installation/known_issues.html#gui-klayout-application">GUI KLayout application</a><ul>
@@ -491,7 +488,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_splitter.html">kqcircuits.elements.waveguide_coplanar_splitter</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.WaveguideCoplanarSplitter"><code class="docutils literal notranslate"><span class="pre">WaveguideCoplanarSplitter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.t_cross_parameters"><code class="docutils literal notranslate"><span class="pre">t_cross_parameters()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_straight.html">kqcircuits.elements.waveguide_coplanar_straight</a><ul>
@@ -723,6 +719,10 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.area.html#kqcircuits.util.area.get_area_and_density"><code class="docutils literal notranslate"><span class="pre">get_area_and_density()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.chip_helpers.html">kqcircuits.util.chip_helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.chip_helpers.html#kqcircuits.util.chip_helpers.produce_instance_name_labels"><code class="docutils literal notranslate"><span class="pre">produce_instance_name_labels()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.count_instances.html">kqcircuits.util.count_instances</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.count_instances.html#kqcircuits.util.count_instances.count_instances_in_cell"><code class="docutils literal notranslate"><span class="pre">count_instances_in_cell()</span></code></a></li>
 </ul>
@@ -784,7 +784,10 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.arc_points"><code class="docutils literal notranslate"><span class="pre">arc_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_points"><code class="docutils literal notranslate"><span class="pre">bspline_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bezier_points"><code class="docutils literal notranslate"><span class="pre">bezier_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_path"><code class="docutils literal notranslate"><span class="pre">bspline_path()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.force_rounded_corners"><code class="docutils literal notranslate"><span class="pre">force_rounded_corners()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.get_center_of_bounding_box"><code class="docutils literal notranslate"><span class="pre">get_center_of_bounding_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.rotate_arbitrary_degrees"><code class="docutils literal notranslate"><span class="pre">rotate_arbitrary_degrees()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a><ul>
@@ -797,6 +800,12 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.gui_epr_preview.html">kqcircuits.util.gui_epr_preview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_markers"><code class="docutils literal notranslate"><span class="pre">draw_epr_markers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_cross_section_cuts"><code class="docutils literal notranslate"><span class="pre">draw_epr_cross_section_cuts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_partition_regions"><code class="docutils literal notranslate"><span class="pre">draw_epr_partition_regions()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -819,6 +828,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html">kqcircuits.util.instance_hierarchy_helpers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_instance_marker_polygons"><code class="docutils literal notranslate"><span class="pre">get_instance_marker_polygons()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
@@ -910,6 +920,14 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squids"><code class="docutils literal notranslate"><span class="pre">replace_squids()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squid"><code class="docutils literal notranslate"><span class="pre">replace_squid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.convert_cells_to_static"><code class="docutils literal notranslate"><span class="pre">convert_cells_to_static()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html">kqcircuits.util.static_chip_helper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.clear_layer"><code class="docutils literal notranslate"><span class="pre">clear_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.strip_faces"><code class="docutils literal notranslate"><span class="pre">strip_faces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.get_chip_boundary_box"><code class="docutils literal notranslate"><span class="pre">get_chip_boundary_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.copy_chip_cell_from_face"><code class="docutils literal notranslate"><span class="pre">copy_chip_cell_from_face()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.swap_face"><code class="docutils literal notranslate"><span class="pre">swap_face()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a><ul>
@@ -1010,7 +1028,7 @@
 <span id="kqcircuits-simulations-waveguides-sim"></span><h1>kqcircuits.simulations.waveguides_sim<a class="headerlink" href="#module-kqcircuits.simulations.waveguides_sim" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="kqcircuits.simulations.waveguides_sim.WaveGuidesSim">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.waveguides_sim.</span></span><span class="sig-name descname"><span class="pre">WaveGuidesSim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/waveguides_sim.html#WaveGuidesSim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.waveguides_sim.WaveGuidesSim" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.waveguides_sim.</span></span><span class="sig-name descname"><span class="pre">WaveGuidesSim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/waveguides_sim.html#WaveGuidesSim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.waveguides_sim.WaveGuidesSim" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation" title="kqcircuits.simulations.simulation.Simulation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Simulation</span></code></a></p>
 <p>Initialize a Simulation.</p>
 <p>The initializer parses parameters, creates a top cell, and then calls <cite>self.build</cite> to create
@@ -1018,7 +1036,14 @@ the simulation geometry, followed by <cite>self.create_simulation_layers</cite> 
 so it is ready for exporting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>layout</strong> – the layout on which to create the simulation</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>layout</strong> – the layout on which to create the simulation</p></li>
+<li><p><strong>ports</strong> – optional list of <cite>Port</cite> to assign to the simulation. This is meant for simulations
+created with an existing cell where <cite>build</cite> does not add ports itself, such as
+<cite>Simulation.from_cell</cite>. When given, the list replaces <cite>self.ports</cite> after <cite>build</cite> has
+run and before the simulation layers are created. Leave as None for subclasses that
+populate <cite>self.ports</cite> inside <cite>build</cite>.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Keyword Arguments<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>**kwargs</strong> – <p>Any parameter can be passed as a keyword argument.</p>

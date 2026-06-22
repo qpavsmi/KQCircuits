@@ -7,6 +7,7 @@ kqcircuits.util
 .. toctree::
 
    kqcircuits.util.area
+   kqcircuits.util.chip_helpers
    kqcircuits.util.count_instances
    kqcircuits.util.coupler_lib
    kqcircuits.util.deep_delete
@@ -18,6 +19,7 @@ kqcircuits.util
    kqcircuits.util.geometry_helper
    kqcircuits.util.geometry_json_encoder
    kqcircuits.util.groundgrid
+   kqcircuits.util.gui_epr_preview
    kqcircuits.util.gui_helper
    kqcircuits.util.gui_waveguide_editing
    kqcircuits.util.import_helper
@@ -36,6 +38,7 @@ kqcircuits.util
    kqcircuits.util.plugin_startup
    kqcircuits.util.refpoints
    kqcircuits.util.replace_junctions
+   kqcircuits.util.static_chip_helper
    kqcircuits.util.symmetric_polygons
 
 Module contents

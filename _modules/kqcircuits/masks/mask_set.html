@@ -48,10 +48,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../installation/klayout.html#python">Python</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../installation/known_issues.html">Known installation issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#standalone-klayout-python-library">Standalone KLayout python library</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#gui-klayout-application">GUI KLayout application</a><ul>
@@ -488,7 +485,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html">kqcircuits.elements.waveguide_coplanar_splitter</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.WaveguideCoplanarSplitter"><code class="docutils literal notranslate"><span class="pre">WaveguideCoplanarSplitter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.t_cross_parameters"><code class="docutils literal notranslate"><span class="pre">t_cross_parameters()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_straight.html">kqcircuits.elements.waveguide_coplanar_straight</a><ul>
@@ -720,6 +716,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.area.html#kqcircuits.util.area.get_area_and_density"><code class="docutils literal notranslate"><span class="pre">get_area_and_density()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.chip_helpers.html">kqcircuits.util.chip_helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.chip_helpers.html#kqcircuits.util.chip_helpers.produce_instance_name_labels"><code class="docutils literal notranslate"><span class="pre">produce_instance_name_labels()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.count_instances.html">kqcircuits.util.count_instances</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.count_instances.html#kqcircuits.util.count_instances.count_instances_in_cell"><code class="docutils literal notranslate"><span class="pre">count_instances_in_cell()</span></code></a></li>
 </ul>
@@ -781,7 +781,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.arc_points"><code class="docutils literal notranslate"><span class="pre">arc_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_points"><code class="docutils literal notranslate"><span class="pre">bspline_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bezier_points"><code class="docutils literal notranslate"><span class="pre">bezier_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_path"><code class="docutils literal notranslate"><span class="pre">bspline_path()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.force_rounded_corners"><code class="docutils literal notranslate"><span class="pre">force_rounded_corners()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.get_center_of_bounding_box"><code class="docutils literal notranslate"><span class="pre">get_center_of_bounding_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.rotate_arbitrary_degrees"><code class="docutils literal notranslate"><span class="pre">rotate_arbitrary_degrees()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a><ul>
@@ -794,6 +797,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html">kqcircuits.util.gui_epr_preview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_markers"><code class="docutils literal notranslate"><span class="pre">draw_epr_markers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_cross_section_cuts"><code class="docutils literal notranslate"><span class="pre">draw_epr_cross_section_cuts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_partition_regions"><code class="docutils literal notranslate"><span class="pre">draw_epr_partition_regions()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -816,6 +825,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html">kqcircuits.util.instance_hierarchy_helpers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_instance_marker_polygons"><code class="docutils literal notranslate"><span class="pre">get_instance_marker_polygons()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
@@ -907,6 +917,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squids"><code class="docutils literal notranslate"><span class="pre">replace_squids()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squid"><code class="docutils literal notranslate"><span class="pre">replace_squid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.convert_cells_to_static"><code class="docutils literal notranslate"><span class="pre">convert_cells_to_static()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html">kqcircuits.util.static_chip_helper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.clear_layer"><code class="docutils literal notranslate"><span class="pre">clear_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.strip_faces"><code class="docutils literal notranslate"><span class="pre">strip_faces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.get_chip_boundary_box"><code class="docutils literal notranslate"><span class="pre">get_chip_boundary_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.copy_chip_cell_from_face"><code class="docutils literal notranslate"><span class="pre">copy_chip_cell_from_face()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.swap_face"><code class="docutils literal notranslate"><span class="pre">swap_face()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a><ul>
@@ -1095,14 +1113,18 @@
         <span class="n">mask_export_layers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">export_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">add_mask_name_to_chips</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">parse_sys_args</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="p">):</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_time</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;INIT&quot;</span><span class="p">:</span> <span class="n">perf_counter</span><span class="p">(),</span> <span class="s2">&quot;ADD_CHIPS&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;BUILD&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;EXPORT&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;END&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 
         <span class="k">if</span> <span class="n">export_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">arg_parser</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">argument_parser</span><span class="p">()</span>
-            <span class="n">arg_values</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">arg_parser</span><span class="o">.</span><span class="n">parse_known_args</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-            <span class="n">export_path</span> <span class="o">=</span> <span class="n">TMP_PATH</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">arg_values</span><span class="o">.</span><span class="n">p</span> <span class="k">else</span> <span class="n">arg_values</span><span class="o">.</span><span class="n">p</span>
+            <span class="k">if</span> <span class="n">parse_sys_args</span><span class="p">:</span>
+                <span class="n">arg_parser</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">argument_parser</span><span class="p">()</span>
+                <span class="n">arg_values</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">arg_parser</span><span class="o">.</span><span class="n">parse_known_args</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+                <span class="n">export_path</span> <span class="o">=</span> <span class="n">TMP_PATH</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">arg_values</span><span class="o">.</span><span class="n">p</span> <span class="k">else</span> <span class="n">arg_values</span><span class="o">.</span><span class="n">p</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">export_path</span> <span class="o">=</span> <span class="n">TMP_PATH</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">KLayoutView</span><span class="p">()</span> <span class="k">if</span> <span class="n">view</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">view</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">layout</span>
@@ -1116,20 +1138,21 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">mask_export_layers</span> <span class="o">=</span> <span class="n">mask_export_layers</span> <span class="k">if</span> <span class="n">mask_export_layers</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">used_chips</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_mask_name_to_chips</span> <span class="o">=</span> <span class="n">add_mask_name_to_chips</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parse_sys_args</span> <span class="o">=</span> <span class="n">parse_sys_args</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_extra_params</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_mask_set_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">export_path</span><span class="p">)</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_v</span><span class="si">{</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exporting to: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mask_set_dir</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_mask_set_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_extra_params</span><span class="p">[</span><span class="s2">&quot;enable_debug&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-d&quot;</span> <span class="ow">in</span> <span class="n">argv</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_extra_params</span><span class="p">[</span><span class="s2">&quot;enable_debug&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">parse_sys_args</span> <span class="ow">and</span> <span class="s2">&quot;-d&quot;</span> <span class="ow">in</span> <span class="n">argv</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_single_process</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extra_params</span><span class="p">[</span><span class="s2">&quot;enable_debug&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">is_standalone_session</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_extra_params</span><span class="p">[</span><span class="s2">&quot;mock_chips&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-m&quot;</span> <span class="ow">in</span> <span class="n">argv</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_extra_params</span><span class="p">[</span><span class="s2">&quot;skip_extras&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-s&quot;</span> <span class="ow">in</span> <span class="n">argv</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_extra_params</span><span class="p">[</span><span class="s2">&quot;mock_chips&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">parse_sys_args</span> <span class="ow">and</span> <span class="s2">&quot;-m&quot;</span> <span class="ow">in</span> <span class="n">argv</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_extra_params</span><span class="p">[</span><span class="s2">&quot;skip_extras&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">parse_sys_args</span> <span class="ow">and</span> <span class="s2">&quot;-s&quot;</span> <span class="ow">in</span> <span class="n">argv</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_cpu_override</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">if</span> <span class="s2">&quot;-c&quot;</span> <span class="ow">in</span> <span class="n">argv</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">argv</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;-c&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">parse_sys_args</span> <span class="ow">and</span> <span class="s2">&quot;-c&quot;</span> <span class="ow">in</span> <span class="n">argv</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">argv</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;-c&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_cpu_override</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">argv</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;-c&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
 
 <div class="viewcode-block" id="MaskSet.add_mask_layout">

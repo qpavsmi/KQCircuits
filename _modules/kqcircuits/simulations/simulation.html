@@ -48,10 +48,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../installation/klayout.html#python">Python</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation/klayout.html">Installing KLayout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../installation/known_issues.html">Known installation issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#standalone-klayout-python-library">Standalone KLayout python library</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../installation/known_issues.html#gui-klayout-application">GUI KLayout application</a><ul>
@@ -488,7 +485,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html">kqcircuits.elements.waveguide_coplanar_splitter</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.WaveguideCoplanarSplitter"><code class="docutils literal notranslate"><span class="pre">WaveguideCoplanarSplitter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.t_cross_parameters"><code class="docutils literal notranslate"><span class="pre">t_cross_parameters()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.elements.waveguide_coplanar_straight.html">kqcircuits.elements.waveguide_coplanar_straight</a><ul>
@@ -720,6 +716,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.area.html#kqcircuits.util.area.get_area_and_density"><code class="docutils literal notranslate"><span class="pre">get_area_and_density()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.chip_helpers.html">kqcircuits.util.chip_helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.chip_helpers.html#kqcircuits.util.chip_helpers.produce_instance_name_labels"><code class="docutils literal notranslate"><span class="pre">produce_instance_name_labels()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.count_instances.html">kqcircuits.util.count_instances</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.count_instances.html#kqcircuits.util.count_instances.count_instances_in_cell"><code class="docutils literal notranslate"><span class="pre">count_instances_in_cell()</span></code></a></li>
 </ul>
@@ -781,7 +781,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.arc_points"><code class="docutils literal notranslate"><span class="pre">arc_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_points"><code class="docutils literal notranslate"><span class="pre">bspline_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bezier_points"><code class="docutils literal notranslate"><span class="pre">bezier_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_path"><code class="docutils literal notranslate"><span class="pre">bspline_path()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.force_rounded_corners"><code class="docutils literal notranslate"><span class="pre">force_rounded_corners()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.get_center_of_bounding_box"><code class="docutils literal notranslate"><span class="pre">get_center_of_bounding_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.rotate_arbitrary_degrees"><code class="docutils literal notranslate"><span class="pre">rotate_arbitrary_degrees()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a><ul>
@@ -794,6 +797,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html">kqcircuits.util.gui_epr_preview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_markers"><code class="docutils literal notranslate"><span class="pre">draw_epr_markers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_cross_section_cuts"><code class="docutils literal notranslate"><span class="pre">draw_epr_cross_section_cuts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_partition_regions"><code class="docutils literal notranslate"><span class="pre">draw_epr_partition_regions()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -816,6 +825,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html">kqcircuits.util.instance_hierarchy_helpers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_instance_marker_polygons"><code class="docutils literal notranslate"><span class="pre">get_instance_marker_polygons()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
@@ -907,6 +917,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squids"><code class="docutils literal notranslate"><span class="pre">replace_squids()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squid"><code class="docutils literal notranslate"><span class="pre">replace_squid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.convert_cells_to_static"><code class="docutils literal notranslate"><span class="pre">convert_cells_to_static()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html">kqcircuits.util.static_chip_helper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.clear_layer"><code class="docutils literal notranslate"><span class="pre">clear_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.strip_faces"><code class="docutils literal notranslate"><span class="pre">strip_faces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.get_chip_boundary_box"><code class="docutils literal notranslate"><span class="pre">get_chip_boundary_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.copy_chip_cell_from_face"><code class="docutils literal notranslate"><span class="pre">copy_chip_cell_from_face()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../api/kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.swap_face"><code class="docutils literal notranslate"><span class="pre">swap_face()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a><ul>
@@ -1028,7 +1046,7 @@
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">abc</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">ast</span>
-
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">inf</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">kqcircuits.defaults</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_faces</span>
@@ -1284,6 +1302,7 @@
     <span class="n">small_shape_area</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeDouble</span><span class="p">,</span> <span class="s2">&quot;Area below which shapes will trigger a warning.&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;µm²&quot;</span><span class="p">)</span>
 
     <span class="n">base_metal_addition_layers</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeList</span><span class="p">,</span> <span class="s2">&quot;Layers to be added to base metal&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;base_metal_addition&quot;</span><span class="p">])</span>
+    <span class="n">parent_simulation</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">pdt</span><span class="o">.</span><span class="n">TypeNone</span><span class="p">,</span> <span class="s2">&quot;Instance of Simulation subclass to determine excitations&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
     <span class="n">extra_json_data</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span>
         <span class="n">pdt</span><span class="o">.</span><span class="n">TypeNone</span><span class="p">,</span>
@@ -1292,7 +1311,7 @@
         <span class="n">docstring</span><span class="o">=</span><span class="s2">&quot;This field may be used to store &#39;virtual&#39; parameters useful for your simulations&quot;</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">ports</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a Simulation.</span>
 
 <span class="sd">        The initializer parses parameters, creates a top cell, and then calls `self.build` to create</span>
@@ -1301,6 +1320,11 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">            layout: the layout on which to create the simulation</span>
+<span class="sd">            ports: optional list of `Port` to assign to the simulation. This is meant for simulations</span>
+<span class="sd">                created with an existing cell where `build` does not add ports itself, such as</span>
+<span class="sd">                `Simulation.from_cell`. When given, the list replaces `self.ports` after `build` has</span>
+<span class="sd">                run and before the simulation layers are created. Leave as None for subclasses that</span>
+<span class="sd">                populate `self.ports` inside `build`.</span>
 
 <span class="sd">        Keyword arguments:</span>
 <span class="sd">            `**kwargs`:</span>
@@ -1342,13 +1366,15 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">ports</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ports</span> <span class="o">=</span> <span class="n">ports</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_simulation_layers</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">warn_of_small_shapes</span><span class="p">()</span>
 
 <div class="viewcode-block" id="Simulation.from_cell">
 <a class="viewcode-back" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation.from_cell">[docs]</a>
     <span class="nd">@classmethod</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">from_cell</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">grid_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_cell</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">grid_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ports</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a Simulation from an existing cell.</span>
 
 <span class="sd">        Arguments:</span>
@@ -1357,6 +1383,8 @@
 <span class="sd">                box of the cell If the `box` keyword argument is given, margin is ignored.</span>
 <span class="sd">            grid_size: size of the simulation box will be rounded to this resolution</span>
 <span class="sd">                If the `box` keyword argument is given, grid_size is ignored.</span>
+<span class="sd">            ports: optional list of `Port` to assign to the simulation. Pass this when the ports are</span>
+<span class="sd">                determined from the existing geometry, since the default `build` does not add ports.</span>
 <span class="sd">            `**kwargs`: any simulation parameters passed</span>
 
 <span class="sd">        Returns:</span>
@@ -1373,7 +1401,7 @@
                 <span class="n">box</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">box</span><span class="o">.</span><span class="n">top</span> <span class="o">/</span> <span class="n">grid_size</span><span class="p">)</span> <span class="o">*</span> <span class="n">grid_size</span>
             <span class="n">extra_kwargs</span><span class="p">[</span><span class="s2">&quot;box&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">box</span>
 
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">layout</span><span class="p">(),</span> <span class="n">cell</span><span class="o">=</span><span class="n">cell</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_kwargs</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">layout</span><span class="p">(),</span> <span class="n">cell</span><span class="o">=</span><span class="n">cell</span><span class="p">,</span> <span class="n">ports</span><span class="o">=</span><span class="n">ports</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_kwargs</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Simulation.build">
@@ -1683,42 +1711,65 @@
         <span class="n">parts</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">parts</span> <span class="k">if</span> <span class="n">p</span><span class="p">]</span>
 
         <span class="c1"># assign excitation to parts</span>
-        <span class="n">ports</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ports</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">number</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_ports</span> <span class="k">else</span> <span class="p">[]</span>
-        <span class="n">excitations</span> <span class="o">=</span> <span class="p">[{}]</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">face_z_levels</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">port</span> <span class="ow">in</span> <span class="n">ports</span><span class="p">:</span>
-            <span class="n">signal_z</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">resolve_face</span><span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">)][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">12</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">&quot;ground_location&quot;</span><span class="p">):</span>
-                <span class="n">v_mps</span> <span class="o">=</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span> <span class="o">-</span> <span class="n">port</span><span class="o">.</span><span class="n">ground_location</span>
-                <span class="n">v_mps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">minimum_point_spacing</span> <span class="o">*</span> <span class="n">v_mps</span> <span class="o">/</span> <span class="n">v_mps</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
-                <span class="n">signal_loc</span> <span class="o">=</span> <span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span> <span class="o">+</span> <span class="n">v_mps</span><span class="p">)</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">port</span><span class="o">.</span><span class="n">floating</span><span class="p">:</span>
-                    <span class="n">ground_loc</span> <span class="o">=</span> <span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">ground_location</span> <span class="o">-</span> <span class="n">v_mps</span><span class="p">)</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
-                    <span class="n">merge_parts</span><span class="p">(</span><span class="n">get_connected_part</span><span class="p">(</span><span class="n">ground_loc</span><span class="p">,</span> <span class="n">signal_z</span><span class="p">),</span> <span class="n">excitations</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># ground excitation</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">signal_loc</span> <span class="o">=</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_simulation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># assign excitation based on parent_simulation</span>
+            <span class="n">excitation_dict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">parent_layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_simulation</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="s2">&quot;excitation&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">parent_layer</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">excitation</span> <span class="o">=</span> <span class="n">parent_layer</span><span class="p">[</span><span class="s2">&quot;excitation&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">excitation</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excitation_dict</span><span class="p">:</span>
+                    <span class="n">excitation_dict</span><span class="p">[</span><span class="n">excitation</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">bottom</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="n">parent_layer</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">],</span> <span class="n">parent_layer</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">parent_layer</span><span class="p">[</span><span class="s2">&quot;thickness&quot;</span><span class="p">]</span>
+                <span class="n">sim_layer</span> <span class="o">=</span> <span class="n">get_simulation_layer_by_name</span><span class="p">(</span><span class="n">layer_name</span><span class="p">)</span>
+                <span class="n">region</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent_simulation</span><span class="o">.</span><span class="n">cell</span><span class="o">.</span><span class="n">shapes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent_simulation</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">layer</span><span class="p">(</span><span class="n">sim_layer</span><span class="p">)))</span>
+                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="n">layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">bottom</span> <span class="ow">and</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">top</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">r</span><span class="o">.</span><span class="n">interacting</span><span class="p">(</span><span class="n">region</span><span class="p">)</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+                            <span class="n">merge_parts</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">excitation_dict</span><span class="p">[</span><span class="n">excitation</span><span class="p">])</span>
+                            <span class="k">break</span>
+            <span class="n">excitations</span> <span class="o">=</span> <span class="p">[</span><span class="n">excitation_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="p">{})</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">excitation_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># assign excitation based on ports</span>
+            <span class="n">ports</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ports</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">number</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_ports</span> <span class="k">else</span> <span class="p">[]</span>
+            <span class="n">excitations</span> <span class="o">=</span> <span class="p">[{}]</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">face_z_levels</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">port</span> <span class="ow">in</span> <span class="n">ports</span><span class="p">:</span>
+                <span class="n">signal_z</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">resolve_face</span><span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">face</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">face_ids</span><span class="p">)][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">12</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="s2">&quot;ground_location&quot;</span><span class="p">):</span>
+                    <span class="n">v_mps</span> <span class="o">=</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span> <span class="o">-</span> <span class="n">port</span><span class="o">.</span><span class="n">ground_location</span>
+                    <span class="n">v_mps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">minimum_point_spacing</span> <span class="o">*</span> <span class="n">v_mps</span> <span class="o">/</span> <span class="n">v_mps</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+                    <span class="n">signal_loc</span> <span class="o">=</span> <span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">signal_location</span> <span class="o">+</span> <span class="n">v_mps</span><span class="p">)</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">port</span><span class="o">.</span><span class="n">floating</span><span class="p">:</span>
+                        <span class="n">ground_loc</span> <span class="o">=</span> <span class="p">(</span><span class="n">port</span><span class="o">.</span><span class="n">ground_location</span> <span class="o">-</span> <span class="n">v_mps</span><span class="p">)</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
+                        <span class="n">merge_parts</span><span class="p">(</span><span class="n">get_connected_part</span><span class="p">(</span><span class="n">ground_loc</span><span class="p">,</span> <span class="n">signal_z</span><span class="p">),</span> <span class="n">excitations</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># ground excitation</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">signal_loc</span> <span class="o">=</span> <span class="n">port</span><span class="o">.</span><span class="n">signal_location</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">)</span>
 
-            <span class="c1"># append port excitation to excitations if it exists</span>
-            <span class="n">port_excitation</span> <span class="o">=</span> <span class="p">{}</span>
-            <span class="n">merge_parts</span><span class="p">(</span><span class="n">get_connected_part</span><span class="p">(</span><span class="n">signal_loc</span><span class="p">,</span> <span class="n">signal_z</span><span class="p">),</span> <span class="n">port_excitation</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">port_excitation</span><span class="p">:</span>
-                <span class="n">excitations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">port_excitation</span><span class="p">)</span>
+                <span class="c1"># append port excitation to excitations if it exists</span>
+                <span class="n">port_excitation</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">merge_parts</span><span class="p">(</span><span class="n">get_connected_part</span><span class="p">(</span><span class="n">signal_loc</span><span class="p">,</span> <span class="n">signal_z</span><span class="p">),</span> <span class="n">port_excitation</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">port_excitation</span><span class="p">:</span>
+                    <span class="n">excitations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">port_excitation</span><span class="p">)</span>
 
-        <span class="c1"># assign remaining parts as ground if they touch edge, bottom, or top of the simulation box, otherwise floating</span>
-        <span class="n">ground_edges</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">))</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+            <span class="c1"># assign remaining parts as ground if they touch edge, bottom, or top of the simulation box</span>
+            <span class="n">ground_edges</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">to_itype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">dbu</span><span class="p">))</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nb">round</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">12</span><span class="p">)</span>
+                    <span class="ow">or</span> <span class="nb">round</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">12</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="s2">&quot;top&quot;</span><span class="p">]</span>
+                    <span class="ow">or</span> <span class="ow">not</span> <span class="n">r</span><span class="o">.</span><span class="n">interacting</span><span class="p">(</span><span class="n">ground_edges</span><span class="p">)</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span>
+                    <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">part</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="p">):</span>
+                    <span class="n">merge_parts</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">excitations</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># ground excitation</span>
+
+        <span class="c1"># assign remaining parts as floating</span>
         <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="nb">round</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">12</span><span class="p">)</span>
-                <span class="ow">or</span> <span class="nb">round</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">12</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="s2">&quot;top&quot;</span><span class="p">]</span>
-                <span class="ow">or</span> <span class="ow">not</span> <span class="n">r</span><span class="o">.</span><span class="n">interacting</span><span class="p">(</span><span class="n">ground_edges</span><span class="p">)</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span>
-                <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">part</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-            <span class="p">):</span>
-                <span class="n">merge_parts</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">excitations</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># ground excitation</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">floating_excitation</span> <span class="o">=</span> <span class="p">{}</span>
-                <span class="n">merge_parts</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">floating_excitation</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">floating_excitation</span><span class="p">:</span>
-                    <span class="n">excitations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">floating_excitation</span><span class="p">)</span>
+            <span class="n">floating_excitation</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">merge_parts</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">floating_excitation</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">floating_excitation</span><span class="p">:</span>
+                <span class="n">excitations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">floating_excitation</span><span class="p">)</span>
 
         <span class="c1"># split metals by excitations</span>
         <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">metal_names</span><span class="p">:</span>
@@ -1991,7 +2042,7 @@
                     <span class="k">return</span> <span class="kc">True</span>
             <span class="k">elif</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span> <span class="ow">or</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]:</span>
                 <span class="k">return</span> <span class="kc">True</span>
-            <span class="k">return</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">overlapping</span><span class="p">(</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">overlapping</span><span class="p">(</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sized</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span>
 
         <span class="k">def</span><span class="w"> </span><span class="nf">subtract</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">lay</span><span class="p">):</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;Subtracts layers[lay] from obj.&quot;&quot;&quot;</span>
@@ -2006,55 +2057,71 @@
                 <span class="k">return</span>  <span class="c1"># ignore separate objects</span>
             <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;subtract&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subtract&quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span> <span class="o">|</span> <span class="p">{</span><span class="n">lay</span><span class="p">}</span>
 
-        <span class="k">def</span><span class="w"> </span><span class="nf">subtract_hard</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">tool</span><span class="p">):</span>
-<span class="w">            </span><span class="sd">&quot;&quot;&quot;Subtracts tool from obj by modifying dimensions of obj. Returns True if successful.&quot;&quot;&quot;</span>
-            <span class="k">if</span> <span class="n">are_separate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">tool</span><span class="p">):</span>
-                <span class="k">return</span> <span class="kc">True</span>
-            <span class="n">subtract_diff</span> <span class="o">=</span> <span class="n">tool</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subtract&quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">())</span> <span class="o">-</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;subtract&quot;</span><span class="p">]</span>
-            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;material&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">are_separate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">layers</span><span class="p">[</span><span class="n">s</span><span class="p">])</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">subtract_diff</span><span class="p">):</span>
-                <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># can&#39;t apply hard subtract if tool has non-material subtractions that obj doesn&#39;t have</span>
-            <span class="k">if</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]:</span>
-                <span class="k">if</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]:</span>
-                    <span class="k">return</span> <span class="kc">False</span>
-                <span class="k">if</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">not_inside</span><span class="p">(</span><span class="n">tool</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span>
-                    <span class="p">{</span>
-                        <span class="s2">&quot;bottom&quot;</span><span class="p">:</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">],</span>
-                        <span class="s2">&quot;top&quot;</span><span class="p">:</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">],</span>
-                        <span class="s2">&quot;region&quot;</span><span class="p">:</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dup</span><span class="p">(),</span>
-                        <span class="s2">&quot;subtract&quot;</span><span class="p">:</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;subtract&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
-                    <span class="p">}</span>
-                <span class="p">):</span>
-                    <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span>
-                    <span class="k">return</span> <span class="kc">True</span>
-                <span class="k">return</span> <span class="kc">False</span>
-            <span class="k">if</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]:</span>
-                <span class="k">if</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">not_inside</span><span class="p">(</span><span class="n">tool</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">(</span>
-                    <span class="p">{</span>
-                        <span class="s2">&quot;bottom&quot;</span><span class="p">:</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">],</span>
-                        <span class="s2">&quot;top&quot;</span><span class="p">:</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">],</span>
-                        <span class="s2">&quot;region&quot;</span><span class="p">:</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dup</span><span class="p">(),</span>
-                        <span class="s2">&quot;subtract&quot;</span><span class="p">:</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;subtract&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
-                    <span class="p">}</span>
-                <span class="p">):</span>
-                    <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span>
-                    <span class="k">return</span> <span class="kc">True</span>
-                <span class="k">return</span> <span class="kc">False</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">can_modify</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span> <span class="ow">and</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">inside</span><span class="p">(</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">():</span>
-                <span class="k">return</span> <span class="kc">False</span>  <span class="c1"># avoid lateral hard subtract if it creates lots of holes (useful with lots of vias)</span>
-            <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span> <span class="o">-=</span> <span class="n">tool</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span>
-            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">subtract_avoid_hole_grid</span><span class="p">(</span><span class="n">obj_region</span><span class="p">,</span> <span class="n">tool_region</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Subtracts the tool region from the object region unless the subtraction creates lots of holes. Avoiding</span>
+<span class="sd">            subtraction with plenty of holes is important for the performance for example in case of lots of vias.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">tool_region</span><span class="o">.</span><span class="n">inside</span><span class="p">(</span><span class="n">obj_region</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">obj_region</span><span class="o">.</span><span class="n">count</span><span class="p">():</span>
+                <span class="n">obj_region</span> <span class="o">-=</span> <span class="n">tool_region</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">sub_layers</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=-</span><span class="n">inf</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="n">inf</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Returns object divided into sub-layers such that the subtractions in obj[&#39;subtract&#39;] are applied.</span>
+<span class="sd">            The return format for sub-layers is a list of tuples containing bottom height, top height, and region.</span>
+<span class="sd">            Only non-empty regions are returned.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="c1"># Determine z-intersection between given bottom and top and the object</span>
+            <span class="n">bottom</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]),</span> <span class="nb">min</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">bottom</span> <span class="o">&gt;</span> <span class="n">top</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[]</span>
+
+            <span class="c1"># Get sub-layer divisions for all subtracted objects</span>
+            <span class="n">subtracts_layers</span> <span class="o">=</span> <span class="p">[</span><span class="n">sub_layers</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;subtract&quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">())]</span>
+
+            <span class="c1"># Special case for sheet object</span>
+            <span class="k">if</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]:</span>
+                <span class="n">z</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span>
+                <span class="n">below_region</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dup</span><span class="p">()</span>
+                <span class="n">above_region</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dup</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">subtract_layers</span> <span class="ow">in</span> <span class="n">subtracts_layers</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">subtract_layers</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="n">z</span> <span class="o">==</span> <span class="n">t</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&lt;=</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">:</span>
+                            <span class="n">subtract_avoid_hole_grid</span><span class="p">(</span><span class="n">above_region</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="n">z</span> <span class="o">==</span> <span class="n">t</span> <span class="ow">or</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">z</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">:</span>
+                            <span class="n">subtract_avoid_hole_grid</span><span class="p">(</span><span class="n">below_region</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                <span class="n">region</span> <span class="o">=</span> <span class="n">below_region</span> <span class="o">+</span> <span class="n">above_region</span>
+                <span class="k">return</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">region</span><span class="o">.</span><span class="n">sized</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span> <span class="k">else</span> <span class="p">[(</span><span class="n">z</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">region</span><span class="p">)]</span>
+
+            <span class="c1"># For solid objects only, define z-intervals for the sub-layers</span>
+            <span class="n">subtract_zs</span> <span class="o">=</span> <span class="p">{</span><span class="n">z</span> <span class="k">for</span> <span class="n">subtract_layers</span> <span class="ow">in</span> <span class="n">subtracts_layers</span> <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">subtract_layers</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">)}</span>
+            <span class="k">if</span> <span class="n">bottom</span> <span class="o">==</span> <span class="n">top</span><span class="p">:</span>  <span class="c1"># if sheet projection is requested, defines z-intervals above and below</span>
+                <span class="n">bottom</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[</span><span class="n">z</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">subtract_zs</span> <span class="k">if</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="n">bottom</span><span class="p">])</span>
+                <span class="n">top</span> <span class="o">=</span> <span class="nb">min</span><span class="p">([</span><span class="n">obj</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[</span><span class="n">z</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">subtract_zs</span> <span class="k">if</span> <span class="n">top</span> <span class="o">&lt;</span> <span class="n">z</span><span class="p">])</span>
+            <span class="n">zs</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">}</span> <span class="o">|</span> <span class="p">{</span><span class="n">z</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">subtract_zs</span> <span class="k">if</span> <span class="n">bottom</span> <span class="o">&lt;</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="n">top</span><span class="p">})</span>
+
+            <span class="c1"># Return sub-layers for determined z-intervals</span>
+            <span class="n">_layers</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">_bottom</span><span class="p">,</span> <span class="n">_top</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">zs</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">zs</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+                <span class="n">region</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dup</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">subtract_layers</span> <span class="ow">in</span> <span class="n">subtracts_layers</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">subtract_layers</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;=</span> <span class="n">_bottom</span> <span class="ow">and</span> <span class="n">_top</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">:</span>
+                            <span class="n">subtract_avoid_hole_grid</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">region</span><span class="o">.</span><span class="n">sized</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+                    <span class="n">_layers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">_bottom</span><span class="p">,</span> <span class="n">_top</span><span class="p">,</span> <span class="n">region</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">_layers</span>
 
         <span class="k">def</span><span class="w"> </span><span class="nf">exists</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
 <span class="w">            </span><span class="sd">&quot;&quot;&quot;Hardens subtractions and returns True if geometry exists.&quot;&quot;&quot;</span>
             <span class="k">if</span> <span class="s2">&quot;subtract&quot;</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">:</span>
-                <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-                    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;subtract&quot;</span><span class="p">]:</span>
-                        <span class="k">if</span> <span class="n">subtract_hard</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">layers</span><span class="p">[</span><span class="n">s</span><span class="p">]):</span>
-                            <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;subtract&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-                            <span class="k">break</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="k">break</span>
-
+                <span class="n">_layers</span> <span class="o">=</span> <span class="n">sub_layers</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+                <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pya</span><span class="o">.</span><span class="n">Region</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">_layers</span><span class="p">:</span>
+                    <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_layers</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;top&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">_layers</span><span class="p">:</span>
+                        <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">r</span>
+                    <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">merge</span><span class="p">()</span>
+                    <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;subtract&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;subtract&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">are_separate</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">layers</span><span class="p">[</span><span class="n">s</span><span class="p">])}</span>
             <span class="k">return</span> <span class="ow">not</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span>
 
         <span class="k">def</span><span class="w"> </span><span class="nf">covering_regions</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">tool</span><span class="p">):</span>
@@ -2325,8 +2392,10 @@
 <a class="viewcode-back" href="../../../api/kqcircuits.simulations.simulation.html#kqcircuits.simulations.simulation.Simulation.get_parameters">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return dictionary with all parameters and their values.&quot;&quot;&quot;</span>
-
-        <span class="k">return</span> <span class="p">{</span><span class="n">param</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_schema</span><span class="p">()}</span></div>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="n">param</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_schema</span><span class="p">()}</span>
+        <span class="k">if</span> <span class="s2">&quot;parent_simulation&quot;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+            <span class="n">params</span><span class="p">[</span><span class="s2">&quot;parent_simulation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_simulation</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_simulation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">params</span></div>
 
 
 <div class="viewcode-block" id="Simulation.etched_line">
@@ -2505,6 +2574,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="s2">&quot;simulation_name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s2">&quot;parent_simulation&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_simulation</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent_simulation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
             <span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;um&quot;</span><span class="p">,</span>  <span class="c1"># hardcoded assumption in multiple places</span>
             <span class="s2">&quot;layers&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">,</span>
             <span class="s2">&quot;material_dict&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_material_dict</span><span class="p">(),</span>

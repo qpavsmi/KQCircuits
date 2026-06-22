@@ -51,10 +51,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/klayout.html">Installing KLayout</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/klayout.html#python">Python</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/klayout.html">Installing KLayout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/known_issues.html">Known installation issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../installation/known_issues.html#standalone-klayout-python-library">Standalone KLayout python library</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../installation/known_issues.html#gui-klayout-application">GUI KLayout application</a><ul>
@@ -491,7 +488,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_splitter.html">kqcircuits.elements.waveguide_coplanar_splitter</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.WaveguideCoplanarSplitter"><code class="docutils literal notranslate"><span class="pre">WaveguideCoplanarSplitter</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_splitter.html#kqcircuits.elements.waveguide_coplanar_splitter.t_cross_parameters"><code class="docutils literal notranslate"><span class="pre">t_cross_parameters()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.elements.waveguide_coplanar_straight.html">kqcircuits.elements.waveguide_coplanar_straight</a><ul>
@@ -723,6 +719,10 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.area.html#kqcircuits.util.area.get_area_and_density"><code class="docutils literal notranslate"><span class="pre">get_area_and_density()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.chip_helpers.html">kqcircuits.util.chip_helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.chip_helpers.html#kqcircuits.util.chip_helpers.produce_instance_name_labels"><code class="docutils literal notranslate"><span class="pre">produce_instance_name_labels()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.count_instances.html">kqcircuits.util.count_instances</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.count_instances.html#kqcircuits.util.count_instances.count_instances_in_cell"><code class="docutils literal notranslate"><span class="pre">count_instances_in_cell()</span></code></a></li>
 </ul>
@@ -784,7 +784,10 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.arc_points"><code class="docutils literal notranslate"><span class="pre">arc_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_points"><code class="docutils literal notranslate"><span class="pre">bspline_points()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bezier_points"><code class="docutils literal notranslate"><span class="pre">bezier_points()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.bspline_path"><code class="docutils literal notranslate"><span class="pre">bspline_path()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.force_rounded_corners"><code class="docutils literal notranslate"><span class="pre">force_rounded_corners()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.get_center_of_bounding_box"><code class="docutils literal notranslate"><span class="pre">get_center_of_bounding_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.geometry_helper.html#kqcircuits.util.geometry_helper.rotate_arbitrary_degrees"><code class="docutils literal notranslate"><span class="pre">rotate_arbitrary_degrees()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.geometry_json_encoder.html">kqcircuits.util.geometry_json_encoder</a><ul>
@@ -797,6 +800,12 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.groundgrid.html">kqcircuits.util.groundgrid</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.insert_ground_grid"><code class="docutils literal notranslate"><span class="pre">insert_ground_grid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.groundgrid.html#kqcircuits.util.groundgrid.make_ground_grid_region"><code class="docutils literal notranslate"><span class="pre">make_ground_grid_region()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.gui_epr_preview.html">kqcircuits.util.gui_epr_preview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_markers"><code class="docutils literal notranslate"><span class="pre">draw_epr_markers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_cross_section_cuts"><code class="docutils literal notranslate"><span class="pre">draw_epr_cross_section_cuts()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.gui_epr_preview.html#kqcircuits.util.gui_epr_preview.draw_epr_partition_regions"><code class="docutils literal notranslate"><span class="pre">draw_epr_partition_regions()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.gui_helper.html">kqcircuits.util.gui_helper</a><ul>
@@ -819,6 +828,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html">kqcircuits.util.instance_hierarchy_helpers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.InstanceHierarchy"><code class="docutils literal notranslate"><span class="pre">InstanceHierarchy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">get_cell_instance_hierarchy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.get_instance_marker_polygons"><code class="docutils literal notranslate"><span class="pre">get_instance_marker_polygons()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.formatted_cell_instance_hierarchy"><code class="docutils literal notranslate"><span class="pre">formatted_cell_instance_hierarchy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.instance_hierarchy_helpers.html#kqcircuits.util.instance_hierarchy_helpers.transform_top_cell"><code class="docutils literal notranslate"><span class="pre">transform_top_cell()</span></code></a></li>
 </ul>
@@ -910,6 +920,14 @@
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squids"><code class="docutils literal notranslate"><span class="pre">replace_squids()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.replace_squid"><code class="docutils literal notranslate"><span class="pre">replace_squid()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.replace_junctions.html#kqcircuits.util.replace_junctions.convert_cells_to_static"><code class="docutils literal notranslate"><span class="pre">convert_cells_to_static()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html">kqcircuits.util.static_chip_helper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.clear_layer"><code class="docutils literal notranslate"><span class="pre">clear_layer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.strip_faces"><code class="docutils literal notranslate"><span class="pre">strip_faces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.get_chip_boundary_box"><code class="docutils literal notranslate"><span class="pre">get_chip_boundary_box()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.copy_chip_cell_from_face"><code class="docutils literal notranslate"><span class="pre">copy_chip_cell_from_face()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="kqcircuits.util.static_chip_helper.html#kqcircuits.util.static_chip_helper.swap_face"><code class="docutils literal notranslate"><span class="pre">swap_face()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="kqcircuits.util.symmetric_polygons.html">kqcircuits.util.symmetric_polygons</a><ul>
@@ -1023,7 +1041,7 @@ New layers are created with data type = 0 and layer numbering starts from 1000.<
 
 <dl class="py class">
 <dt class="sig sig-object py" id="kqcircuits.simulations.simulation.Simulation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.simulation.</span></span><span class="sig-name descname"><span class="pre">Simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/simulation.html#Simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.simulation.Simulation" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kqcircuits.simulations.simulation.</span></span><span class="sig-name descname"><span class="pre">Simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/simulation.html#Simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.simulation.Simulation" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base class for simulation geometries.</p>
 <p>Generally, this class is intended to be subclassed by a specific simulation implementation; the
@@ -1056,7 +1074,14 @@ the simulation geometry, followed by <cite>self.create_simulation_layers</cite> 
 so it is ready for exporting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>layout</strong> – the layout on which to create the simulation</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>layout</strong> – the layout on which to create the simulation</p></li>
+<li><p><strong>ports</strong> – optional list of <cite>Port</cite> to assign to the simulation. This is meant for simulations
+created with an existing cell where <cite>build</cite> does not add ports itself, such as
+<cite>Simulation.from_cell</cite>. When given, the list replaces <cite>self.ports</cite> after <cite>build</cite> has
+run and before the simulation layers are created. Leave as None for subclasses that
+populate <cite>self.ports</cite> inside <cite>build</cite>.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Keyword Arguments<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>**kwargs</strong> – <p>Any parameter can be passed as a keyword argument.</p>
@@ -1078,7 +1103,7 @@ used as the top cell for the simulation. Otherwise, a new cell will be created. 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kqcircuits.simulations.simulation.Simulation.from_cell">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/simulation.html#Simulation.from_cell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.simulation.Simulation.from_cell" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kqcircuits/simulations/simulation.html#Simulation.from_cell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kqcircuits.simulations.simulation.Simulation.from_cell" title="Link to this definition"></a></dt>
 <dd><p>Create a Simulation from an existing cell.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1088,6 +1113,8 @@ used as the top cell for the simulation. Otherwise, a new cell will be created. 
 box of the cell If the <cite>box</cite> keyword argument is given, margin is ignored.</p></li>
 <li><p><strong>grid_size</strong> – size of the simulation box will be rounded to this resolution
 If the <cite>box</cite> keyword argument is given, grid_size is ignored.</p></li>
+<li><p><strong>ports</strong> – optional list of <cite>Port</cite> to assign to the simulation. Pass this when the ports are
+determined from the existing geometry, since the default <cite>build</cite> does not add ports.</p></li>
 <li><p><strong>**kwargs</strong> – any simulation parameters passed</p></li>
 </ul>
 </dd>
@@ -1512,6 +1539,7 @@ By default places one point at the middle of the region’s boundary box.</p></l
 <li><p><strong>polygon_tolerance</strong><em> (Double)</em><span> - Tolerance for merging adjacent polygons in a layer</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.004</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>small_shape_area</strong><em> (Double)</em><span> - Area below which shapes will trigger a warning.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">1.0</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm²</span></code></p></li>
 <li><p><strong>base_metal_addition_layers</strong><em> (List)</em><span> - Layers to be added to base metal</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['base_metal_addition']</span></code></p></li>
+<li><p><strong>parent_simulation</strong><em> (None)</em><span> - Instance of Simulation subclass to determine excitations</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>extra_json_data</strong><em> (None)</em><span> - This field may be used to store ‘virtual’ parameters useful for your simulations</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p><strong>junction_total_length</strong><em> (Double)</em><span> - Simulation junction total length</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">33</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
 <li><p><strong>junction_upper_pad_width</strong><em> (Double)</em><span> - Simulation junction upper metal pad width</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">8</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">µm</span></code></p></li>
@@ -1528,11 +1556,13 @@ By default places one point at the middle of the region’s boundary box.</p></l
 <li><p><strong>display_name</strong><em> (String)</em><span> - Name displayed in GUI (empty for default)</span><em>, default=</em><code class="docutils literal notranslate"></code></p></li>
 <li><p><strong>protect_opposite_face</strong><em> (Boolean)</em><span> - This applies only on signal carrying elements that typically include some metal between gaps.</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>opposing_face_id_groups</strong><em> (List)</em><span> - Opposing face ID groups (list of lists)</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[['1t1',</span> <span class="pre">'2b1']]</span></code></p></li>
+<li><p><strong>duplicate_face_ids</strong><em> (List)</em><span> - Duplicate face IDs (list of lists), where the first face of each group is copied into other faces</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
+<li><p><strong>duplicate_layers</strong><em> (List)</em><span> - Layers (list), which are copied into other faces when duplicate_face_ids are given</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">['base_metal_gap',</span> <span class="pre">'base_metal_gap_wo_grid',</span> <span class="pre">'base_metal_addition']</span></code></p></li>
 <li><p><strong>etch_opposite_face</strong><em> (Boolean)</em><span> - Etch avoidance shaped gap on the opposite face too</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 <li><p><strong>etch_opposite_face_margin</strong><em> (Double)</em><span> - Margin of the opposite face etch shape</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">5</span></code><em>, unit=</em><code class="docutils literal notranslate"><span class="pre">μm</span></code></p></li>
 <li><p><strong>_epr_show</strong><em> (Boolean)</em><span> - Show geometry related to EPR simulation, if available</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-<li><p><strong>_epr_cross_section_cut_layer</strong><em> (Layer)</em><span> - Layer where EPR cross section cuts are placed</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
-<li><p><strong>_epr_cross_section_cut_width</strong><em> (Double)</em><span> - Width of the EPR cross section cuts when visualised</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><strong>_epr_cross_section_cut</strong><em> (Boolean)</em><span> - Show EPR cross section cuts, if available</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><strong>_epr_counter</strong><em> (Int)</em><span> - Internal counter to enable EPR preview</span><em>, default=</em><code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
 </ul>
 <img alt="../_images/kqcircuits.simulations.simulation.png" src="../_images/kqcircuits.simulations.simulation.png" />
 </section>
