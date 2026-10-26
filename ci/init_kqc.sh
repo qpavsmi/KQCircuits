@@ -5,6 +5,10 @@ mkdir -p "$HOME"/.klayout/python .pip-cache
 # For CI this causes headaches that I'd rather not deal with,
 # so for simplicity we force the installation to "system" python
 # since this script is only intended to be executed by a Docker image.
+
+# Due to eMudhra (https://emudhra.we-have-a-problem.com/) we must use pip version 26.2.2
+python -m pip install --cache-dir=.pip-cache --break-system-packages \
+    -r ci/pip-requirements.txt
 python -m pip install --cache-dir=.pip-cache --break-system-packages \
     -r klayout_package/python/requirements/linux/requirements.txt \
     -r klayout_package/python/requirements/linux/dev-requirements.txt \

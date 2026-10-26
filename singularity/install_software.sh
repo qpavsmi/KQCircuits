@@ -31,6 +31,7 @@ define_variables () {
 install_kqcircuits_package () {
     git clone https://github.com/iqm-finland/KQCircuits.git && cd KQCircuits || exit
     cd klayout_package/python || exit
+    python -m pip install -r ci/requirements/pip-requirements.txt
     python -m pip install -r requirements/linux/requirements.txt
     python -m pip install --no-deps -e .
     python -m pip install -r requirements/linux/sim-requirements.txt
@@ -79,7 +80,7 @@ install_deb_packages () {
 
     # This is needed to use pip without venv
     python -m pip config set global.break-system-packages true
-    python -m pip install --upgrade pip
+    python -m pip install -r ci/requirements/pip-requirements.txt
     rm -rf /usr/lib/python3/dist-packages/klayout /usr/lib/python3/dist-packages/klayout.egg-info 
     install_kqcircuits_package
 
@@ -397,10 +398,9 @@ install_kqcircuits_and_deps_centos () {
     alternatives --install /usr/bin/python python "/usr/local/bin/python$PYTHON_BIN_VERSION" 1
     alternatives --set python "/usr/local/bin/python$PYTHON_BIN_VERSION"
 
-    # TODO switch to using pinned requirements by using install_kqcircuits_package()
-    python -m pip install --upgrade pip
     rm -rf /usr/lib/python3/dist-packages/klayout /usr/lib/python3/dist-packages/klayout.egg-info
     git clone https://github.com/iqm-finland/KQCircuits.git && cd KQCircuits || exit
+    python -m pip install -r ci/requirements/pip-requirements.txt
     python -m pip install -e klayout_package/python
     python -m pip install pandas
     ln -s /usr/bin/python /usr/bin/kqclib

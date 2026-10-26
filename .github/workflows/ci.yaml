@@ -33,6 +33,7 @@ jobs:
       - name: Init KQCircuits
         # Was previously run: ci/init_kqc.sh
         run: |
+          python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r klayout_package/python/requirements/linux/requirements.txt -r klayout_package/python/requirements/linux/dev-requirements.txt -r klayout_package/python/requirements/linux/sim-requirements.txt
           pip install --no-deps -e "klayout_package/python/"
       - name: Select KLayout version
@@ -79,6 +80,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Init KQCircuits
         run: |
+          python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r klayout_package/python/requirements/${{ matrix.os-folder }}/requirements.txt -r klayout_package/python/requirements/${{ matrix.os-folder }}/dev-requirements.txt -r klayout_package/python/requirements/${{ matrix.os-folder }}/sim-requirements.txt
           pip3 install --no-deps -e "klayout_package/python/"
       - name: Select KLayout version
@@ -121,6 +123,7 @@ jobs:
       - name: Init KQCircuits
         # Was previously run: ci/init_kqc.sh
         run: |
+          python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r klayout_package/python/requirements/linux/requirements.txt -r klayout_package/python/requirements/linux/dev-requirements.txt
           pip install --no-deps -e "klayout_package/python/"
       - name: Run static code analysis
@@ -154,6 +157,7 @@ jobs:
       - name: Init KQCircuits
         # Was previously run: ci/init_kqc.sh
         run: |
+          python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r klayout_package/python/requirements/linux/requirements.txt -r klayout_package/python/requirements/linux/dev-requirements.txt
           pip install --no-deps -e "klayout_package/python/"
       - name: Make docs
@@ -206,6 +210,7 @@ jobs:
       - name: Init KQCircuits
         # Was previously run: ci/init_kqc.sh
         run: |
+          python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r klayout_package/python/requirements/linux/requirements.txt -r klayout_package/python/requirements/linux/dev-requirements.txt
           pip install --no-deps -e "klayout_package/python/"
       - name: Run check_layer_props.py
@@ -225,6 +230,7 @@ jobs:
         run: |
           git fetch --unshallow --tags
           echo "GIT_TAG=$(git tag --contains HEAD | grep -P '^v\d+\.\d+\.\d+.*')" >> $GITHUB_ENV
+          python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r ci/requirements/twine-requirements.txt
           cd klayout_package/python
           python -m build
