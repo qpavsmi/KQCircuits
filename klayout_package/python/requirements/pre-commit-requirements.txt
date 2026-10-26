@@ -95,7 +95,7 @@ pyyaml==6.0.2 \
     --hash=sha256:f753120cb8181e736c57ef7636e83f31b9c0d1722c516f7e86cf15b7aa57ff12 \
     --hash=sha256:ff3824dc5261f50c9b0dfb3be22b4567a6f938ccce4587b38952d85fd9e9afe4
     # via pre-commit
-virtualenv==21.14.9 \
-    --hash=sha256:4d1bee354cd81c820da3bee56e38be3426490f8d1fc54e10ea5b2072ebad8ef8 \
-    --hash=sha256:ac51744da66ae56ff814b087d65096c94de698ec520adc624b108b679655809b
+virtualenv==21.14.13 \
+    --hash=sha256:5fbb04138a4861580b78ba9110d529a26bc48fcc93c8ec36bc0202eeed96a788 \
+    --hash=sha256:de5307ba4b9a0001d9c8ea02832d38f63ca432880f416c1bface61c4323fd905
     # via pre-commit
