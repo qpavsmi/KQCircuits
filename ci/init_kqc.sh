@@ -8,7 +8,7 @@ mkdir -p "$HOME"/.klayout/python .pip-cache
 
 # Due to eMudhra (https://emudhra.we-have-a-problem.com/) we must use pip version 26.2.2
 python -m pip install --cache-dir=.pip-cache --break-system-packages \
-    -r ci/pip-requirements.txt
+    -r ci/requirements/pip-requirements.txt
 python -m pip install --cache-dir=.pip-cache --break-system-packages \
     -r klayout_package/python/requirements/linux/requirements.txt \
     -r klayout_package/python/requirements/linux/dev-requirements.txt \
