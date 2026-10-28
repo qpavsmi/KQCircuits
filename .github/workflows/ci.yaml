@@ -35,7 +35,7 @@ jobs:
         run: |
           python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r klayout_package/python/requirements/linux/requirements.txt -r klayout_package/python/requirements/linux/dev-requirements.txt -r klayout_package/python/requirements/linux/sim-requirements.txt
-          pip install --no-deps -e "klayout_package/python/"
+          pip install --no-deps --no-build-isolation -e "klayout_package/python/"
       - name: Select KLayout version
         run: pip install --force-reinstall -r "ci/requirements/${{ matrix.klayout_version }}-requirements.txt"
         if: ${{ matrix.klayout_version != 'latest' }}
@@ -82,7 +82,7 @@ jobs:
         run: |
           python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r klayout_package/python/requirements/${{ matrix.os-folder }}/requirements.txt -r klayout_package/python/requirements/${{ matrix.os-folder }}/dev-requirements.txt -r klayout_package/python/requirements/${{ matrix.os-folder }}/sim-requirements.txt
-          pip3 install --no-deps -e "klayout_package/python/"
+          pip3 install --no-deps --no-build-isolation -e "klayout_package/python/"
       - name: Select KLayout version
         run: pip3 install --force-reinstall -r "ci/requirements/${{ matrix.klayout_version }}-requirements.txt"
         if: ${{ matrix.klayout_version != 'latest' }}
@@ -125,7 +125,7 @@ jobs:
         run: |
           python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r klayout_package/python/requirements/linux/requirements.txt -r klayout_package/python/requirements/linux/dev-requirements.txt
-          pip install --no-deps -e "klayout_package/python/"
+          pip install --no-deps --no-build-isolation -e "klayout_package/python/"
       - name: Run static code analysis
         run: tox -e static_analysis
 
@@ -159,7 +159,7 @@ jobs:
         run: |
           python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r klayout_package/python/requirements/linux/requirements.txt -r klayout_package/python/requirements/linux/dev-requirements.txt
-          pip install --no-deps -e "klayout_package/python/"
+          pip install --no-deps --no-build-isolation -e "klayout_package/python/"
       - name: Make docs
         run: |
           cd docs
@@ -212,7 +212,7 @@ jobs:
         run: |
           python -m pip install -r ci/requirements/pip-requirements.txt
           python -m pip install -r klayout_package/python/requirements/linux/requirements.txt -r klayout_package/python/requirements/linux/dev-requirements.txt
-          pip install --no-deps -e "klayout_package/python/"
+          pip install --no-deps --no-build-isolation -e "klayout_package/python/"
       - name: Run check_layer_props.py
         run:  python util/check_layer_props.py
 

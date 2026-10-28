@@ -18,7 +18,7 @@ if [ $ret -ne 0 ]; then
     echo "Can't install KQCircuits: installing requirements.txt failed"
     exit $ret
 fi
-pip --cache-dir=.pip-cache install --break-system-packages --no-deps -e "klayout_package/python/"
+pip --cache-dir=.pip-cache install --break-system-packages --no-deps --no-build-isolation -e "klayout_package/python/"
 ret=$?
 if [ $ret -ne 0 ]; then
     echo "Can't install KQCircuits: pip install --no-deps failed"

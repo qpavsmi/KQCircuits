@@ -33,7 +33,7 @@ install_kqcircuits_package () {
     cd klayout_package/python || exit
     python -m pip install -r ci/requirements/pip-requirements.txt
     python -m pip install -r requirements/linux/requirements.txt
-    python -m pip install --no-deps -e .
+    python -m pip install --no-deps --no-build-isolation -e .
     python -m pip install -r requirements/linux/sim-requirements.txt
     ln -sf /usr/bin/python /usr/bin/kqclib
 }
