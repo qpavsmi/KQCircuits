@@ -21,6 +21,7 @@
 
 Defines values for things such as default layers, paths, and default sub-element types.
 """
+
 import os
 import subprocess
 from pathlib import Path
@@ -29,7 +30,6 @@ from kqcircuits.pya_resolver import pya
 from kqcircuits.util.defaults_helper import find_ansys_executable
 from kqcircuits.util.import_helper import module_from_file
 
-
 _kqcircuits_path = Path(os.path.dirname(os.path.realpath(__file__)))
 # workaround for Windows because os.path.realpath doesn't work there before Python 3.8
 if os.name == "nt" and os.path.islink(Path(__file__).parent):
@@ -37,24 +37,27 @@ if os.name == "nt" and os.path.islink(Path(__file__).parent):
 
 # project paths
 SRC_PATHS = [_kqcircuits_path]
-ROOT_PATH = Path(os.getenv("KQC_ROOT_PATH", os.getcwd()))  # "current dir" or set by optional KQC_ROOT_PATH
+_root_path = Path(os.getenv("KQC_ROOT_PATH", os.getcwd()))  # "current dir" or set by optional KQC_ROOT_PATH
 if _kqcircuits_path.parts[-3] == "klayout_package":  # developer setup
-    ROOT_PATH = _kqcircuits_path.parents[2]
+    _root_path = _kqcircuits_path.parents[2]
 
-TMP_PATH = Path(os.getenv("KQC_TMP_PATH", str(ROOT_PATH.joinpath("tmp"))))  # specify alternative tmp directory
-_py_path = ROOT_PATH.joinpath("klayout_package/python")
+_tmp_path = Path(os.getenv("KQC_TMP_PATH", str(_root_path.joinpath("tmp"))))  # specify alternative tmp directory
+_py_path = _root_path.joinpath("klayout_package/python")
 
 if _kqcircuits_path.parts[-4] == "salt":  # KQC Salt package
-    ROOT_PATH = _kqcircuits_path.parents[1]
-    _py_path = ROOT_PATH.joinpath("python")
-    TMP_PATH = _kqcircuits_path.parents[3].joinpath("python/tmp")  # local tmp dir for salt package
+    _root_path = _kqcircuits_path.parents[1]
+    _py_path = _root_path.joinpath("python")
+    _tmp_path = _kqcircuits_path.parents[3].joinpath("python/tmp")  # local tmp dir for salt package
 
+ROOT_PATH = _root_path
+TMP_PATH = _tmp_path
 SCRIPTS_PATH = _py_path.joinpath("scripts")
 DRC_PATH = _py_path.joinpath("drc")
 
 TMP_PATH.mkdir(parents=True, exist_ok=True)  # TODO move elsewhere?
 
-ANSYS_EXECUTABLE = find_ansys_executable(r"%PROGRAMFILES%\AnsysEM\v241\Win64\ansysedt.exe")
+_ansys_default_path = r"%PROGRAMFILES%\AnsysEM\v241\Win64\ansysedt.exe"
+ANSYS_EXECUTABLE = os.getenv("ANSYS_EXECUTABLE", find_ansys_executable(_ansys_default_path))
 ANSYS_SCRIPT_PATHS = [
     SCRIPTS_PATH.joinpath("simulations").joinpath("ansys"),
     SCRIPTS_PATH.joinpath("simulations").joinpath("post_process"),
@@ -75,10 +78,11 @@ KQC_REMOTE_TMP_PATH = os.getenv("KQC_REMOTE_TMP_PATH", "~/KQCircuits/tmp")
 KQC_REMOTE_ACCOUNT = os.getenv("KQC_REMOTE_ACCOUNT")
 
 # Given to subprocess.Popen calls, hides terminals on Windows
-STARTUPINFO = None
 if os.name == "nt":
     STARTUPINFO = subprocess.STARTUPINFO()
     STARTUPINFO.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+else:
+    STARTUPINFO = None
 
 # printed to corners of all chips and top of all masks
 # could be for example "IQM" or "A!"
@@ -100,6 +104,7 @@ default_bump_type = "Flip Chip Connector Dc"
 default_netlist_breakdown = [
     "Waveguide Composite",
     "Meander",
+    "Spiral Resonator Polygon",
 ]
 
 default_netlist_ignore_connections = [

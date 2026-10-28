@@ -8,9 +8,9 @@ anybadge==1.16.0 \
     --hash=sha256:bc9ef2e20d875ee09237a15250a17b6fd7e67276f083d32a297963cdec179918 \
     --hash=sha256:f4e95eca834482f9932f9020ac2fe04a5ca863728b446324a8d35b1e67faab71
     # via pylint-gitlab
-astroid==3.3.11 \
-    --hash=sha256:1e5a5011af2920c7c67a53f65d536d65bfa7116feeaf2354d8b94f29573bb0ce \
-    --hash=sha256:54c760ae8322ece1abd213057c4b5bba7c49818853fc901ef09719a60dbf9dec
+astroid==4.0.4 \
+    --hash=sha256:52f39653876c7dec3e3afd4c2696920e05c83832b9737afc21928f2d2eb7a753 \
+    --hash=sha256:986fed8bcf79fb82c78b18a53352a0b287a73817d6dbcfba3162da36667c49a0
     # via
     #   pylint
     #   pylint-gitlab
@@ -117,9 +117,9 @@ platformdirs==4.4.0 \
     # via
     #   pylint
     #   pylint-gitlab
-pylint==3.3.8 \
-    --hash=sha256:26698de19941363037e2937d3db9ed94fb3303fdadf7d98847875345a8bb6b05 \
-    --hash=sha256:7ef94aa692a600e82fabdd17102b73fc226758218c97473c7ad67bd4cb905d83
+pylint==4.0.9 \
+    --hash=sha256:6f1305780229ae720e89b8aff2b3ff857cbb268fbab98c8b586960267667ad34 \
+    --hash=sha256:c4ba5bbaf1e70ecf05f08cd7d6091ea04824b79a2b2d9f5b10dc25fc34cb1124
     # via pylint-gitlab
 pylint-gitlab==2.0.1 \
     --hash=sha256:aa767782744a1fefbdaf21ea6d18aaaf28fa858c98aaf5e584bcc25856ee2385 \
