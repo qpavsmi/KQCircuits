@@ -392,7 +392,9 @@ numpy==2.3.5 \
 packaging==26.3 \
     --hash=sha256:94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79 \
     --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c
-    # via matplotlib
+    # via
+    #   matplotlib
+    #   setuptools-git-versioning
 pillow==13.0.0 \
     --hash=sha256:02464da86f561f410e13b061ec37c3068a9cb557a095494157742d07b3c24a27 \
     --hash=sha256:04a63720f79e22fd54d897c233a68314c50ca0603360f54ce2bd5db8f0f43782 \
@@ -549,6 +551,10 @@ scipy==1.17.0 \
     --hash=sha256:fc02c37a5639ee67d8fb646ffded6d793c06c5622d36b35cfa8fe5ececb8f042 \
     --hash=sha256:fe508b5690e9eaaa9467fc047f833af58f1152ae51a0d0aed67aa5801f4dd7d6
     # via -r requirements.in
+setuptools-git-versioning==3.2.0 \
+    --hash=sha256:27aa1ad0409b632ee49947ea592cc27e16fbb2a1605cc22efeb7c353fd790b31 \
+    --hash=sha256:99ba418d3e5b790ffd6347c89c8c9da92d917b73f5a918e4eb10622358ae9c48
+    # via -r requirements.in
 six==1.17.0 \
     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
     --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
@@ -566,4 +572,6 @@ versiontag==1.2.0 \
 setuptools==84.1.0 \
     --hash=sha256:23657205b63d4d31395ab917815247f694aafad28cd21316bf5fd45a51048ea0 \
     --hash=sha256:5231689c6ac8156cd155cfb98c3fd6fb252c3e7e9bd3d78b64d3c55f132624c9
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   setuptools-git-versioning

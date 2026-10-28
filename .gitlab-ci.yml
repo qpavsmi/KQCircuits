@@ -187,8 +187,8 @@ deploy_image:
       --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
       --cache-repo=$CI_REGISTRY_IMAGE/cache
       --cache=true
-      --build-arg KL_FILE=klayout_0.30.5-1_amd64.deb
-      --build-arg KL_HASH=c63629bdebe20261c2cfaaa0827c6ab8
+      --build-arg KL_FILE=klayout_0.30.12-1_amd64.deb
+      --build-arg KL_HASH=0181713e60891e461d6d1664c1b8e213
       $LATEST
   only:
     - master
@@ -207,8 +207,8 @@ test_image:
       --destination $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
       --cache-repo=$CI_REGISTRY_IMAGE/cache
       --cache=true
-      --build-arg KL_FILE=klayout_0.30.5-1_amd64.deb
-      --build-arg KL_HASH=c63629bdebe20261c2cfaaa0827c6ab8
+      --build-arg KL_FILE=klayout_0.30.12-1_amd64.deb
+      --build-arg KL_HASH=0181713e60891e461d6d1664c1b8e213
       --no-push
   only:
     refs:

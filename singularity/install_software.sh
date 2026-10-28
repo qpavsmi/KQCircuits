@@ -62,8 +62,8 @@ install_yum_packages () {
 }
 
 install_deb_packages () {
-    KL_FILE="klayout_0.30.5-1_amd64.deb"
-    KL_HASH="c63629bdebe20261c2cfaaa0827c6ab8"
+    KL_FILE="klayout_0.30.12-1_amd64.deb"
+    KL_HASH="0181713e60891e461d6d1664c1b8e213"
 
     apt update ; apt install -y apt-utils; apt upgrade -y
     DEBIAN_FRONTEND=noninteractive apt install -y tzdata
@@ -319,8 +319,8 @@ install_kqcircuits_and_deps_centos () {
     # KQCircuits installation #
     ###########################
 
-    KL_FILE="klayout-0.30.5-0.x86_64.rpm"
-    KL_HASH="3a93b2c52b4620b6a495dc411451606d"
+    KL_FILE="klayout-0.30.12-0.x86_64.rpm"
+    KL_HASH="137cd43fe0aa6620e3dec2c3a5f78243"
 
     yum -y install -y xorg-x11-server-Xvfb mesa-libGL libXft-devel
     yum -y install -y paraview
