@@ -8,6 +8,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=34bb78ad" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eeab0646" />
 
   
@@ -21,6 +22,8 @@
         <script src="../_static/documentation_options.js?v=d91e2b8e"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -1036,11 +1039,8 @@ for your OS.</p>
 <p>An important consideration when choosing an installation package is how
 a python interpreter is linked into the KLayout compilation. For linux builds,
 it will always link the system python of the OS. For windows, a copy of python executable
-is packaged with the installation. For macOS, package names starting with <code class="docutils literal notranslate"><span class="pre">ST-*</span></code>
-link to system python, and <code class="docutils literal notranslate"><span class="pre">HW-*</span></code> include a python executable with the package.</p>
-<p>The reason why we need to care about system python is that ideally we would like
-the python version to be recent enough so that its compatible with our dependencies.
-<strong>KQCircuits requires Python 3.11 minimum.</strong> This is not a problem for sufficiently
+is packaged with the installation. For macOS see the options in the notes below.</p>
+<p><strong>KQCircuits requires Python 3.11 minimum.</strong> This is not a problem for sufficiently
 recent linux distributions (Ubuntu 24.04), as well as Windows and <code class="docutils literal notranslate"><span class="pre">HW-*</span></code> macOS installations
 since pre-packaged python executables fulfill the requirement.</p>
 <div class="admonition warning">
@@ -1050,44 +1050,109 @@ and may risk breaking your operating system.</p>
 </div>
 <p>Wherever the python executable happens to be, make sure that <code class="docutils literal notranslate"><span class="pre">pip</span></code> package
 manager is installed for that python executable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For mac users:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">arm64ST-*</span></code> and <code class="docutils literal notranslate"><span class="pre">ST-*</span></code> packages are problematic for most macOS distributions because they
+have Python version 3.9.6 as the system python, which is not supported by KQCircuits code.
+Below are multiple alternative ways to install the KLayout.</p>
+<p>If you pick one of the two <code class="docutils literal notranslate"><span class="pre">arm64LW-*</span></code> options, make sure to download the installation
+package, open it, double click the <code class="docutils literal notranslate"><span class="pre">ReadMeFirst</span></code> folder, then open the <code class="docutils literal notranslate"><span class="pre">*-ReadMeFirst.txt</span></code>
+file. You can follow the guide there, or our guide below. In the readme file keep note
+which python, qt and ruby versions to install, because KLayout will expect a specific version.</p>
+<details class="summary-arm64lw-macports-development-environment">
+<summary>arm64LW-* MacPorts development environment</summary><p>Install the Apple Command Line Tools:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="o">--</span><span class="n">install</span>
+</pre></div>
+</div>
+<p>Make sure MacPorts is installed in your system from <a class="reference external" href="https://www.macports.org/">MacPorts site</a> or
+from <a class="reference external" href="https://github.com/macports/macports-base/releases/">github releases</a>. Update MacPorts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">port</span> <span class="o">-</span><span class="n">v</span> <span class="n">selfupdate</span>
+</pre></div>
+</div>
+<p>Following <code class="docutils literal notranslate"><span class="pre">port</span></code> commands are needed for KLayout GUI executable to link correctly.
+Check from the readme file which python, qt and ruby versions to install:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">port</span> <span class="n">install</span> <span class="n">coreutils</span> <span class="n">findutils</span> <span class="n">qt5</span> <span class="n">ruby34</span> <span class="n">python314</span> <span class="n">py314</span><span class="o">-</span><span class="n">pip</span> <span class="n">libgit2</span>
+<span class="n">sudo</span> <span class="n">port</span> <span class="n">select</span> <span class="o">--</span><span class="nb">set</span> <span class="n">python3</span> <span class="n">python314</span>
+<span class="n">sudo</span> <span class="n">port</span> <span class="n">select</span> <span class="o">--</span><span class="nb">set</span> <span class="n">python</span> <span class="n">python314</span>
+<span class="n">sudo</span> <span class="n">port</span> <span class="n">select</span> <span class="o">--</span><span class="nb">set</span> <span class="n">pip3</span> <span class="n">pip314</span>
+<span class="n">sudo</span> <span class="n">port</span> <span class="n">select</span> <span class="o">--</span><span class="nb">set</span> <span class="n">pip</span> <span class="n">pip314</span>
+<span class="n">sudo</span> <span class="n">port</span> <span class="n">select</span> <span class="o">--</span><span class="nb">set</span> <span class="n">ruby</span> <span class="n">ruby34</span>
+</pre></div>
+</div>
+<p>Proceed with installing <code class="docutils literal notranslate"><span class="pre">arm64LW-*</span> <span class="pre">MacPorts</span> <span class="pre">development</span> <span class="pre">environment</span></code> by following below instructions.</p>
+</details><details class="summary-arm64lw-anaconda3-development-environment">
+<summary>arm64LW-* Anaconda3 development environment</summary><p>We will use <code class="docutils literal notranslate"><span class="pre">Miniforge</span></code> so there is no need for any licensing agreements.
+If you have <a class="reference external" href="https://brew.sh/">HomeBrew</a> you can install miniforge with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">update</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="o">--</span><span class="n">cask</span> <span class="n">miniforge</span>
+</pre></div>
+</div>
+<p>Initialize conda for your shell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">homebrew</span><span class="o">/</span><span class="n">Caskroom</span><span class="o">/</span><span class="n">miniforge</span><span class="o">/</span><span class="n">base</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">conda</span> <span class="n">init</span> <span class="n">zsh</span>
+<span class="n">source</span> <span class="o">~/.</span><span class="n">zshrc</span>
+</pre></div>
+</div>
+<p>You might need to fix some folder permissions. Try running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">ld</span> <span class="s2">&quot;$HOME/.conda&quot;</span>
+</pre></div>
+</div>
+<p>If the output shows <code class="docutils literal notranslate"><span class="pre">root</span></code>, fix it with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo chown -R $(whoami) &quot;$HOME/.conda&quot;
+</pre></div>
+</div>
+<p>Update conda to protect yourself from recent security vulnerabilities:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">n</span> <span class="n">base</span> <span class="o">-</span><span class="n">y</span> <span class="o">--</span><span class="n">override</span><span class="o">-</span><span class="n">channels</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="s2">&quot;conda&gt;=26.9.4&quot;</span> <span class="s2">&quot;certifi&gt;=2026.10.19&quot;</span> <span class="n">ca</span><span class="o">-</span><span class="n">certificates</span>
+<span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>Set up needed conda channels:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">env</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">env</span> <span class="o">--</span><span class="nb">set</span> <span class="n">channel_priority</span> <span class="n">strict</span>
+</pre></div>
+</div>
+<p>Following conda configuration needed for KLayout GUI executable to link correctly.
+Check from the readme file which python, qt and ruby versions to install:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">klayout</span><span class="o">-</span><span class="n">qt6</span> <span class="o">-</span><span class="n">y</span> <span class="o">--</span><span class="n">override</span><span class="o">-</span><span class="n">channels</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> \
+  <span class="s2">&quot;python=3.14&quot;</span> <span class="s2">&quot;pip&gt;=26.2.2&quot;</span> <span class="s2">&quot;certifi&gt;=2026.10.19&quot;</span> <span class="n">ca</span><span class="o">-</span><span class="n">certificates</span> \
+  <span class="s2">&quot;qt6-main=6.9.3&quot;</span> <span class="s2">&quot;qt6-multimedia=6.9.3&quot;</span> <span class="s2">&quot;ruby=3.4.7&quot;</span> <span class="s2">&quot;libgit2=1.9.1&quot;</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">klayout</span><span class="o">-</span><span class="n">qt6</span>
+</pre></div>
+</div>
+<p>Add a symbolic link to conda python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">homebrew</span><span class="o">/</span><span class="n">Caskroom</span><span class="o">/</span><span class="n">miniforge</span><span class="o">/</span><span class="n">base</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">anaconda3</span>
+</pre></div>
+</div>
+<p>Proceed with installing <code class="docutils literal notranslate"><span class="pre">arm64LW-*</span> <span class="pre">Anaconda3</span> <span class="pre">development</span> <span class="pre">environment</span></code> by following below instructions.</p>
+</details><details class="summary-using-x86-64-compilation">
+<summary>Using x86_64 compilation</summary><p>If you have an intel mac device, you should use <code class="docutils literal notranslate"><span class="pre">x86_64</span></code> compilation instead of <code class="docutils literal notranslate"><span class="pre">arm64</span></code>.
+However, you can also use <code class="docutils literal notranslate"><span class="pre">x86_64</span></code> KLayout installation for Apple Silicon devices as well.
+You can then use the <code class="docutils literal notranslate"><span class="pre">HW-*</span></code> installation, which embeds a working python installation,
+thus KLayout GUI will work with no further configuration needed.
+For Apple Silicon devices it is dependent on Rosetta to recompile the KLayout executable during launch.
+This slows down KLayout startup, and also at some macOS release in the future
+Rosetta support will be deprecated.</p>
+</details><details class="summary-compiling-klayout-from-source">
+<summary>Compiling KLayout from source</summary><p>KLayout can be compiled manually using your macOS device. We recommend
+<a class="reference external" href="https://github.com/KLayout/klayout/tree/master/macbuild#6c-fully-homebrew-flavored-build-with-homebrew-ruby-34-and-homebrew-python-313">Guide 6C. Fully Homebrew-flavored build with Homebrew Ruby 3.4 and Homebrew Python 3.13</a>,
+which we have tested to work for us. At the time of writing, the compilation seems to be
+<a class="reference external" href="https://github.com/KLayout/klayout/issues/2515">incompatible with Qt version 6.12.0</a>. A workaround is to disable
+Qt binding using the <code class="docutils literal notranslate"><span class="pre">--noqtbinding</span></code> option when running <code class="docutils literal notranslate"><span class="pre">./build4mac.py</span></code>.
+If you wish to use Qt binding features, consider using some other Qt version.</p>
+</details><p>After downloading or acquiring the KLayout GUI installation package of your choice,
+open the package, in the opened window drag the klayout icon to
+the <code class="docutils literal notranslate"><span class="pre">Applications</span></code> folder. Close the window and eject the disk image.
+Now use <code class="docutils literal notranslate"><span class="pre">Finder</span></code> to open <code class="docutils literal notranslate"><span class="pre">Applications</span></code> folder,
+try opening the <code class="docutils literal notranslate"><span class="pre">klayout</span></code> app. MacOS will most likely prevent opening the application
+with <code class="docutils literal notranslate"><span class="pre">&quot;klayout&quot;</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">opened</span> <span class="pre">because</span> <span class="pre">the</span> <span class="pre">developer</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">verified</span></code>.
+Open <code class="docutils literal notranslate"><span class="pre">System</span> <span class="pre">Settings</span> <span class="pre">&gt;</span> <span class="pre">Privacy</span> <span class="pre">&amp;</span> <span class="pre">Security</span></code>, scroll down
+until you see a section mentioning KLayout and click button <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">anyway</span></code>.</p>
+</div>
 <p>You can also build KLayout yourself, which allows you to link the python
 executable of your choosing.</p>
 <p>We recommend installing
 KLayout without changing the installation directory location from default,
 as many KQCircuits features assume that KLayout specific files can be found there.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For mac users:</p>
-<p>There are KLayout installation packages precompiled natively for <code class="docutils literal notranslate"><span class="pre">arm64</span></code>,
-but they are only available in <code class="docutils literal notranslate"><span class="pre">ST-*</span></code> form. Most macOS distributions
-have Python version 3.9.6 as the system python. There are multiple ways
-to resolve this problem.</p>
-<p>1. Easiest way is to install older dependencies that are compatible with older
-python. Copy the contents of <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//klayout_package/python/requirements/mac/gui-requirements-396.txt">gui-requirements-396.txt</a>
-into <a class="reference external" href="https://github.com/iqm-finland/KQCircuits/blob/main//klayout_package/python/requirements/mac/gui-requirements.txt">gui-requirements.txt</a>
-then proceed with installation guides as usual. There are risks that we might
-use features not supported by out-of-date dependencies in KQC, and also that
-a standalone KQCircuits installation may be out-of-sync with the GUI KQCircuits installation.</p>
-<p>2. Next consideration is to use <code class="docutils literal notranslate"><span class="pre">HW-*</span></code> macOS installation of KLayout. At the time
-of writing this is only available for <code class="docutils literal notranslate"><span class="pre">x86_64</span></code> compilations, which means for some macOS
-devices it is dependent on Rosetta to recompile the KLayout executable during launch.
-This slows down KLayout startup, and also at some macOS release in the future
-Rosetta support will be deprecated.</p>
-<p>3. Finally, KLayout can be compiled yourself using your macOS device. We recommend
-<a class="reference external" href="https://github.com/KLayout/klayout/tree/master/macbuild#6c-fully-homebrew-flavored-build-with-homebrew-ruby-34-and-homebrew-python-313">Guide 6C. Fully Homebrew-flavored build with Homebrew Ruby 3.4 and Homebrew Python 3.13</a>,
-which we have tested to work for us. A prerequisite is to install a python version of your choice
-using the HomeBrew package manager,
-then instructing KLayout compiler to link to Homebrew python installation.</p>
-<p>4. There is a KLayout cask in <a class="reference external" href="https://formulae.brew.sh/cask/klayout">HomeBrew package manager</a>,
-available for install using <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">--cask</span> <span class="pre">klayout</span></code>.
-This will install a <code class="docutils literal notranslate"><span class="pre">x86_64</span></code> compilation with prepackaged python executable.
-At the time of writing there seemed to be problems installing from homebrew, which is
-why we don’t recommend anymore to install KLayout using this method.</p>
-<p>There might be issues on first time launch of KLayout with window:
-<code class="docutils literal notranslate"><span class="pre">&quot;klayout&quot;</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">opened</span> <span class="pre">because</span> <span class="pre">the</span> <span class="pre">developer</span> <span class="pre">cannot</span> <span class="pre">be</span> <span class="pre">verified</span></code>.
-To fix this, find KLayout app using Finder, control+click KLayout,
-click Open, then in the warning window there should be option to Open.</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If problems with linking python executable to KLayout installation seem insurmountable,
