@@ -227,6 +227,10 @@ layer_config_path = Path(__file__).parent / "layer_config" / "default_layer_conf
 # Load layer/face related defaults from the layer config file
 
 layer_config_module = module_from_file(layer_config_path)
+# dictonary of possible chip stacks
+stacks = layer_config_module.stacks
+# dictonary of possible frames
+frame_sets = layer_config_module.frame_sets
 # pya layer information
 default_layers = layer_config_module.default_layers
 # default_faces[face_id] contains the face dictionary for the face determined by face_id.
@@ -257,3 +261,5 @@ default_path_length_layers = layer_config_module.default_path_length_layers
 default_mask_parameters = layer_config_module.default_mask_parameters
 # Path to layer properties file
 default_layer_props = layer_config_module.default_layer_props
+# Default port layers
+default_port_layers = layer_config_module.default_port_layers

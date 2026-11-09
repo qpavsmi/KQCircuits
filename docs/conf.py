@@ -62,20 +62,10 @@ except FileNotFoundError:
     pass
 
 try:
-    import sphinx
-    from pkg_resources import parse_version
-
     template_dir = os.path.join(__location__, "templates", "apidoc")
-    cmd_line_template = (
-        "sphinx-apidoc -f -o {outputdir} {moduledir} -e --implicit-namespaces --templatedir={templatedir}"
-    )
+    cmd_line_template = "-f -o {outputdir} {moduledir} -e --implicit-namespaces --templatedir={templatedir}"
     cmd_line = cmd_line_template.format(outputdir=output_dir, moduledir=module_dir, templatedir=template_dir)
-
-    args = cmd_line.split(" ")
-    if parse_version(sphinx.__version__) >= parse_version("1.7"):
-        args = args[1:]
-
-    apidoc.main(args)
+    apidoc.main(cmd_line.split(" "))
 except Exception as e:
     print(f"Running `sphinx-apidoc` failed!\n{e}")
 
@@ -117,6 +107,8 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx.ext.graphviz",
     "kqc_elem_params",
+    "sphinx_toolbox.collapse",
+    "sphinx_copybutton",
     "sphinx.ext.extlinks",
 ]
 

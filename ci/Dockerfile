@@ -12,13 +12,14 @@ ARG KL_FILE=klayout_0.30.12-1_amd64.deb
 ARG KL_HASH=0181713e60891e461d6d1664c1b8e213
 
 RUN apt-get update && apt-get install -y apt-utils && apt-get upgrade -y && \
-    apt-get install -y wget xvfb python-is-python3 python3-pip git libcurl4 libglu1-mesa libxft-dev jq shellcheck graphviz && \
+    apt-get install -y wget xvfb python-is-python3 python3-pip python3-venv git libcurl4 libglu1-mesa libxft-dev jq shellcheck graphviz && \
     wget -q https://www.klayout.org/downloads/Ubuntu-24/$KL_FILE && \
     echo "$KL_HASH  $KL_FILE" > klayout.md5 && \
     md5sum --check klayout.md5  && \
     apt-get install -y ./$KL_FILE && \
     apt-get clean -y && rm -rf /var/lib/apt/lists/* ./klayout* && apt-get clean && \
-    rm -rf /usr/lib/python3/dist-packages/klayout /usr/lib/python3/dist-packages/klayout.egg-info
+    rm -rf /usr/lib/python3/dist-packages/klayout /usr/lib/python3/dist-packages/klayout.egg-info && \
+    python -m venv /usr/local/ci-env
 
 # build from parent directory with -f ci/Dockerfile
 COPY . /kqc

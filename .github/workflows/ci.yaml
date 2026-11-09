@@ -40,7 +40,7 @@ jobs:
         run: pip install --force-reinstall -r "ci/requirements/${{ matrix.klayout_version }}-requirements.txt"
         if: ${{ matrix.klayout_version != 'latest' }}
       - name: Run tests
-        run: tox -e matrix
+        run: python -m pytest tests --runslow -n8 --quiet --cov --cov-report=term-missing --junitxml=test_report.xml
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
@@ -87,7 +87,7 @@ jobs:
         run: pip3 install --force-reinstall -r "ci/requirements/${{ matrix.klayout_version }}-requirements.txt"
         if: ${{ matrix.klayout_version != 'latest' }}
       - name: Run tests
-        run: tox -e matrix
+        run: python -m pytest tests --runslow -n8 --quiet --cov --cov-report=term-missing --junitxml=test_report.xml
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v4
@@ -127,7 +127,9 @@ jobs:
           python -m pip install -r klayout_package/python/requirements/linux/requirements.txt -r klayout_package/python/requirements/linux/dev-requirements.txt
           pip install --no-deps --no-build-isolation -e "klayout_package/python/"
       - name: Run static code analysis
-        run: tox -e static_analysis
+        run: python -m pylint klayout_package/ tests/ util/
+      - name: Run black formatter
+        run: python -m black --check -l 120 -t py311 -t py312 -t py313 -t py314 .
 
   shellcheck:
     name: Shellcheck

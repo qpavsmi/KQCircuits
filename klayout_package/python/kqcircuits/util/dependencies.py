@@ -22,7 +22,7 @@ from pathlib import Path
 from sys import platform
 import os
 import site
-import setuptools
+import pip
 
 
 def install_kqc_gui_dependencies():
@@ -50,7 +50,7 @@ def install_kqc_gui_dependencies():
     else:
         raise SystemError("Unsupported operating system.")
 
-    target_dir = os.path.split(setuptools.__path__[0])[0]
+    target_dir = os.path.split(pip.__path__[0])[0]
     test_file = IOBase()
     try:
         test_file_path = os.path.join(target_dir, ".test.file")
